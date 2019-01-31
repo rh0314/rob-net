@@ -1,0 +1,52 @@
+@import "./assets/css/fonticons.css";
+@import "./assets/fonts/stylesheet.css";
+@import "./assets/css/font-awesome.min.css";
+@import "./assets/css/bootstrap.min.css";
+// @import "./assets/css/plugins.css";
+@import "./assets/css/style.css";
+@import "./assets/css/responsive.css";
+
+html {
+  background-color: #0E1119
+}
+
+.head_title h2 {
+  color: #CCCCCC;
+  margin-top: 18px;
+  letter-spacing: 0.1em;
+  font-size: 1.75em;
+}
+
+// ==== TEMPLATE OVERRIDE ====
+
+.navbar-default .navbar-nav>li>a {
+  color: #FFF;
+}
+
+.home-overlay-fluid {
+  padding: 0px 0px;
+}
+
+.home{
+  text-align: center;
+}
+
+.background-servers {
+  background: url(./assets/images/homebg.jpg) 100%;
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+.background-fingers {
+  background: url(./assets/images/coding-fingers.jpg) 100%;
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+.overlay-60 {
+  background-color: rgba(0, 0, 0, 0.60); 
+}
+
+.overlay-80 {
+  background-color: rgba(0, 0, 0, 0.80); 
+}
