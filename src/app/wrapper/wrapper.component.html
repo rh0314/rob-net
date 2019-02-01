@@ -1,10 +1,6 @@
 <section id="home" class="home background-servers">
-  <!--  ([ngClass])="{ 'background-fingers': (routeData.backgroundImage === 'fingers'), 'background-servers': (routeData.backgroundImage === 'servers') }" -->
   <div id="rn-main-overlay" class="home-overlay-fluid overlay-60">
-    <!-- [ngClass]="{ 'overlay-60': (routeData.opacity === 60), 'overlay-80': (routeData.opacity === 80) }" -->
-    <div class="container">
-      <!-- This is my wrapper component.
-       <pre>{{global.routeData | json}} </pre> -->
+    <div id="router-outlet-container" class="container router-outlet-container">
       <router-outlet></router-outlet>
     </div>
   </div>

@@ -41,19 +41,21 @@ export class WrapperComponent implements OnInit {
 
   }
 
-  fixFooterHeight() {
+  resizeMainElements() {
     const setFooterHeight = 40;
     const wh = window.innerHeight;
     const hh = document.getElementById('rn-main-menu-bg').offsetHeight;
     const mh = wh - setFooterHeight;
+    const rah = wh - (setFooterHeight + hh);
     const main = document.getElementById('home');
     const overlay = document.getElementById('rn-main-overlay');
+    const routerContainer = document.getElementById('router-outlet-container');
     main.style.height = mh + 'px';
     overlay.style.height = mh + 'px';
   }
 
   fixElements() {
-    this.fixFooterHeight();
+    this.resizeMainElements();
   }
 
 
