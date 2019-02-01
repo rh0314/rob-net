@@ -11,6 +11,7 @@ import { Error404Component } from './error404/error404.component';
 import { GlobalDataService } from './shared/global-data.service';
 import { BgOverlayDirective } from './shared/directives/bg-overlay.directive';
 import { WrapperComponent } from './wrapper/wrapper.component';
+import { VideoComponent } from './video/video.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { WrapperComponent } from './wrapper/wrapper.component';
     AboutComponent,
     Error404Component,
     BgOverlayDirective,
-    WrapperComponent
+    WrapperComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,
