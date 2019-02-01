@@ -19,9 +19,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.cdr.checkNoChanges()
-    this.global.setBg('servers');
-    this.cdr.detectChanges();
+    setTimeout(() => {
+      this.cdr.reattach();
+      this.global.setBg('servers');
+    }, 250);
   }
 
 }

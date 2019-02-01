@@ -17,9 +17,9 @@ export class AboutComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.cdr.checkNoChanges()
-    this.global.setBg('fingers');
-    this.cdr.detectChanges();
+    setTimeout(() => {
+      this.global.setBg('fingers');
+    }, 250);
   }
 
 }

@@ -33,9 +33,9 @@ export class WrapperComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.cdr.checkNoChanges();
-    this.bg = this.global.getBg();
-    this.cdr.detectChanges();
+    setTimeout(() => {
+      this.bg = this.global.getBg();
+    }, 750);
   }
 
 
