@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { GlobalDataService } from './../shared/global-data.service';
 
 @Component({
@@ -6,16 +6,20 @@ import { GlobalDataService } from './../shared/global-data.service';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements OnInit {
 
-  constructor(private global: GlobalDataService) { }
+export class AboutComponent implements OnInit {
+  constructor(private global: GlobalDataService, private cdr: ChangeDetectorRef) { 
+
+  }
 
   ngOnInit() {
-    // this.global.routeData = {
-    //   opacity: 80,
-    //   backgroundImage: 'fingers'
-    // }
-    // console.log('about: global: ', this.global)
+    this.cdr.detach();
+  }
+
+  ngAfterViewInit() {
+    this.cdr.checkNoChanges()
+    this.global.setBg('fingers');
+    this.cdr.detectChanges();
   }
 
 }

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { Router, Route, ActivatedRoute, Params, Data } from '@angular/router';
 import { GlobalDataService } from '../shared/global-data.service';
 import { RouteData } from '../shared/object-models/route-data';
+
 
 @Component({
   selector: 'app-home',
@@ -10,16 +11,17 @@ import { RouteData } from '../shared/object-models/route-data';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute, private global: GlobalDataService) {
+  constructor(private router: Router, private route: ActivatedRoute, private global: GlobalDataService, private cdr: ChangeDetectorRef) {
   }
 
   ngOnInit() {
-    // this.global.routeData = {
-    //   opacity: 60,
-    //   backgroundImage: 'servers'
-    // }
-    // console.log('HOME: global: ', this.global)
+    this.cdr.detach();
+  }
 
+  ngAfterViewInit() {
+    this.cdr.checkNoChanges()
+    this.global.setBg('servers');
+    this.cdr.detectChanges();
   }
 
 }

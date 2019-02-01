@@ -10,15 +10,13 @@ import { RouteData } from './shared/object-models/route-data';
 })
 export class AppComponent {
   title = 'rob-net';
-  global = {
-    routeData: RouteData
-  }
 
   @Input() watchData: Array<any> = [];
 
   constructor(global: GlobalDataService) { 
     
     console.log('app', global)
+
   }
 
   

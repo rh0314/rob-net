@@ -1,23 +1,20 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { RouteData } from './../shared/object-models/route-data';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GlobalDataService } from './../shared/global-data.service';
+import { ThrowStmt } from '@angular/compiler';
 
 
 @Component({
   selector: 'app-wrapper',
   templateUrl: './wrapper.component.html',
-  styleUrls: ['./wrapper.component.scss']
+  styleUrls: ['./wrapper.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WrapperComponent implements OnInit {
-  routeData: RouteData = {
-    backgroundImage: 'servers',
-    opacity: 80
-  }
-  constructor(private router: Router, private acitveRoute: ActivatedRoute, private global: GlobalDataService) {
-    console.log('router: ', router);
-    console.log('activeRoute: ', acitveRoute)
-    console.log('global: ', global)
+  bg: string;
+
+  constructor(private global: GlobalDataService, private cdr: ChangeDetectorRef) {
 
 
   }
@@ -30,16 +27,17 @@ export class WrapperComponent implements OnInit {
       this.fixElements();
     });
 
-    this.global.routeData = { 
-      backgroundImage: this.acitveRoute.children.length > 0 ? this.acitveRoute.children[0].snapshot.data.backgroundImage : this.routeData.backgroundImage,
-      opacity: this.acitveRoute.children.length > 0 ? this.acitveRoute.children[0].snapshot.data.opacity : this.routeData.opacity
-    }
-
     setTimeout(() => {
       this.fixElements();
     }, 500);
-
   }
+
+  ngAfterViewInit() {
+    this.cdr.checkNoChanges();
+    this.bg = this.global.getBg();
+    this.cdr.detectChanges();
+  }
+
 
   fixFooterHeight() {
     const setFooterHeight = 40;
@@ -55,6 +53,4 @@ export class WrapperComponent implements OnInit {
   fixElements() {
     this.fixFooterHeight();
   }
-
-
 }

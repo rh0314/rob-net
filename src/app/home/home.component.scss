@@ -1,5 +1,29 @@
 .home {
 
-  background: url(./../../assets/images//homebg.jpg) 100% !important;
-  text-align: center;
+  // background: url(./../../assets/images//homebg.jpg) 100% !important;
+  // text-align: center;
+}
+
+.rn-home-container-outer {
+    height: 100vh;
+    position: relative;
+}
+
+.rn-home-container-inner {
+  position: absolute;
+  width: 100%;
+}
+
+.rn-home-main-banner {
+  font-size: 2em;
+  color: #cecece70;
+}
+
+.rn-home-secondary-banner {
+  font-size: 4em;
+  color: #ffffffed;
+  width: 100%;
+  text-shadow: 3px 3px grey;
+  font-weight: bold;
+  font-style: italic;
 }

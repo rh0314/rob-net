@@ -1,11 +1,11 @@
-<section id="home" class="home background-servers">
-  <!--  ([ngClass])="{ 'background-fingers': (routeData.backgroundImage === 'fingers'), 'background-servers': (routeData.backgroundImage === 'servers') }" -->
-  <div id="rn-main-overlay" class="home-overlay-fluid overlay-60">
+<section id="home" [className]="'home'" [ngClass]="{'background-fingers': global.getBg() === 'fingers', 'background-servers': global.getBg() === 'servers'}">
+  <!--   -->
+  <div id="rn-main-overlay" class="home-overlay-fluid" [ngClass]="{'overlay-60': true}">
     <!-- [ngClass]="{ 'overlay-60': (routeData.opacity === 60), 'overlay-80': (routeData.opacity === 80) }" -->
     <div class="container">
-      <!-- This is my wrapper component.
-       <pre>{{global.routeData | json}} </pre> -->
+
       <router-outlet></router-outlet>
+
     </div>
   </div>
 </section><!-- End of Banner Section -->
