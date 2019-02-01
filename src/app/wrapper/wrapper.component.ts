@@ -53,16 +53,19 @@ export class WrapperComponent implements OnInit {
     //c= calculated sizes (elements to be reszied)
     const mh = wh - setFooterHeight;
     const asb = wh - astSetOffset;
+    const rah = wh - (setFooterHeight + hh);
 
     // get the elements
     const main = document.getElementById('home');
     const overlay = document.getElementById('rn-main-overlay');
     const aboutScrollBox = document.getElementById('about-scroll-box');
+    const routerContainer = document.getElementById('router-outlet-container');
 
     // resize the elements
     main.style.height = mh + 'px';
     overlay.style.height = mh + 'px';
     aboutScrollBox.style.maxHeight = asb + 'px';
+    routerContainer.style.height = rah + 'px';
   }
 
   fixElements() {
