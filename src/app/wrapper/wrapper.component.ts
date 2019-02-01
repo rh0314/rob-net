@@ -41,21 +41,32 @@ export class WrapperComponent implements OnInit {
 
   }
 
-  resizeMainElements() {
+  resizeElements() {
+    // set or pre-calculated numbers
     const setFooterHeight = 40;
+    const astSetOffset = 274;
+
+     // flexible sizes
     const wh = window.innerHeight;
     const hh = document.getElementById('rn-main-menu-bg').offsetHeight;
+
+    //c= calculated sizes (elements to be reszied)
     const mh = wh - setFooterHeight;
-    const rah = wh - (setFooterHeight + hh);
+    const asb = wh - astSetOffset;
+
+    // get the elements
     const main = document.getElementById('home');
     const overlay = document.getElementById('rn-main-overlay');
-    const routerContainer = document.getElementById('router-outlet-container');
+    const aboutScrollBox = document.getElementById('about-scroll-box');
+
+    // resize the elements
     main.style.height = mh + 'px';
     overlay.style.height = mh + 'px';
+    aboutScrollBox.style.maxHeight = asb + 'px';
   }
 
   fixElements() {
-    this.resizeMainElements();
+    this.resizeElements();
   }
 
 
