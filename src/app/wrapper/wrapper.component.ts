@@ -71,7 +71,7 @@ export class WrapperComponent implements OnInit {
     const aboutScrollBox = document.getElementById('about-scroll-box');
     if (aboutScrollBox) {
       const wh = window.innerHeight;
-      const astSetOffset = 274;
+      const astSetOffset = 304;
       const asb = wh - astSetOffset;
       aboutScrollBox.style.maxHeight = asb + 'px';
     }

@@ -1,17 +1,10 @@
 @import "./assets/css/fonticons.css";
-
 @import "./assets/fonts/stylesheet.css";
-
 @import "./assets/css/font-awesome.min.css";
-
 @import "./assets/css/bootstrap.min.css";
-
 // @import "./assets/css/plugins.css";
-
 @import "./assets/css/style.css";
-
 @import "./assets/css/responsive.css";
-
 
 html {
   background-color: #0E1119
@@ -19,39 +12,27 @@ html {
 
 .head_title h2 {
   color: #CCCCCC;
-
   margin-top: 18px;
-
-  letter-spacing: 0.1em;
-
-  font-size: 1.75em;
-
+  letter-spacing: 0.1rem;
+  font-size: 1.75rem;
 }
-
 
 /* ***** FONTS ***** */
 
 @font-face {
   font-family: headline;
-
   src: url('./assets/fonts/fax-sans-beta.otf');
-
 }
 
 @font-face { 
   font-family: content-text;
-
   src: url('./assets/fonts/GlacialIndifference-Regular.otf');
-
 }
 
 @font-face {
   font-family: content-text-bold;
-
   src: url('./assets/fonts/GlacialIndifference-Bold.otf');
-
   font-weight: bold;
-
 }
 
 @font-face{
@@ -74,12 +55,12 @@ html {
   font-weight: bold;
   // text-shadow: 4px 4px #587570;
   // text-shadow: 4px 4px #3D5655;
-  font-size: 5em;
+  font-size: 5rem;
 }
 
 .page-subheadline-content {
   margin-top: 50px;
-  font-size: 2em; 
+  font-size: 2rem; 
   font-weight: bold;
 }
 .font-headline {
@@ -89,9 +70,22 @@ html {
 
 .font-content-normal {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.3em;
+  font-size: 1.3rem;
 }
 
+.headline-themed {
+  color: #C56600;
+  text-shadow: 4px 4px #080C51;
+}
+
+.subheadline-themed {
+  color: #9E4800;
+  text-shadow: 2px 2px #090E52;
+}
+
+.content-themed {
+
+}
 // ==== TEMPLATE OVERRIDE ====
 
 .navbar-default .navbar-nav>li>a {
