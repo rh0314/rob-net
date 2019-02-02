@@ -1,3 +1,20 @@
 #about-scroll-box {
   overflow-y: auto;
+  max-height: 450px;
+  overflow-y: auto;
+  padding: 8px 16px 8px 16px;
+  p {
+    color: #ffffff;
+  }
+}
+
+
+
+.about-content-bg {
+  background: url('./../../assets/images/streak2.png');
+  background-repeat: no-repeat;
+  background-position-y: 200px;
+  background-size: contain;
+  background-origin: content-box;
+  opacity: .4;
 }
