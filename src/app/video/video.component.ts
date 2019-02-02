@@ -7,11 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video.component.scss']
 })
 export class VideoComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
 
   }
-
+//autoplay preload="auto" width="100%" poster="./../../assets/images/poster.png"
 }

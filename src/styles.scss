@@ -2,9 +2,9 @@
 @import "./assets/fonts/stylesheet.css";
 @import "./assets/css/font-awesome.min.css";
 @import "./assets/css/bootstrap.min.css";
-// @import "./assets/css/plugins.css";
 @import "./assets/css/style.css";
 @import "./assets/css/responsive.css";
+@import "./assets/fonts/stylesheet.css";
 
 html {
   background-color: #0E1119
@@ -53,43 +53,51 @@ html {
 }
 
 .page-headline-content {
-  // color: #68ccaf;
-  // color: #E0F7F6;
   font-style: italic;
   font-weight: bold;
-  // text-shadow: 4px 4px #587570;
-  // text-shadow: 4px 4px #3D5655;
-  font-size: 5rem;
+  font-size: 7rem;
+  font-family: 'latoheavy_italic';
+  &.themed {
+    color: #48A868;
+    text-shadow: 3px 4px #173622;
+  }
 }
 
 .page-subheadline-content {
-  margin-top: 50px;
-  font-size: 2rem; 
+  margin-top: 30px;
+  font-size: 2.5rem; 
   font-weight: bold;
-}
-.font-headline {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: latomedium;
+  &.themed {
+    color: #48A868;
+    text-shadow: 3px 4px #173622;
+    }
 }
 
-.font-content-normal {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.page-content {
   font-size: 1.3rem;
+  line-height: 2rem;
+  &.themed {
+    font-family: 'latolight', 'Lucinda', 'Tahoma', 'Arial';
+    color: #FFF;
+    &.bold {
+      &.italic {
+        font-style: italic;
+      }
+
+    }
+    .bold {
+      font-weight: bold;;
+      &.italic {
+        font-style: italic;
+      }
+    }
+    .italic {
+      font-style: italic;
+    }
+  }
 }
 
-.headline-themed {
-  color: #C56600;
-  text-shadow: 4px 4px #080C51;
-}
-
-.subheadline-themed {
-  color: #9E4800;
-  text-shadow: 2px 2px #090E52;
-}
-
-.content-themed {
-
-}
 // ==== TEMPLATE OVERRIDE ====
 
 .navbar-default .navbar-nav>li>a {
@@ -133,4 +141,10 @@ html {
 .overlay-80 {
   background-color: rgba(0, 0, 0, 0.80);
  
+}
+
+.sercelist {
+  margin-top: 20px !important;
+  // border: 1px solid rgba(128, 128, 128, 0.801);
+  border: none !important;
 }
