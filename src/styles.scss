@@ -1,10 +1,17 @@
 @import "./assets/css/fonticons.css";
+
 @import "./assets/fonts/stylesheet.css";
+
 @import "./assets/css/font-awesome.min.css";
+
 @import "./assets/css/bootstrap.min.css";
+
 // @import "./assets/css/plugins.css";
+
 @import "./assets/css/style.css";
+
 @import "./assets/css/responsive.css";
+
 
 html {
   background-color: #0E1119
@@ -12,41 +19,120 @@ html {
 
 .head_title h2 {
   color: #CCCCCC;
+
   margin-top: 18px;
+
   letter-spacing: 0.1em;
+
   font-size: 1.75em;
+
+}
+
+
+/* ***** FONTS ***** */
+
+@font-face {
+  font-family: headline;
+
+  src: url('./assets/fonts/fax-sans-beta.otf');
+
+}
+
+@font-face { 
+  font-family: content-text;
+
+  src: url('./assets/fonts/GlacialIndifference-Regular.otf');
+
+}
+
+@font-face {
+  font-family: content-text-bold;
+
+  src: url('./assets/fonts/GlacialIndifference-Bold.otf');
+
+  font-weight: bold;
+
+}
+
+@font-face{
+  font-family:'glacialIndifferenceRegular';
+  src:url('./assets/fonts/GlacialIndifference-Regular.otf');
+  font-weight:normal;
+  font-style:normal
+}
+
+.page-headline {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.page-headline-content {
+  // color: #68ccaf;
+  // color: #E0F7F6;
+  font-style: italic;
+  font-weight: bold;
+  // text-shadow: 4px 4px #587570;
+  // text-shadow: 4px 4px #3D5655;
+  font-size: 5em;
+}
+
+.page-subheadline-content {
+  margin-top: 50px;
+  font-size: 2em; 
+  font-weight: bold;
+}
+.font-headline {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.font-content-normal {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.3em;
 }
 
 // ==== TEMPLATE OVERRIDE ====
 
 .navbar-default .navbar-nav>li>a {
   color: #FFF;
+
 }
 
 .home-overlay-fluid {
   padding: 0px 0px;
+
 }
 
 .home{
   text-align: center;
+
 }
 
 .background-servers {
   background: url(./assets/images/homebg.jpg) 100%;
+
   background-repeat: repeat-y;
+
   background-size: cover;
+
 }
 
 .background-fingers {
   background: url(./assets/images/coding-fingers.jpg) 100%;
+
   background-repeat: repeat-y;
+
   background-size: cover;
+
 }
 
 .overlay-60 {
-  background-color: rgba(0, 0, 0, 0.60); 
+  background-color: rgba(0, 0, 0, 0.60);
+ 
 }
 
 .overlay-80 {
-  background-color: rgba(0, 0, 0, 0.80); 
+  background-color: rgba(0, 0, 0, 0.80);
+ 
 }

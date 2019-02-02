@@ -11,11 +11,15 @@ export class AboutComponent implements OnInit {
   constructor(private global: GlobalDataService) { }
 
   ngOnInit() {
-    // this.global.routeData = {
-    //   opacity: 80,
-    //   backgroundImage: 'fingers'
-    // }
-    // console.log('about: global: ', this.global)
+    this.setContentBoxHeight();
+  }
+
+  setContentBoxHeight() {
+    const wh = window.innerHeight;
+    const astSetOffset = 274;
+    const asb = wh - astSetOffset;
+    const aboutScrollBox = document.getElementById('about-scroll-box');
+    aboutScrollBox.style.maxHeight = asb + 'px';
   }
 
 }
