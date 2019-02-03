@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GlobalDataService } from './../shared/global-data.service';
+import { element } from '@angular/core/src/render3';
 
 
 @Component({
@@ -64,9 +65,19 @@ export class WrapperComponent implements OnInit {
   resizeAboutElements() {
     const aboutScrollBox = document.getElementById('about-scroll-box');
     if (aboutScrollBox) {
-      const astSetOffset = 344;
+      const astSetOffset = 304;
       const asb = this.windowHeight - astSetOffset;
       aboutScrollBox.style.maxHeight = asb + 'px';
+    }
+  }
+
+  resizePdfViewer() {
+    const pdfOffset = 190;
+    const canvasOffset = 205;
+    const pdfViewer = document.getElementById('pdf-viewer-container');
+    const viewerSize = this.windowHeight - pdfOffset;
+    if (pdfViewer) {
+      pdfViewer.style.maxHeight = viewerSize + 'px';
     }
   }
 
@@ -80,7 +91,7 @@ export class WrapperComponent implements OnInit {
     this.resizeGlobalElements();
     this.resizeAboutElements();
     this.resizeVideoElements();
-    window.resizeTo(800, 600);
+    this.resizePdfViewer();
   }
 
 

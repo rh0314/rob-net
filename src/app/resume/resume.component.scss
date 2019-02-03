@@ -1,0 +1,45 @@
+.pdf-viewer-container {
+  overflow-y: auto;
+  padding-top: 8px;
+}
+
+.page-button-container {
+  margin-top: 7px;
+}
+
+.page-button {
+  width: 120px;
+  margin-top: 8px;
+  span {
+    font-weight: bold;
+  }
+  i {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: rgb(19, 116, 228); 
+    size: 20px; 
+    margin-right: 5px;
+    margin-top: 3px;
+  }
+  &.right {
+    i {
+      float: right;
+    }
+  }
+  &.left {
+    i {
+      float: left;
+    }
+  }
+}
+
+.page-number-display {
+  min-width: 150px;
+}
+
+
+// TEMPLATE OVERRIDE
+
+.ng2-pdf-viewer-container {
+  overflow-y: hidden !important;
+}

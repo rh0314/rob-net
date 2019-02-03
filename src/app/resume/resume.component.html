@@ -1,0 +1,21 @@
+<div *ngIf="isLoaded" style="text-align: center; " class="row page-button-container">
+    <div class="col-sm-5">
+        <button (click)="prevPage()" [disabled]="page === 1" class="page-button left pull-right">
+            <i class="fa fa-arrow-left"></i>
+            <span>Previous</span>
+        </button>
+    </div>
+    <div class="page-number-display col-sm-2">
+        <span>{{ page }} / {{ totalPages }}</span>
+    </div>
+    <div class="col-sm-5">
+        <button (click)="nextPage()" [disabled]="page === totalPages" class="page-button right pull-left">
+            <span>Next</span>
+            <i class="fa fa-arrow-right"></i>
+        </button>
+    </div>
+</div>
+<div id="pdf-viewer-container" class="pdf-viewer-container">
+    <pdf-viewer id="pdfViewer" src="../assets/rob-harrison-resume.pdf" [show-all]="false" [page]="page"
+        (after-load-complete)="afterLoadComplete($event)"></pdf-viewer>
+</div>
