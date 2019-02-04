@@ -3,11 +3,18 @@
   padding-top: 8px;
 }
 
+::-webkit-scrollbar-track {
+  width: 8px;
+}
+
+
 .page-button-container {
   margin-top: 7px;
 }
 
 .page-button {
+  background-image: url(./../../assets/images/brushed-aluminium-vector-background.jpg);
+  background-color: grba(0,0,0,0);
   width: 120px;
   margin-top: 8px;
   span {
@@ -21,20 +28,47 @@
     margin-right: 5px;
     margin-top: 3px;
   }
-  &.right {
-    i {
+}
+
+@media (min-width:768px) {
+  .resume-page-button-container.left {  
+    button.page-button {
       float: right;
     }
-  }
-  &.left {
     i {
       float: left;
     }
   }
+  .resume-page-button-container.right {
+    button.page-button {
+      float: left;
+    }
+    i {
+      float: right;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .resume-page-button-container.left {
+    button.page-button.left {
+      float: left;
+      i {
+        float: left;
+      }
+    }
+    button.page-button.right {
+      float: right;
+      i { 
+        float: right;
+      }
+    }
+  } 
 }
 
 .page-number-display {
   min-width: 150px;
+
 }
 
 

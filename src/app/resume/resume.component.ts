@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-resume',
@@ -11,14 +10,17 @@ export class ResumeComponent implements OnInit {
   totalPages: number;
   isLoaded: boolean = false;
   pdfViewer: Element;
+  showAll: false;
 
   ngOnInit() {
 
   }
 
   afterLoadComplete(pdfData: any) {
+    console.log('pdfData', pdfData);
     this.totalPages = pdfData.numPages;
     this.isLoaded = true;
+    
   }
 
   nextPage() {
@@ -31,5 +33,9 @@ export class ResumeComponent implements OnInit {
     this.pdfViewer = document.getElementById('pdf-viewer-container');
     this.page--;
     this.pdfViewer.scrollTop = 0;
+  }
+
+  pageRenderedI(e) {
+    console.log('pageRendered: ', e);
   }
 }

@@ -1,5 +1,4 @@
 // @import '../../assets/css/plugins.css';
-
 .home-headline {
   position: relative;
 }
@@ -25,6 +24,7 @@
     filter: blur(0px);
   }
 }
+
 .content-fade::after {
   animation: deliverContent 3s ease-in inifinte alternate;
 }
