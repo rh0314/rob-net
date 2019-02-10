@@ -1,7 +1,7 @@
 <div id="resumePage" class="page-wrapper">
-    <!-- <div *ngIf="isLoaded" style="text-align: center; " class="row page-button-container">
+    <!-- <div *ngIf="isLoaded" style="text-align: center; " class="row page-button-container"> 
         <div class="col-md-5 col-sm-4 col-xs-12 resume-page-button-container left">
-            <button (click)="prevPage()" [disabled]="page === 1" class="page-button left">
+            <button (click)="prevPage()" [disabled]="page === 1" class="page-button left" id="btnZoomUp">
                 <i class="fa fa-arrow-left"></i>
                 <span>Previous</span>
             </button>
@@ -20,8 +20,22 @@
             </button>
         </div>
     </div> -->
-    <div id="pdf-viewer-container" class="pdf-viewer-container">
-        <pdf-viewer id="pdfViewer" src="../assets/rob-harrison-resume.pdf" [show-all]="true" [page]="page"
-            (after-load-complete)="afterLoadComplete($event)" [autoresize]="true" page-rendered="pageRendered($event)"></pdf-viewer>
+    <div id="anchor" class="pdf-button-anchor">
+        <div style="width: 100%">
+            <div id="zoomBtnHolder" class="zoom-button-container">
+                <button id="btnZoomDown" class="zoom-button" (click)="zoomUp(false)" [disabled]="(zoomLevel <= 0.25)">
+                    <i class="fa fa-minus"></i>
+                </button>
+                <div style="width: 100px; float: left; font-weight: bold; font-size: 1rem; color: #FFF;">Zoom: {{zoomLevel | number:'1.0-1'}}</div>
+                <button id="btnZoomUp" class="zoom-button" (click)="zoomUp(true)" [disabled]="(zoomLevel >= 1.5)">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+        </div>
+        <div id="pdf-viewer-container" class="pdf-viewer-container">
+            <pdf-viewer id="pdfViewer" src="../assets/rob-harrison-resume.pdf" [show-all]="true" [page]="page"
+                (after-load-complete)="afterLoadComplete($event)" [autoresize]="true" [zoom]="zoomLevel" page-rendered="pageRendered($event)">
+            </pdf-viewer>
+        </div>
     </div>
 </div>

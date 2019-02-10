@@ -25,6 +25,28 @@
   }
 }
 
+.zoom-button {
+  float: left;
+  z-index: 5;
+  display: block;
+  color: rgb(7, 58, 116); 
+}
+
+.zoom-button-container {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(7, 58, 116); 
+  z-index: 10;
+}
+
+#anchor {
+  position: relative;
+}
+
+#zoomBtnHolder {
+  position: fixed;
+}
+
 @media (min-width:768px) {
   .resume-page-button-container.left {  
     button.page-button {
