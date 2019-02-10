@@ -22,6 +22,7 @@ export class AniCardComponent implements OnInit {
   @Input('home-x') homeX: number = 100;
   @Input('home-y') homeY: number = 100;
   @Input('delay') delay: number = 5000;
+  @Input('duration') duration: number = 3000;
   @Input('front-image') frontImage: string;
   @Input('front-text') frontText: string;
   @Input('back-image') backImage: string;
@@ -51,10 +52,10 @@ export class AniCardComponent implements OnInit {
     this.rend.setStyle(n, 'position', 'absolute');
     this.rend.setStyle(n, 'opacity', '0.0');
 
-    this.rend.setStyle(n, 'webkitTransition', 'top left bottom right width height opacity, transform');
-    this.rend.setStyle(n, 'webkitTransitionDuration', '3s');
+    this.rend.setStyle(n, 'webkitTransition', 'top left bottom right width height opacity transform');
+    this.rend.setStyle(n, 'webkitTransitionDuration', this.duration + 'ms');
 
-    this.centerVertically();
+    // this.centerVertically();
 
     if (this.idx % 2 === 0) {
       const flip = n.children[0];
@@ -99,15 +100,15 @@ export class AniCardComponent implements OnInit {
     
   }
 
-  centerVertically() {
-    if (!this.el.nativeElement || this.frontText.length > 23) {
-      return;
-    }
-    const textBlock = this.el.nativeElement.children[0].children[0];
-    const th = textBlock.getBoundingClientRect().height;
-    const eh = this.el.nativeElement.getBoundingClientRect().height;
-    this.rend.setStyle(this.el.nativeElement.children[0].children[0], 'padding-top', 'calc(' + ((eh - th) / 2) + 'px + 0.5rem)')
-  }
+  // centerVertically() {
+  //   if (!this.el.nativeElement || this.frontText.length > 23) {
+  //     return;
+  //   }
+  //   const textBlock = this.el.nativeElement.children[0].children[0];
+  //   const th = textBlock.getBoundingClientRect().height;
+  //   const eh = this.el.nativeElement.getBoundingClientRect().height;
+  //   this.rend.setStyle(this.el.nativeElement.children[0].children[0], 'padding-top', 'calc(' + ((eh - th) / 2) + 'px + 0.5rem)')
+  // }
 
   addBuildNgStyle(newStyle: any) {
     this.ngStyles.push(newStyle);

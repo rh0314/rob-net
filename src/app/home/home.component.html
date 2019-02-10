@@ -1,41 +1,48 @@
-<section id="homePage" class="container page-wrapper">
+<section id="homePage" class="page-wrapper">
     <div class="container-fullwidth">
-        <div class="row text-center">
+        <div class="text-center">
             <div class="page-headline home-headline fadeInDownBig">
-                <div id="homeHeadline" class="page-headline-content home-headline-content themed">
-                    Application Developer
-                </div>
-                <div class="page-subheadline-content home-subheadline-content themed row">
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-10 col-xs-12">
-                        Over a decade of professional experience designing and developiong custom web applications.
+                <div id="homeHeadline" class="page-headline-content home-headline-content themed row">
+                    <div class="col">
+                        Application Developer
                     </div>
                 </div>
             </div>
+
+            <div class="page-subheadline-content home-subheadline-content themed row">
+                <div class="col">
+                    Over a decade of professional experience designing and developiong custom web applications.
+                </div>
+            </div>
+
             <div class="page-main home-page-main">
-                <div class="page-content themed row">
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-10 col-xs-12">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <app-ani-card *ngFor="let item of items; let idx =  index" [idx]="idx" [back-image]="'../../assets/images/thumbsup-mitchell.png'"
-                                    [delay]="((idx + 1) *  300)" [start-x]="-99" [start-y]="999" [home-x]="0" [home-y]="0"
-                                    [front-text]="item"> </app-ani-card>
-                            </div>
-                            <div class="col-sm-4">
-                                <app-ani-card *ngFor="let item of techs; let idx =  index" [idx]="idx" [back-image]="'../../assets/images/thumbsup-mitchell.png'"
-                                    [delay]="(1500 + ((idx + 1) *  300))" [start-x]="0" [start-y]="-999" [home-x]="0"
-                                    [home-y]="0" [front-text]="item"> </app-ani-card>
-                            </div>
-                            <div class="col-sm-4">
-                                <app-ani-card *ngFor="let item of subtechs; let idx =  index" [idx]="idx" [back-image]="'../../assets/images/thumbsup-mitchell.png'"
-                                    [delay]="(2500 + ((idx + 1) *  150))" [start-x]="10000" [start-y]="1000" [home-x]="0"
-                                    [home-y]="0" [front-text]="item"> </app-ani-card>
-                            </div>
-                        </div>
+                <div class="col col-sm-6 col-md-4">
+                    <div class="home-section-wrapper">
+                        <app-ani-card *ngFor="let item of items; let idx =  index" [idx]="idx" [back-image]="'../../assets/images/thumbsup-mitchell.png'"
+                            [duration]="500" [delay]="((idx + 1) *  300)" [start-x]="-99" [start-y]="999" [home-x]="0"
+                            [home-y]="0" [front-text]="item"> </app-ani-card>
                     </div>
                 </div>
+                <div class="col col-sm-6 col-md-4">
+                    <div class="home-section-wrapper">
+                        <app-ani-card *ngFor="let item of techs; let idx =  index" [idx]="idx" [back-image]="'../../assets/images/thumbsup-mitchell.png'"
+                            [duration]="400" [delay]="(1500 + ((idx + 1) *  300))" [start-x]="0" [start-y]="-999"
+                            [home-x]="0" [home-y]="0" [front-text]="item"> </app-ani-card>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-4">
+                    <div class="home-section-wrapper">
+                        <app-ani-card *ngFor="let item of subtechs; let idx =  index" [idx]="idx" [back-image]="'../../assets/images/thumbsup-mitchell.png'"
+                            [duration]="750" [delay]="(2500 + ((idx + 1) *  150))" [start-x]="10000" [start-y]="1000"
+                            [home-x]="0" [home-y]="0" [front-text]="item"> </app-ani-card>
+                    </div>
+                </div>
+
             </div>
+
+
+
+
         </div>
     </div>
 </section>

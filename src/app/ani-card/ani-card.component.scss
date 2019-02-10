@@ -49,11 +49,15 @@
 .flip {
   position: relative;
   display: inline-block;
-  margin-right: 2px;
-  margin-bottom: 1em;
-  width: 230px;
+  margin-right: 25px;
+  margin-bottom: 1em; 
   font-size: 1.25rem;
   line-height: 160%;
+  .front {
+    span {
+      display: inline-flex;
+    }
+  }
   .front,
   .back {
     display: block;
@@ -61,15 +65,69 @@
     width: inherit;
     background-size: cover !important;
     background-position: center !important;
-    height: 5.2rem;
     padding: .5rem 1rem;
-    background: #1C6E8C;
+    background: rgba(28, 110, 140, 0.8);
     border-radius: 10px;
     p {
       color: #999;
     }
   }
 }
+
+// xs
+@media(max-width: 767px) {
+  .flip {}
+  .back,
+  .front {
+    height: 100px;
+    width: 120px;
+  }
+}
+
+// sm & xs
+@media(max-width: 991px) {
+  .flip {
+    font-size: 1.0em;
+  }
+}
+
+// sm
+@media (min-width: 768px) and (max-width: 991px) {
+  .flip {
+    .back,
+    .front {
+      height: 75px;
+      padding-top: 15px;
+    }
+    .front {
+      span {
+        min-height: 40px;
+        display: inline-flex;
+        width: 160px;
+      }
+    }
+  }
+}
+
+// md ONLY
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+// md AND UP
+@media (min-width: 992px) {
+  .flip {
+    .back,
+    .front {
+      width: 350px;
+      height: 75px;
+      .text-shadow {
+        margin-top: 4%;
+      }
+    }
+  }
+}
+
+// lg (and beyond)
+@media (min-width: 1200px) {}
 
 .text-shadow {
   text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
