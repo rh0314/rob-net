@@ -3,10 +3,10 @@
 
 jQuery(document).ready(function ($) {
 
-	$(window).load(function () {
-		$(".loaded").fadeOut();
-		$(".preloader").delay(1000).fadeOut("slow");
-	});
+    $(window).load(function () {
+        $(".loaded").fadeOut();
+        $(".preloader").delay(1000).fadeOut("slow");
+    });
     /*---------------------------------------------*
      * Mobile menu
      ---------------------------------------------*/
@@ -40,15 +40,15 @@ jQuery(document).ready(function ($) {
      * Counter 
      ---------------------------------------------*/
 
-//    $('.statistic-counter').counterUp({
-//        delay: 10,
-//        time: 2000
-//    });
+    //    $('.statistic-counter').counterUp({
+    //        delay: 10,
+    //        time: 2000
+    //    });
 
-//    $('.statistic').counterUp({
-//        delay: 10,
-//        time: 2000
- //   });
+    //    $('.statistic').counterUp({
+    //        delay: 10,
+    //        time: 2000
+    //   });
 
 
 
@@ -57,10 +57,10 @@ jQuery(document).ready(function ($) {
      * WOW
      ---------------------------------------------*/
 
-        var wow = new WOW({
-            mobile: false // trigger animations on mobile devices (default is true)
-        });
-        wow.init();
+    var wow = new WOW({
+        mobile: false // trigger animations on mobile devices (default is true)
+    });
+    wow.init();
 
 
     /* ---------------------------------------------------------------------
@@ -73,81 +73,51 @@ jQuery(document).ready(function ($) {
         items: 1,
         loop: true,
         dots: true,
-	    nav:false,
-	    navText: [
-                    "<i class='lnr lnr-chevron-left'></i>",
-                    "<i class='lnr lnr-chevron-right'></i>"
-                ],
-      autoplayHoverPause: true
+        nav: false,
+        navText: [
+            "<i class='lnr lnr-chevron-left'></i>",
+            "<i class='lnr lnr-chevron-right'></i>"
+        ],
+        autoplayHoverPause: true
 
     });
 
 
+    jQuery(window).scroll(function () {
+        var top = jQuery(document).scrollTop();
+        var height = 175;
+        var maxO = 0.9
+        var el = jQuery('.navbar-fixed-top');
+        if (el && el[0]) {
+            el = el[0];
+        }
 
-	
-//	$('.chart').easyPieChart({
-//		animate: 2000,
-//           scaleColor: false,
-//            lineWidth: 10,
-//            lineCap: 'square',
-//            size: 130,
-//            trackColor: false,
-//           barColor: '#498af3',
-//            onStep: function (from, to, percent) {
-//                $(this.el).find('.percent').text(Math.round(percent));
-//            }
-//	});
-	
+        if (top > 0 && top < height) {
+            var o = ((((100 / height) * top) * .01) * maxO);
+            var c = "rgba(14,17,25," + o.toString() + ")";
+            el.style.backgroundColor = c;
+        }
+        else if (top > height) {
+            el.style.backgroundColor = "rgba(14,17,25," + maxO + ")";
+        } else {
+            jQuery('.navbar-fixed-top').removeClass('menu-scroll');
+        }
+    });
 
+    // scroll Up
 
-
-
-
-
-
-
-
-
-
-
-
-	
-	    
-//$('#test').mixItUp({
-//    animation: {
-//      animateResizeContainer: false,
-//      effects: 'fade rotateX(-45deg) translateY(-10%)'
-//   }
-// });
-
-// main-menu-scroll
-
-	jQuery(window).scroll(function () {
-	  var top = jQuery(document).scrollTop();
-		var height = 300;
-	  //alert(batas);
-	  
-	  if (top > height) {
-		jQuery('.navbar-fixed-top').addClass('menu-scroll');
-	  } else {
-	   jQuery('.navbar-fixed-top').removeClass('menu-scroll');
-	  }
-	});	 
-	
-// scroll Up
-
-    $(window).scroll(function(){
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 600) {
             $('.scrollup').fadeIn('slow');
         } else {
             $('.scrollup').fadeOut('slow');
         }
     });
-    $('.scrollup').click(function(){
+    $('.scrollup').click(function () {
         $("html, body").animate({ scrollTop: 0 }, 1000);
         return false;
-    });	
-   
+    });
+
 
     //End
 });

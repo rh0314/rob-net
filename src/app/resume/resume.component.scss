@@ -1,12 +1,7 @@
 .pdf-viewer-container {
-  overflow-y: auto;
+  // overflow-y: auto;
   padding-top: 8px;
 }
-
-::-webkit-scrollbar-track {
-  width: 8px;
-}
-
 
 .page-button-container {
   margin-top: 7px;
@@ -75,5 +70,5 @@
 // TEMPLATE OVERRIDE
 
 .ng2-pdf-viewer-container {
-  overflow-y: hidden !important;
+  // overflow-y: hidden !important;
 }

@@ -1,25 +1,27 @@
-<div *ngIf="isLoaded" style="text-align: center; " class="row page-button-container">
-    <div class="col-md-5 col-sm-4 col-xs-12 resume-page-button-container left">
-        <button (click)="prevPage()" [disabled]="page === 1" class="page-button left">
-            <i class="fa fa-arrow-left"></i>
-            <span>Previous</span>
-        </button>
-        <button (click)="nextPage()" [disabled]="page === totalPages" class="page-button right hidden-sm hidden-md hidden-lg hidden-xl">
-            <span>Next</span>
-            <i class="fa fa-arrow-right"></i>
-        </button>
+<div id="resumePage" class="page-wrapper">
+    <!-- <div *ngIf="isLoaded" style="text-align: center; " class="row page-button-container">
+        <div class="col-md-5 col-sm-4 col-xs-12 resume-page-button-container left">
+            <button (click)="prevPage()" [disabled]="page === 1" class="page-button left">
+                <i class="fa fa-arrow-left"></i>
+                <span>Previous</span>
+            </button>
+            <button (click)="nextPage()" [disabled]="page === totalPages" class="page-button right hidden-sm hidden-md hidden-lg hidden-xl">
+                <span>Next</span>
+                <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+        <div class="page-number-display col-md-2 col-sm-4 col-xs-12">
+            <span>{{ page }} / {{ totalPages }}</span>
+        </div>
+        <div class="col-md-5 col-sm-4 hidden-xs resume-page-button-container right">
+            <button (click)="nextPage()" [disabled]="page === totalPages" class="page-button">
+                <span>Next</span>
+                <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+    </div> -->
+    <div id="pdf-viewer-container" class="pdf-viewer-container">
+        <pdf-viewer id="pdfViewer" src="../assets/rob-harrison-resume.pdf" [show-all]="true" [page]="page"
+            (after-load-complete)="afterLoadComplete($event)" [autoresize]="true" page-rendered="pageRendered($event)"></pdf-viewer>
     </div>
-    <div class="page-number-display col-md-2 col-sm-4 col-xs-12">
-        <span>{{ page }} / {{ totalPages }}</span>
-    </div>
-    <div class="col-md-5 col-sm-4 hidden-xs resume-page-button-container right">
-        <button (click)="nextPage()" [disabled]="page === totalPages" class="page-button">
-            <span>Next</span>
-            <i class="fa fa-arrow-right"></i>
-        </button>
-    </div>
-</div>
-<div id="pdf-viewer-container" class="pdf-viewer-container">
-    <pdf-viewer id="pdfViewer" src="../assets/rob-harrison-resume.pdf" [show-all]="showAll" [page]="page"
-        (after-load-complete)="afterLoadComplete($event)" [autoresize]="true" page-rendered="pageRendered($event)"></pdf-viewer>
 </div>

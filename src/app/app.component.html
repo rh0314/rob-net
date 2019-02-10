@@ -4,11 +4,17 @@
 <app-header></app-header>
 <!-- This is my app component.
 <pre>{{global.routeData | json }}</pre> -->
-<router-outlet></router-outlet>
+
+<section id="home" class="home background-servers">
+  <div id="rn-main-overlay" class="home-overlay-fluid overlay-60">
+    <div id="router-outlet-container" class="container router-outlet-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</section>
 
 
 
-<app-footer class="rn-app-footer" style="position: relative;"></app-footer>
 <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
 <script src="assets/js/vendor/bootstrap.min.js"></script>
 <script src="assets/js/jquery.easypiechart.min.js"></script>

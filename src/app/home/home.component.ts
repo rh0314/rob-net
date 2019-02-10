@@ -25,7 +25,9 @@ export class HomeComponent implements OnInit {
     this.items = [
       "Custom Applications",
       "Database Driven", 
-      "Performs All Business Logic"
+      "Enable Business Processes",
+      "Delightful, Intuitive User Experience",
+      "Data transformation"
     ];
     this.techs = [
       "ASP.NET",

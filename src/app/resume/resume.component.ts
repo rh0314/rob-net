@@ -10,7 +10,7 @@ export class ResumeComponent implements OnInit {
   totalPages: number;
   isLoaded: boolean = false;
   pdfViewer: Element;
-  showAll: false;
+  showAll: true;
 
   ngOnInit() {
 

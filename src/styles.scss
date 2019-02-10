@@ -47,6 +47,14 @@ html {
   font-style:normal
 }
 
+.page-wrapper {
+  margin-top: 150px;
+}
+
+router-outlet section:first-of-type {
+  margin-top: 100px;
+}
+
 .page-headline {
   width: 100%;
   padding: 15px;
@@ -379,7 +387,8 @@ html {
 
 .home-overlay-fluid {
   padding: 0px 0px;
-
+  height: 100vh;
+  width: 100vw;
 }
 
 .home{
@@ -389,11 +398,10 @@ html {
 
 .background-servers {
   background: url(./assets/images/homebg.jpg) 100%;
-
   background-repeat: repeat-y;
-
   background-size: cover;
-
+  height: 100vh;
+  width: 100vw;
 }
 
 .background-fingers {
