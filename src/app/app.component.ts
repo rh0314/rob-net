@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { GlobalDataService } from './shared/global-data.service';
 import { RouteData } from './shared/object-models/route-data';
-// import { InsertCodeModule } from './modules/insert-code/insert-code.module';
 
 @Component({
   selector: 'app-root',

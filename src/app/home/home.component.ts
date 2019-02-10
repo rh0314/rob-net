@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject,  } from '@angular/core';
 import { Router, Route, ActivatedRoute, Params, Data } from '@angular/router';
 import { GlobalDataService } from '../shared/global-data.service';
-import { RouteData } from '../shared/object-models/route-data';
 import { DOCUMENT, NgForOf } from "@angular/common";
 
 @Component({
@@ -13,6 +12,7 @@ export class HomeComponent implements OnInit {
   items: Array<string>;
   techs: Array<string>;
   subtechs: Array<string>;
+  card1in = false;
 
   constructor(
     @Inject(DOCUMENT) document, 
@@ -23,9 +23,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.items = [
-      "Custom Applications",
-      "Database Driven", 
-      "Enable Business Processes",
+      "Custom Application Development",
+      "Database Driven Applications", 
+      "Web-Based Tools",
       "Delightful, Intuitive User Experience",
       "Data transformation"
     ];
@@ -46,7 +46,8 @@ export class HomeComponent implements OnInit {
       "CSS",
       "Bootstrap",
       "SQL", 
-    ]
+    ];
+
   }
 
 

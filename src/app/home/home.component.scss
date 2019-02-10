@@ -29,8 +29,25 @@
   animation: deliverContent 3s ease-in inifinte alternate;
 }
 
-
 // body{
 // 	background:#000000;
 // }
+.card-in {
+  -webkit-transition: top 2s;
+  transition: top 3s;
+  -webkit-transition: left 2s;
+  transition: left 3s;
+  // -webkit-transition-delay: 1s; /* Safari */
+  // transition-delay: 1s;
+}
 
+.card-gone-left {
+  left: -100000px;
+  position: absolute;
+}
+
+.card-pos-1 {
+  top: 100px;
+  left: 100px;
+  position: relateive;
+}

@@ -18,13 +18,19 @@
                     <div class="col-sm-10 col-xs-12">
                         <div class="row">
                             <div class="col-sm-4">
-                                <div *ngFor="let item of items">{{item}}</div>
+                                <app-ani-card *ngFor="let item of items; let idx =  index" [idx]="idx" [back-image]="'../../assets/images/thumbsup-mitchell.png'"
+                                    [delay]="((idx + 1) *  300)" [start-x]="-99" [start-y]="999" [home-x]="0" [home-y]="0"
+                                    [front-text]="item"> </app-ani-card>
                             </div>
                             <div class="col-sm-4">
-                                <div *ngFor="let tech of techs">{{tech}}</div>
+                                <app-ani-card *ngFor="let item of techs; let idx =  index" [idx]="idx" [back-image]="'../../assets/images/thumbsup-mitchell.png'"
+                                    [delay]="(1500 + ((idx + 1) *  300))" [start-x]="0" [start-y]="-999" [home-x]="0"
+                                    [home-y]="0" [front-text]="item"> </app-ani-card>
                             </div>
                             <div class="col-sm-4">
-                                <div *ngFor="let subtech of subtechs">{{subtech}}</div>
+                                <app-ani-card *ngFor="let item of subtechs; let idx =  index" [idx]="idx" [back-image]="'../../assets/images/thumbsup-mitchell.png'"
+                                    [delay]="(2500 + ((idx + 1) *  150))" [start-x]="10000" [start-y]="1000" [home-x]="0"
+                                    [home-y]="0" [front-text]="item"> </app-ani-card>
                             </div>
                         </div>
                     </div>

@@ -17,6 +17,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { WalkingCatComponent } from './walking-cat/walking-cat.component';
 import { CodeInsertDirective } from './directives/code-insert.directive';
 import { RootCodeInsertDirective } from './directives/root-code-insert.directive';
+import { AniCardComponent } from './ani-card/ani-card.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { RootCodeInsertDirective } from './directives/root-code-insert.directive
     WalkingCatComponent,
     CodeInsertDirective,
     RootCodeInsertDirective,
+    AniCardComponent,
   ],
   imports: [
     BrowserModule,

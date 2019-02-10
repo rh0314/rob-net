@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AniCardComponent } from '../ani-card/ani-card.component';
 
 @Component({
   selector: 'app-walking-cat',
