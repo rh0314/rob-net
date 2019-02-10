@@ -1,21 +1,23 @@
 <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-<app-header></app-header>
-<!-- This is my app component.
-<pre>{{global.routeData | json }}</pre> -->
+<div>
 
-<section id="home" class="home background-servers">
-  <div id="rn-main-overlay" class="home-overlay-fluid overlay-60">
-    <div id="router-outlet-container" class="router-outlet-container">
-      <router-outlet></router-outlet>
+  <app-header></app-header>
+
+  <!-- <div style="position: relative; height: 150px; border: 1px solid red;"></div> -->
+  <section>
+    <div id="backgroundImage" class="home background-servers">
+      <div id="rn-main-overlay" class="home-overlay-fluid overlay-60">
+
+        <div id="router-outlet-container" class="router-outlet-container">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
+</div>
 <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
 <script src="assets/js/vendor/bootstrap.min.js"></script>
 <script src="assets/js/jquery.easypiechart.min.js"></script>
 
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/main.js"></script>
-
-<!-- </div> -->

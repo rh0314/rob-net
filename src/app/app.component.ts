@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { GlobalDataService } from './shared/global-data.service';
 import { RouteData } from './shared/object-models/route-data';
-
+// import { InsertCodeModule } from './modules/insert-code/insert-code.module';
 
 @Component({
-  selector: 'app-root', 
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -16,11 +16,15 @@ export class AppComponent {
 
   @Input() watchData: Array<any> = [];
 
-  constructor(global: GlobalDataService) { 
-    
+  constructor(global: GlobalDataService) {
+
     console.log('app', global)
   }
 
-  
+
+
+
+
+
 }
 

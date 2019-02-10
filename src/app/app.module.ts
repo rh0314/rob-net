@@ -15,6 +15,8 @@ import { VideoComponent } from './video/video.component';
 import { ResumeComponent } from './resume/resume.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { WalkingCatComponent } from './walking-cat/walking-cat.component';
+import { CodeInsertDirective } from './directives/code-insert.directive';
+import { RootCodeInsertDirective } from './directives/root-code-insert.directive';
 
 
 @NgModule({
@@ -29,12 +31,14 @@ import { WalkingCatComponent } from './walking-cat/walking-cat.component';
     WrapperComponent,
     VideoComponent,
     ResumeComponent,
-    WalkingCatComponent
+    WalkingCatComponent,
+    CodeInsertDirective,
+    RootCodeInsertDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PdfViewerModule
+    PdfViewerModule,
   ],
   providers: [
     GlobalDataService
