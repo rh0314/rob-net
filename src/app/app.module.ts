@@ -14,6 +14,8 @@ import { WrapperComponent } from './wrapper/wrapper.component';
 import { VideoComponent } from './video/video.component';
 import { ResumeComponent } from './resume/resume.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { WalkingCatComponent } from './walking-cat/walking-cat.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     BgOverlayDirective,
     WrapperComponent,
     VideoComponent,
-    ResumeComponent
+    ResumeComponent,
+    WalkingCatComponent
   ],
   imports: [
     BrowserModule,
