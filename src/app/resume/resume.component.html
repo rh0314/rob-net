@@ -27,7 +27,7 @@
                     <i class="fa fa-minus"></i>
                 </button>
                 <div style="width: 100px; float: left; font-weight: bold; font-size: 1rem; color: #FFF;">Zoom: {{zoomLevel | number:'1.0-1'}}</div>
-                <button id="btnZoomUp" class="zoom-button" (click)="zoomUp(true)" [disabled]="(zoomLevel >= 1.5)">
+                <button id="btnZoomUp" class="zoom-button" (click)="zoomUp(true)" [disabled]="(zoomLevel >= 3)">
                         <i class="fa fa-plus"></i>
                     </button>
                 </div>
