@@ -11,6 +11,9 @@ import { Error404Component } from './error404/error404.component';
 import { GlobalDataService } from './shared/global-data.service';
 import { BgOverlayDirective } from './shared/directives/bg-overlay.directive';
 import { WrapperComponent } from './wrapper/wrapper.component';
+import { VideoComponent } from './video/video.component';
+import { ResumeComponent } from './resume/resume.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -21,15 +24,18 @@ import { WrapperComponent } from './wrapper/wrapper.component';
     AboutComponent,
     Error404Component,
     BgOverlayDirective,
-    WrapperComponent
+    WrapperComponent,
+    VideoComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PdfViewerModule
   ],
   providers: [
     GlobalDataService
-    
+
   ],
   bootstrap: [AppComponent]
 })

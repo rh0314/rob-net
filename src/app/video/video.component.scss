@@ -1,0 +1,24 @@
+.video-outer-wrapper {
+  width: 100%;
+  position: absolute;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.videobg-container {
+    z-index: -1;
+    overflow: hidden;
+    background-size: cover;
+    // background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-color: #000;
+    border: 2px solid red;
+    height: 100vh;
+
+  }
+
+  .video-js {
+    top:0px;
+    left: 0px;
+    position: absolute;
+
+  }

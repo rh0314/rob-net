@@ -11,11 +11,7 @@ export class AboutComponent implements OnInit {
   constructor(private global: GlobalDataService) { }
 
   ngOnInit() {
-    // this.global.routeData = {
-    //   opacity: 80,
-    //   backgroundImage: 'fingers'
-    // }
-    // console.log('about: global: ', this.global)
   }
+
 
 }

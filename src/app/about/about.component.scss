@@ -1,0 +1,27 @@
+#about-scroll-box {
+  // overflow-y: auto;
+  // max-height: 450px;
+
+  -webkit-box-shadow: 2px -3px 16px 20px rgba(59, 65, 71, 0.65);
+  -moz-box-shadow: 2px -3px 16px 20px rgba(59, 65, 71, 0.65);
+  box-shadow: 2px -3px 27px 20px rgba(16,15,50, 0.65);
+  background-color: rgba(16,15,50, 0.75);
+  border-radius: 15px;
+
+  padding: 8px 24px 8px 24px;
+  p {
+    color: #ffffff;
+    font-size: 1.3rem;
+    line-height: 1.9rem;  }
+}
+
+
+
+.about-content-bg {
+  background: url('./../../assets/images/streak2.png');
+  background-repeat: no-repeat;
+  background-position-y: 200px;
+  background-size: contain;
+  background-origin: content-box;
+  opacity: .4;
+}

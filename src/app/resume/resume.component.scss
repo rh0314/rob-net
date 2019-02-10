@@ -1,0 +1,74 @@
+.pdf-viewer-container {
+  // overflow-y: auto;
+  padding-top: 8px;
+}
+
+.page-button-container {
+  margin-top: 7px;
+}
+
+.page-button {
+  background-image: url(./../../assets/images/brushed-aluminium-vector-background.jpg);
+  background-color: grba(0,0,0,0);
+  width: 120px;
+  margin-top: 8px;
+  span {
+    font-weight: bold;
+  }
+  i {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: rgb(19, 116, 228); 
+    size: 20px; 
+    margin-right: 5px;
+    margin-top: 3px;
+  }
+}
+
+@media (min-width:768px) {
+  .resume-page-button-container.left {  
+    button.page-button {
+      float: right;
+    }
+    i {
+      float: left;
+    }
+  }
+  .resume-page-button-container.right {
+    button.page-button {
+      float: left;
+    }
+    i {
+      float: right;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .resume-page-button-container.left {
+    button.page-button.left {
+      float: left;
+      i {
+        float: left;
+      }
+    }
+    button.page-button.right {
+      float: right;
+      i { 
+        float: right;
+      }
+    }
+  } 
+}
+
+.page-number-display {
+  min-width: 150px;
+
+}
+
+
+// TEMPLATE OVERRIDE
+
+.ng2-pdf-viewer-container {
+  // overflow-y: hidden !important;
+}

@@ -1,17 +1,33 @@
-<section id="register" class="register">
+<section id="homePage" class="page-wrapper">
     <div class="container-fullwidth">
         <div class="row text-center">
-            <div class="home-headline">
-                <div class="home-headlline-content">
-                    Experienced Application Developer
+            <div class="page-headline home-headline fadeInDownBig">
+                <div id="homeHeadline" class="page-headline-content home-headline-content themed">
+                    Application Developer
                 </div>
-                <div class="home-subheadline-content">
-                    Over 11 years of professional experiance
+                <div class="page-subheadline-content home-subheadline-content themed row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10 col-xs-12">
+                        Over a decade of professional experience designing and developiong custom web applications.
+                    </div>
                 </div>
             </div>
-            <div class="home-main">
-                <div class="home-main-content">
-                    
+            <div class="page-main home-page-main">
+                <div class="page-content themed row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10 col-xs-12">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div *ngFor="let item of items">{{item}}</div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div *ngFor="let tech of techs">{{tech}}</div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div *ngFor="let subtech of subtechs">{{subtech}}</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

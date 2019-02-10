@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { RouteData } from './../shared/object-models/route-data';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GlobalDataService } from './../shared/global-data.service';
+import { element } from '@angular/core/src/render3';
 
 
 @Component({
@@ -10,16 +10,14 @@ import { GlobalDataService } from './../shared/global-data.service';
   styleUrls: ['./wrapper.component.scss']
 })
 export class WrapperComponent implements OnInit {
-  routeData: RouteData = {
-    backgroundImage: 'servers',
-    opacity: 80
-  }
+  windowHeight: number;
+  headerHeight: number;
+  footerHeight: number;
+
   constructor(private router: Router, private acitveRoute: ActivatedRoute, private global: GlobalDataService) {
     console.log('router: ', router);
     console.log('activeRoute: ', acitveRoute)
     console.log('global: ', global)
-
-
   }
 
   ngOnInit() {
@@ -30,32 +28,70 @@ export class WrapperComponent implements OnInit {
       this.fixElements();
     });
 
-    this.global.routeData = { 
-      backgroundImage: this.acitveRoute.children.length > 0 ? this.acitveRoute.children[0].snapshot.data.backgroundImage : this.routeData.backgroundImage,
-      opacity: this.acitveRoute.children.length > 0 ? this.acitveRoute.children[0].snapshot.data.opacity : this.routeData.opacity
-    }
-
     setTimeout(() => {
       this.fixElements();
     }, 500);
 
   }
 
-  resizeMainElements() {
-    const setFooterHeight = 40;
-    const wh = window.innerHeight;
-    const hh = document.getElementById('rn-main-menu-bg').offsetHeight;
-    const mh = wh - setFooterHeight;
-    const rah = wh - (setFooterHeight + hh);
+  resizeGlobalElements() {
+    // get the elements
     const main = document.getElementById('home');
     const overlay = document.getElementById('rn-main-overlay');
     const routerContainer = document.getElementById('router-outlet-container');
+
+    //c= calculated sizes (elements to be reszied)
+    const rch = this.windowHeight - (this.footerHeight + this.headerHeight);
+    const mh = this.windowHeight - this.footerHeight;
+
+    // resize the elements
     main.style.height = mh + 'px';
     overlay.style.height = mh + 'px';
+    routerContainer.style.height = rch + 'px';
+    routerContainer.style.top = (this.headerHeight + 1) + 'px';
   }
 
+  resizeVideoElements() {
+    const videoEl = document.getElementById('bg-video');
+    if (videoEl) {
+      const vh = this.windowHeight - this.footerHeight;
+      const vt = this.headerHeight * -1;
+      videoEl.style.height = vh + 'px';
+      videoEl.style.top = vt + 'px';
+    }
+
+  }
+
+  resizeAboutElements() {
+    const aboutScrollBox = document.getElementById('about-scroll-box');
+    if (aboutScrollBox) {
+      const astSetOffset = 304;
+      const asb = this.windowHeight - astSetOffset;
+      aboutScrollBox.style.maxHeight = asb + 'px';
+    }
+  }
+
+  resizePdfViewer() {
+    const pdfOffset = 190;
+    const canvasOffset = 205;
+    const pdfViewer = document.getElementById('pdf-viewer-container');
+    const viewerSize = this.windowHeight - pdfOffset;
+    if (pdfViewer) {
+      pdfViewer.style.maxHeight = viewerSize + 'px';
+    }
+  }
+
+
   fixElements() {
-    this.resizeMainElements();
+    this.footerHeight = 40;
+    const header = document.getElementById('rn-main-menu-bg');;
+    this.windowHeight = window.innerHeight;
+    this.headerHeight = header.offsetHeight;
+
+    this.resizeGlobalElements();
+    this.resizeAboutElements();
+    this.resizeVideoElements();
+    this.resizePdfViewer();
   }
 
 

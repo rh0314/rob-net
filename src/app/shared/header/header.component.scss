@@ -1,0 +1,37 @@
+.navbar-nav {}
+
+.nav_menu {
+  margin-bottom: 20px;
+}
+
+.navbar-nav.invert {
+  a {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.menu-scroll {
+  background-color: rgba(14, 17, 25, 0.75);
+  background-size: contain;
+}
+
+.navbar-fixed-top {
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+  background-color:  rgba(14,17,25,0.0);
+}
+//   background-color: rgba(14, 17, 25, 0.8);
+
+.main_menu_bg .navbar-default .navbar-nav>.active>a {
+  color: #e84c3d;
+  background-color: transparent;
+  border-bottom: 1px solid #FFF;
+  margin-bottom: -1px;
+  padding-bottom: 33px;
+}
+
+.navbar-right {
+  margin-right: 25px;
+}

@@ -1,5 +1,30 @@
-.home {
+// @import '../../assets/css/plugins.css';
+.home-headline {
+  position: relative;
+}
 
-  background: url(./../../assets/images//homebg.jpg) 100% !important;
-  text-align: center;
+.home-page-main {
+  margin-top: 20px;
+}
+
+@keyframes deliverContent {
+  0% {
+    content: "Intuitive User Interface";
+    opacity: .25;
+    filter: blur(90px);
+  }
+  50% {
+    content: "Intuitive User Interface";
+    opacity: .5;
+    filter: blur(45px);
+  }
+  100% {
+    content: "Intuitive User Interface";
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.content-fade::after {
+  animation: deliverContent 3s ease-in inifinte alternate;
 }

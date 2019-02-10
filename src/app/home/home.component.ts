@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject,  } from '@angular/core';
 import { Router, Route, ActivatedRoute, Params, Data } from '@angular/router';
 import { GlobalDataService } from '../shared/global-data.service';
 import { RouteData } from '../shared/object-models/route-data';
+import { DOCUMENT, NgForOf } from "@angular/common";
 
 @Component({
   selector: 'app-home',
@@ -9,17 +10,44 @@ import { RouteData } from '../shared/object-models/route-data';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  items: Array<string>;
+  techs: Array<string>;
+  subtechs: Array<string>;
 
-  constructor(private router: Router, private route: ActivatedRoute, private global: GlobalDataService) {
-  }
+  constructor(
+    @Inject(DOCUMENT) document, 
+    private router: Router, 
+    private route: ActivatedRoute, 
+    private global: GlobalDataService
+    ) { }
 
   ngOnInit() {
-    // this.global.routeData = {
-    //   opacity: 60,
-    //   backgroundImage: 'servers'
-    // }
-    // console.log('HOME: global: ', this.global)
-
+    this.items = [
+      "Custom Applications",
+      "Database Driven", 
+      "Enable Business Processes",
+      "Delightful, Intuitive User Experience",
+      "Data transformation"
+    ];
+    this.techs = [
+      "ASP.NET",
+      "JavaScript Frameworks",
+      "Relational Databases"
+    ];
+    this.subtechs = [
+      "Angular (2+)",
+      "AngularJS",
+      "ReactJS", 
+      "JQuery",
+      "NodeJS",
+      "C#",
+      "VB.NET",
+      "HTML/HTML5",
+      "CSS",
+      "Bootstrap",
+      "SQL", 
+    ]
   }
+
 
 }
