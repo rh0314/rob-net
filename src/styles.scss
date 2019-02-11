@@ -49,6 +49,7 @@ html {
 
 .page-wrapper {
   margin-top: 150px;
+  margin-bottom: 40px;
 }
 
 router-outlet section:first-of-type {
@@ -81,6 +82,7 @@ router-outlet section:first-of-type {
   font-size: 2.5rem; 
   font-weight: bold;
   font-family: latomedium;
+  margin-right: 0px;
   &.themed {
     // color: #48A868;
     // color: rgb(19, 116, 228);
@@ -387,6 +389,7 @@ router-outlet section:first-of-type {
 
 .home-overlay-fluid {
   padding: 0px 0px;
+  height: 100vmax;
 }
 
 .home{
@@ -517,7 +520,7 @@ left:0;
 right:0;
 bottom:0;
 width:100%;
-height:100%;
+height:100vmax;
 display:block;
 }
 
