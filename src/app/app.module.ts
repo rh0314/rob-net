@@ -18,6 +18,7 @@ import { WalkingCatComponent } from './walking-cat/walking-cat.component';
 import { CodeInsertDirective } from './directives/code-insert.directive';
 import { RootCodeInsertDirective } from './directives/root-code-insert.directive';
 import { AniCardComponent } from './ani-card/ani-card.component';
+import { StarsComponent } from './stars/stars.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { AniCardComponent } from './ani-card/ani-card.component';
     CodeInsertDirective,
     RootCodeInsertDirective,
     AniCardComponent,
+    StarsComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@
 @import "./assets/css/responsive.css";
 @import "./assets/fonts/stylesheet.css";
 @import "./assets/css/magic.css";
+@import "./assets/css/magic.css";
 
 html {
   background-color: #0E1119
@@ -48,8 +49,9 @@ html {
 }
 
 .page-wrapper {
-  margin-top: 150px;
+  // margin-top: 150px;
   margin-bottom: 40px;
+  margin-left: 10px;
 }
 
 router-outlet section:first-of-type {
@@ -83,6 +85,7 @@ router-outlet section:first-of-type {
   font-weight: bold;
   font-family: latomedium;
   margin-right: 0px;
+  padding: 20px;
   &.themed {
     // color: #48A868;
     // color: rgb(19, 116, 228);
