@@ -11,7 +11,8 @@
   background: -webkit-linear-gradient(left, rgba(15, 14, 120, .65) 0%,rgba(16, 15, 50, .75) 40%,rgba(16, 15, 50, .75) 60%,rgba(15, 50, 120, .65) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, rgba(15, 14, 120, .65) 0%,rgba(16, 15, 50, .75) 40%,rgba(16, 15, 50, .75) 60%,rgba(15, 50, 120, .65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f0e78', endColorstr='#0f3278',GradientType=0 ); /* IE6-9 */
-  padding: 8px 24px 8px 24px;
+  padding: 25px;
+  margin-bottom: 25px;
   p {
     color: #ffffff;
     font-size: 1.3rem;

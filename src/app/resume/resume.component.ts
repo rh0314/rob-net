@@ -35,8 +35,8 @@ export class ResumeComponent implements OnInit {
     if (btns) {
       btns.style.top = this.zbt + 'px';
       btns.style.left = this.zbl + 'px';
+      console.log('btns', btns.getBoundingClientRect());
     }
-    console.log('btns', btns.getBoundingClientRect());
   }
 
   zoomUp(up: boolean) {
