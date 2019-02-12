@@ -1,5 +1,4 @@
-import { Component, OnInit, Renderer2, ElementRef, Input, OnChanges, SimpleChange, HostListener } from '@angular/core';
-import { parse } from 'querystring';
+import { Component, OnInit, Renderer2, ElementRef, Input, OnChanges, SimpleChange, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-ani-circle',
@@ -10,8 +9,11 @@ export class AniCircleComponent implements OnInit, OnChanges {
   native: Element;
   @Input('start-x') startX: number = -99999;
   @Input('start-y') startY: number = -99999;
-  @Input('home-x') homeX: number = 1;
-  @Input('home-y') homeY: number = 1;
+  @Input('home-x') homeX: number;
+  @Input('home-y') homeY: number;
+  @Input('grid-col') col: number;
+  @Input('grid-row') row: number;
+  @Input('grid-center') gc: boolean = true;
   @Input('delay') delay: number = 5000;
   @Input('duration') duration: number = 3000;
   @Input('front-image') frontImage: any;
@@ -22,20 +24,26 @@ export class AniCircleComponent implements OnInit, OnChanges {
 
   @HostListener('window:resize', ['$event']) 
   onresize(event) {
-    this.initializeScreenSize();
-    // this.setImages();
-    this.setHome();
-    this.goHome();
+    this.onResize();
   }
+  @HostListener('orientationchange', ['$event'])
+  onorientationchange(event) {
+    this.onResize();
+  }
+
+
 
   ngStyle: any;
   ngStyles: Array<string> = new Array<string>();
   inYoFaceBezier: string = 'cubic-bezier(0,1.33,.55,.99)';
   homeBezier: string = 'cubic-bezier(1,.01,1,-0.17)';
+  resizeBezier: string = 'linear';
   areaSize: number;
   circleSize: number;
   maxImageSize: number;
   bufferSize: number;
+  vwCalc: number;
+  vhCalc: number;
 
   
   constructor(
@@ -50,12 +58,16 @@ export class AniCircleComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(e: any) {
-    console.log('change', e);
     if (e.backImage) {
       this.setBackImage();
     }
   }
 
+  onResize() {
+    this.initializeScreenSize();
+    this.setImages();
+    this.resetHome();
+  }
 
   initialize() {
     if (!(this.el && this.el.nativeElement)) {
@@ -96,7 +108,8 @@ export class AniCircleComponent implements OnInit, OnChanges {
 
   initializeScreenSize() {
     const w = screen.width;
-
+    this.vhCalc = screen.height / 100;
+    this.vwCalc = w / 100;
     this.circleSize = w * 0.18;
     this.bufferSize = this.circleSize * 0.1;
     this.areaSize = this.circleSize + this.bufferSize;
@@ -105,14 +118,34 @@ export class AniCircleComponent implements OnInit, OnChanges {
   }
 
   setHome() {
-    if (this.homeX > -11 && this.homeX < 11) {
+    if (this.col > -11 && this.col < 11) {
       let center = window.innerWidth / 2;
       const front = this.el.nativeElement.children[0].children[0];
-      center = center - (front.offsetWidth / 2)
-      this.homeX = (center - (this.homeX * this.areaSize));
-      this.homeY = this.areaSize * this.homeY;
+      if (this.gc) { center = center - ((front.offsetWidth / 2) + (this.bufferSize / 2)); }
+      this.homeX = (center + (this.col * this.areaSize));
+      this.homeY = this.areaSize * this.row;
     }
 
+  }
+
+  resetHome() {
+    const holdBezier = this.el.nativeElement.style.transitionTimingFunction ? this.el.nativeElement.style.transitionTimingFunction : this.el.nativeElement.style.webkitTransformTimingFunction;
+    const holdDuration = this.el.nativeElement.style.transitionDuration ? this.el.nativeElement.style.transitionDuration : this.el.nativeElement.style.webkitTransformDuration;
+    const holdDelay = this.el.nativeElement.style.transitionDelay ? this.el.nativeElement.style.transitionDelay : this.el.nativeElement.style.webkitTransitionDelay;
+    this.rend.setStyle(this.el.nativeElement, 'transitionTimingFunction', 'ease-out');
+    this.rend.setStyle(this.el.nativeElement, 'transitionDuration', '500ms' );
+    this.rend.setStyle(this.el.nativeElement, 'transitionDelay', 'none');
+    this.rend.setStyle(this.el.nativeElement, 'webkitTransformTimingFunction', 'ease-out');
+    this.rend.setStyle(this.el.nativeElement, 'webkitTransformDuration', '500ms');
+    this.rend.setStyle(this.el.nativeElement, 'webkitTransitionDelay', 'none');
+    this.setHome();
+    this.goHome();
+    this.rend.setStyle(this.el.nativeElement, 'transitionTimingFunction', holdBezier);
+    this.rend.setStyle(this.el.nativeElement, 'transitionDuration', holdDuration);
+    this.rend.setStyle(this.el.nativeElement, 'transitionDelay', holdDelay);
+    this.rend.setStyle(this.el.nativeElement, 'webkitTransformTimingFunction', holdBezier);
+    this.rend.setStyle(this.el.nativeElement, 'webkitTransformDuration', holdDuration);
+    this.rend.setStyle(this.el.nativeElement, 'webkitTransitionDelay', holdDelay);
   }
 
   centerText() {
@@ -168,9 +201,9 @@ export class AniCircleComponent implements OnInit, OnChanges {
     this.rend.setStyle(n, 'top', t + 'px');
     this.rend.setStyle(n, 'opacity', '1');
 
-    // The first timeout increases the object's size by 50% as soon as it's 
+    // The first timeout block increases the object's size by 50% as soon as it's 
     // done moving (i.e., when the transition above is done).
-    // The second timeout sends the object to its "home" location.
+    // The second timeout block sends the object to its "home" location.
     const _this = this;
     const popTransform = 300;
     setTimeout(() => {
@@ -206,5 +239,9 @@ export class AniCircleComponent implements OnInit, OnChanges {
     });
     styleString = "{ " + styleString + " }";
     return styleString;
+  }
+
+  backClick() {
+    this.onResize();
   }
 }
