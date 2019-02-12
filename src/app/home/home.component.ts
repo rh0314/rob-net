@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
 
   initItems() {
     this.techItems = [
-      { text: "Custom Application Development", image: { path: "" }, startX: '9999', startY: '-999', homeX: -1, homeY: '0', duration: 10000, delay: 1000, backImage: '' },
+      { text: "Custom Application Development", image: { path: "../../assets/images/internet-icons/sql.png" }, startX: '9999', startY: '-999', duration: 7000, delay: 3500, backImage: '' },
       // { text: "Database Driven Applications", image: { path: "" }, startX: '', startY: '', homeX: '', homeY: '', duration: 0, delay: 0, backImage: '' },
       // { text: "Web-Based Tools", image: { path: "" }, startX: '', startY: '', homeX: '', homeY: '', duration: 0, delay: 0, backImage: '' },
       { text: "Delightful, Intuitive User Experience", image: { path: "../../assets/images/internet-icons/ux.png", sizeX: 1, sizeY: 1 }, startX: -1500, startY: -500, homeX: 1, homeY: 0, duration: 6000, delay: 2000, backImage: '' },
