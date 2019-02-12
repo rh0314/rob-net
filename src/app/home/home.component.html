@@ -17,33 +17,18 @@
             </div>
 
             <div class="page-main home-page-main">
-                <div class="col col-sm-6 col-md-4">
-                    <div class="home-section-wrapper">
-                        <app-ani-card *ngFor="let item of items; let idx =  index" [idx]="idx" [back-image]="'../../assets/images/thumbsup-mitchell.png'"
-                            [duration]="500" [delay]="((idx + 1) *  300)" [start-x]="-99" [start-y]="999" [home-x]="0"
-                            [home-y]="0" [front-text]="item"> </app-ani-card>
-                    </div>
+                <div id="windowBoundary"></div>
+                <div id="animationBoundary" class="circles-container">
+                    <app-ani-circle *ngFor="let item of techItems; let idx = index" [idx]="idx" [front-image]="item.image"
+                        [back-image]="backImage" [duration]="item.delay" [delay]="item.delay"
+                        [start-x]="item.startX" [start-y]="item.startY" [home-x]="item.homeX" [home-y]="item.homeY"
+                        [front-text]="item.text">
+                    </app-ani-circle>
                 </div>
-                <div class="col col-sm-6 col-md-4">
-                    <div class="home-section-wrapper">
-                        <app-ani-card *ngFor="let item of techs; let idx =  index" [idx]="idx" [back-image]="'../../assets/images/thumbsup-mitchell.png'"
-                            [duration]="400" [delay]="(1500 + ((idx + 1) *  300))" [start-x]="0" [start-y]="-999"
-                            [home-x]="0" [home-y]="0" [front-text]="item"> </app-ani-card>
-                    </div>
-                </div>
-                <div class="col col-sm-12 col-md-4">
-                    <div class="home-section-wrapper">
-                        <app-ani-card *ngFor="let item of subtechs; let idx =  index" [idx]="idx" [back-image]="'../../assets/images/thumbsup-mitchell.png'"
-                            [duration]="750" [delay]="(2500 + ((idx + 1) *  150))" [start-x]="10000" [start-y]="1000"
-                            [home-x]="0" [home-y]="0" [front-text]="item"> </app-ani-card>
-                    </div>
-                </div>
+
+
 
             </div>
-
-
-
-
         </div>
     </div>
 </section>

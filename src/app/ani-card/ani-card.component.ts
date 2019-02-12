@@ -4,15 +4,6 @@ import { Component, OnInit, Renderer2, ElementRef, Input } from '@angular/core';
 @Component({
   selector: 'app-ani-card',
   templateUrl: 'ani-card.component.html',
-//   template: `<div class="flip">
-//   <div class="front"  style="background-image: url(https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
-//     <div class="text-shadow">MOUNTAIN</div>
-//   </div>
-// </div>
-// <div class="back">
-//   <h2>Angular</h2>
-//   <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
-// </div>`,
   styleUrls: ['./ani-card.component.scss']
 })
 export class AniCardComponent implements OnInit {
@@ -23,9 +14,9 @@ export class AniCardComponent implements OnInit {
   @Input('home-y') homeY: number = 100;
   @Input('delay') delay: number = 5000;
   @Input('duration') duration: number = 3000;
-  @Input('front-image') frontImage: string;
+  @Input('front-image') frontImage: any;
   @Input('front-text') frontText: string;
-  @Input('back-image') backImage: string;
+  @Input('back-image') backImage: any;
   @Input('back-text') backText: string;
   @Input('idx') idx: number = -1;
 
@@ -38,7 +29,6 @@ export class AniCardComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    console.log('el', this.el.nativeElement.children);
     this.initialize();
   }
 
@@ -71,15 +61,23 @@ export class AniCardComponent implements OnInit {
     }, this.delay)
   }
 
+  // background-size: 250px 250px;
+  // background-position: bottom;
+  // background-repeat: no-repeat;
+
+
   setImages() {
     if (this.frontImage) {
-      const f = this.el.nativeElement.children[0].children[0];
+      const f = this.el.nativeElement.children[0].children[0];  // gets "front" div
       if (f) {
-        this.rend.setStyle(f, 'background-image', 'url(' + this.frontImage + ')');
+        this.rend.setStyle(f, 'background-image', 'url(' + this.frontImage.path + ')');
+        this.rend.setStyle(f, 'background-size', this.frontImage.size ? (this.frontImage.size.x + ' ' + this.frontImage.size.y) : '250px');
+        this.rend.setStyle(f, 'background-position', this.frontImage.placement ? this.frontImage.placement : 'center 300px');
+        this.rend.setStyle(f, 'background-repeat', 'no-repeat');
       }
     }
     if (this.backImage) {
-      const b = this.el.nativeElement.children[0].children[1];
+      const b = this.el.nativeElement.children[0].children[1];  // gets "back" div
       if (b) {
         this.rend.setStyle(b, 'background-image', 'url(' + this.backImage + ')');
         this.rend.setStyle(b, 'background-size', '');

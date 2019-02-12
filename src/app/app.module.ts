@@ -19,7 +19,7 @@ import { CodeInsertDirective } from './directives/code-insert.directive';
 import { RootCodeInsertDirective } from './directives/root-code-insert.directive';
 import { AniCardComponent } from './ani-card/ani-card.component';
 import { StarsComponent } from './stars/stars.component';
-
+import { AniCircleComponent } from './ani-circle/ani-circle.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +38,7 @@ import { StarsComponent } from './stars/stars.component';
     RootCodeInsertDirective,
     AniCardComponent,
     StarsComponent,
+    AniCircleComponent,
   ],
   imports: [
     BrowserModule,
