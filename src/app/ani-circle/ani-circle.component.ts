@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2, ElementRef, Input, OnChanges, SimpleChange } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef, Input, OnChanges, SimpleChange, HostListener } from '@angular/core';
 import { parse } from 'querystring';
 
 @Component({
@@ -20,12 +20,22 @@ export class AniCircleComponent implements OnInit, OnChanges {
   @Input('back-text') backText: string;
   @Input('idx') idx: number = -1;
 
+  @HostListener('window:resize', ['$event']) 
+  onresize(event) {
+    this.initializeScreenSize();
+    // this.setImages();
+    this.setHome();
+    this.goHome();
+  }
+
   ngStyle: any;
   ngStyles: Array<string> = new Array<string>();
   inYoFaceBezier: string = 'cubic-bezier(0,1.33,.55,.99)';
   homeBezier: string = 'cubic-bezier(1,.01,1,-0.17)';
+  areaSize: number;
+  circleSize: number;
   maxImageSize: number;
-  canvasSize: number;
+  bufferSize: number;
 
   
   constructor(
@@ -79,7 +89,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
   iniitializeLater() {
     setTimeout(() => {
 
-      this.setHomeX();
+      this.setHome();
 
     }, 150);
   }
@@ -87,42 +97,23 @@ export class AniCircleComponent implements OnInit, OnChanges {
   initializeScreenSize() {
     const w = screen.width;
 
-    switch(true) {
-      case (w < 768):
-        this.canvasSize = 125;
-        this.maxImageSize = 80;
-      case (w >= 768 && w < 992):
-      this.canvasSize = 150;
-      this.maxImageSize = 100;
-        break;
-      case (w >= 992 && w < 1200):
-        this.canvasSize = 175;
-        this.maxImageSize = 125;
-        break;
-      case (w >= 1200 && w < 1400):
-        this.canvasSize = 200;
-        this.maxImageSize = 150;
-        break;
-      case (w >= 1400):
-        this.canvasSize = 250;
-        this.maxImageSize = 175;
-        break;
-    }
+    this.circleSize = w * 0.18;
+    this.bufferSize = this.circleSize * 0.1;
+    this.areaSize = this.circleSize + this.bufferSize;
+    this.maxImageSize = this.circleSize * 0.5;
+
   }
 
-  setHomeX() {
+  setHome() {
     if (this.homeX > -11 && this.homeX < 11) {
       let center = window.innerWidth / 2;
       const front = this.el.nativeElement.children[0].children[0];
       center = center - (front.offsetWidth / 2)
-      this.homeX = (center - (this.homeX * this.canvasSize)) - 12.5;
+      this.homeX = (center - (this.homeX * this.areaSize));
+      this.homeY = this.areaSize * this.homeY;
     }
 
   }
-  /* 
-
-
-  */
 
   centerText() {
     const title = document.getElementById('circleTitle' + this.idx);
@@ -193,8 +184,6 @@ export class AniCircleComponent implements OnInit, OnChanges {
     }, (_this.duration));
   }
 
-
-
   goHome() {
     if (!(this.el && this.el.nativeElement)) {
       return;
@@ -204,7 +193,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
     this.rend.setStyle(n, 'transitionTimingFunction', this.homeBezier);
     this.rend.setStyle(f, 'transform', 'scale(1, 1)');
     this.rend.setStyle(n, 'left', this.homeX + 'px');
-    this.rend.setStyle(n, 'top', ((this.homeY * this.canvasSize) + 'px'));
+    this.rend.setStyle(n, 'top', this.homeY + 'px');
     this.rend.setStyle(n, 'opacity', '1');
     this.centerText();
   }

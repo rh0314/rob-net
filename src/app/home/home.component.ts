@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit {
       this.backImage = '../../assets/images/thumbsup-mitchell.v3.png';
     }, 3000);
 
+
+    // change to hostlistener
     window.addEventListener('scroll', this.onScroll);
     window.addEventListener('resize', this.onResize);
     window.addEventListener('scroll', this.onScrollAndResize);
