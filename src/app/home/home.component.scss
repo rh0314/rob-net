@@ -1,4 +1,4 @@
-// @import '../../assets/css/plugins.css';
+@import '../responsive.scss';
 .home-headline {
   position: relative;
 }
@@ -51,4 +51,65 @@
 
 .home-section-wrapper {
   padding-top: 25px;
+}
+
+.container-fullwidth {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+
+/******************************************************************************
+ ******************************************************************************
+
+                              R E S P O N S I V E 
+
+ ******************************************************************************
+*******************************************************************************/
+
+
+@media(min-width: 767px) {
+  .page-headline-container {
+    max-width: 768px;
+  }
+
+  .page-headline-content {
+    font-size: 3em;
+  }
+
+  .page-subheadline-content {
+    font-size: 1.5em;
+  }
+
+}
+
+
+// md AND UP
+@media (min-width: 992px) {
+  .page-headline-content {
+    font-size: 3rem;
+  }
+
+  .page-headline-container {
+    max-width: 992px;
+  }
+}
+
+// lg
+@media (min-width: 1200p) {
+  .router-outlet-container {
+    max-width: 1200px;
+  }
+  .page-headline-container {
+    max-width: 1200px;
+  }
+
+}
+
+@media (min-width: 1450px) {
+  .page-headline-container {
+    max-width: 100%;
+  }
+
+
 }

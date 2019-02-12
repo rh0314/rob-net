@@ -15,8 +15,7 @@
       font-size: 1.5em;
       position: absolute;
       top: 60px;
-      left: 0px;
-      // width: 100%;
+      left: 0px; // width: 100%;
       text-align: center;
     }
   }
@@ -25,8 +24,8 @@
     opacity: 0.9;
   }
   .back {
-   transform: rotateY(-180deg);
-   opacity: 0;
+    transform: rotateY(-180deg);
+    opacity: 0;
   }
   &:hover {
     .front {
@@ -83,56 +82,60 @@
 
 /* ****** RESPONSIVE **********/
 
-// ************************* xs only
-// @media(max-width: 767px) {
-//   .flip {}
-//   .back,
-//   .front {}
-// }
+// lg (and beyond)
+@media (min-width: 1200px) {
 
-// // ************************* sm & xs
-// @media(max-width: 991px) {
-//   .flip {}
-// }
-
-// // ************************* sm
-// @media (min-width: 768px) and (max-width: 991px) {
-//   .flip {
-//     .back,
-//     .front {}
-//     .back {
-//       h3 {
-//         top: 100px;
-//         display: inline-flex;
-//       }
-//     }
-//   }
-// }
-
-// // md ONLY
-// @media (min-width: 992px) and (max-width: 1199px) {}
+  
+}
 
 // md AND UP
-@media (min-width: 992px) {
+@media (max-width: 991px) {
   .flip {
     .back {
       .circle-title {
         font-size: 1.5em;
-        position: absolute;
-        top: 60px;
-        left: 50px;
-        max-width: 100px;
       }
     }
     .back,
     .front {
-      .text-shadow {}
+      // BACK AND FRONT
     }
   }
 }
 
-// lg (and beyond)
-@media (min-width: 1200px) {}
+// ************************* sm
+@media (max-width: 991px) {
+  .flip {
+    .circle-title {
+      font-size: 0.75em;
+      top: 25px;
+      max-width: 80px;
+  }
+    .front {
+      width: 125px;
+      height: 125px;
+    }
+    .back {
+      width: 125px;
+      height: 125px;
+    }
+  }
+}
+
+
+@media(max-width: 767px) {
+// .flip {
+//   .circle-title {
+//     font-size: 1.5em;
+//     top: 60px;
+//     left: 0px;
+//   }
+//   .front {}
+//   .back {}
+// }
+}
+
+
 
 .text-shadow {
   text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);

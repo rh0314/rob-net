@@ -10,8 +10,8 @@ export class AniCircleComponent implements OnInit, OnChanges {
   native: Element;
   @Input('start-x') startX: number = -99999;
   @Input('start-y') startY: number = -99999;
-  @Input('home-x') homeX: number = 100;
-  @Input('home-y') homeY: number = 100;
+  @Input('home-x') homeX: number = 1;
+  @Input('home-y') homeY: number = 1;
   @Input('delay') delay: number = 5000;
   @Input('duration') duration: number = 3000;
   @Input('front-image') frontImage: any;
@@ -24,13 +24,17 @@ export class AniCircleComponent implements OnInit, OnChanges {
   ngStyles: Array<string> = new Array<string>();
   inYoFaceBezier: string = 'cubic-bezier(0,1.33,.55,.99)';
   homeBezier: string = 'cubic-bezier(1,.01,1,-0.17)';
+  maxImageSize: number;
+  canvasSize: number;
 
+  
   constructor(
     private rend: Renderer2,
     private el: ElementRef
   ) { }
 
   ngOnInit() {
+    this.initializeScreenSize();
     this.initialize();
     this.iniitializeLater();
   }
@@ -80,12 +84,38 @@ export class AniCircleComponent implements OnInit, OnChanges {
     }, 150);
   }
 
+  initializeScreenSize() {
+    const w = screen.width;
+
+    switch(true) {
+      case (w < 768):
+        this.canvasSize = 125;
+        this.maxImageSize = 80;
+      case (w >= 768 && w < 992):
+      this.canvasSize = 150;
+      this.maxImageSize = 100;
+        break;
+      case (w >= 992 && w < 1200):
+        this.canvasSize = 175;
+        this.maxImageSize = 125;
+        break;
+      case (w >= 1200 && w < 1400):
+        this.canvasSize = 200;
+        this.maxImageSize = 150;
+        break;
+      case (w >= 1400):
+        this.canvasSize = 225;
+        this.maxImageSize = 175;
+        break;
+    }
+  }
+
   setHomeX() {
     if (this.homeX > -11 && this.homeX < 11) {
       let center = window.innerWidth / 2;
       const front = this.el.nativeElement.children[0].children[0];
       center = center - (front.offsetWidth / 2)
-      this.homeX = center - (this.homeX * 250)
+      this.homeX = (center - (this.homeX * this.canvasSize)) - 12.5;
     }
 
   }
@@ -106,8 +136,11 @@ export class AniCircleComponent implements OnInit, OnChanges {
 
   setImages() {
     if (this.frontImage) {
+      this.frontImage.sizeX = (this.frontImage.sizeX && this.frontImage.sizeX <= 2 ? (this.frontImage.sizeX * this.maxImageSize) : this.maxImageSize);
+      this.frontImage.sizeY = (this.frontImage.sizeY && this.frontImage.sizeY <= 2 ? (this.frontImage.sizeY * this.maxImageSize) : this.maxImageSize);
       const f = this.el.nativeElement.children[0].children[0];  // gets "front" div
-      const imgSize = (this.frontImage.sizeX ? this.frontImage.sizeX : '150px') + ' ' + (this.frontImage.sizeY ? this.frontImage.sizeY : '150px');
+
+      const imgSize = this.frontImage.sizeX + 'px ' + this.frontImage.sizeY + 'px';
       if (f) {
         this.rend.setStyle(f, 'background-image', 'url(' + this.frontImage.path + ')');
         this.rend.setStyle(f, 'background-size', imgSize);
@@ -123,8 +156,9 @@ export class AniCircleComponent implements OnInit, OnChanges {
   setBackImage() {
     const b = this.el.nativeElement.children[0].children[1];  // gets "back" div
     if (b) {
+      const imgSize = this.maxImageSize + 'px auto'
       this.rend.setStyle(b, 'background-image', 'url(' + this.backImage + ')');
-      this.rend.setStyle(b, 'background-size', '150px auto');
+      this.rend.setStyle(b, 'background-size', imgSize);
       this.rend.setStyle(b, 'background-repeat', 'no-repeat');
       this.rend.setStyle(b, 'background-position', 'center center');
     }
@@ -170,7 +204,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
     this.rend.setStyle(n, 'transitionTimingFunction', this.homeBezier);
     this.rend.setStyle(f, 'transform', 'scale(1, 1)');
     this.rend.setStyle(n, 'left', this.homeX + 'px');
-    this.rend.setStyle(n, 'top', (this.homeY + 'px'));
+    this.rend.setStyle(n, 'top', ((this.homeY * this.canvasSize) + 'px'));
     this.rend.setStyle(n, 'opacity', '1');
     this.centerText();
   }
