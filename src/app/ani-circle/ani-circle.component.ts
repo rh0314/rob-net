@@ -104,7 +104,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
         this.maxImageSize = 150;
         break;
       case (w >= 1400):
-        this.canvasSize = 225;
+        this.canvasSize = 250;
         this.maxImageSize = 175;
         break;
     }
