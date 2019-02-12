@@ -107,9 +107,9 @@ export class AniCircleComponent implements OnInit, OnChanges {
   }
 
   initializeScreenSize() {
-    const w = screen.width;
     this.vhCalc = screen.height / 100;
-    this.vwCalc = w / 100;
+    this.vwCalc = screen.width / 100;
+    const w = window.innerWidth;
     this.circleSize = w * 0.18;
     this.bufferSize = this.circleSize * 0.1;
     this.areaSize = this.circleSize + this.bufferSize;
@@ -148,15 +148,15 @@ export class AniCircleComponent implements OnInit, OnChanges {
     this.rend.setStyle(this.el.nativeElement, 'webkitTransitionDelay', holdDelay);
   }
 
-  centerText() {
-    const title = document.getElementById('circleTitle' + this.idx);
-    const pe = this.rend.parentNode(title);
-    const w = pe.getBoundingClientRect().width;
-    const text = document.getElementById('circleText' + this.idx);
-    const tw = title.clientWidth;
-    const pw = (w - tw) / 2;
-    this.rend.setStyle(title, 'left', pw + 'px');
-  }
+  // centerText() {
+  //   const title = document.getElementById('circleTitle' + this.idx);
+  //   const pe = this.rend.parentNode(title);
+  //   const w = pe.getBoundingClientRect().width;
+  //   const tw = title.clientWidth;
+  //   let tnw = (tw > (w * .66)) ? (w * .66) : tw;
+  //   tnw = (w - tnw) / 2;
+  //   this.rend.setStyle(title, 'left', tnw + 'px');
+  // }
 
   setImages() {
     if (this.frontImage) {
@@ -193,13 +193,16 @@ export class AniCircleComponent implements OnInit, OnChanges {
       return;
     }
     const n = this.el.nativeElement;
-    const f = n.children[0].children[0];
+    const flip = n.children[0];
+    const f = flip.children[0];
     const frame = this.rend.parentNode(n);
     const t = ((window.innerHeight / 2) - frame.offsetTop) + window.scrollY;
     this.rend.setStyle(n, 'transitionTimingFunction', this.inYoFaceBezier);
     this.rend.setStyle(n, 'left', ((window.innerWidth / 2) - (f.offsetWidth / 2)) + 'px');
     this.rend.setStyle(n, 'top', t + 'px');
     this.rend.setStyle(n, 'opacity', '1');
+    const color = flip.style.backgroundColor;
+    // this.rend.setStyle(f, 'background-color', color.replace(/rgba\((\d{1,3}\,\s{0,1}\d{1,3}\,\d{1,3}\,\s{0,1})\d{1,3}\.{0,1}\d{1,3}\)/, 'rgba($11)'));
 
     // The first timeout block increases the object's size by 50% as soon as it's 
     // done moving (i.e., when the transition above is done).
@@ -228,7 +231,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
     this.rend.setStyle(n, 'left', this.homeX + 'px');
     this.rend.setStyle(n, 'top', this.homeY + 'px');
     this.rend.setStyle(n, 'opacity', '1');
-    this.centerText();
+    // this.centerText();
   }
 
   addBuildNgStyle(newStyle: any) {
