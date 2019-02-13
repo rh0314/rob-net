@@ -19,15 +19,11 @@
             <div class="page-main home-page-main">
                 <div id="windowBoundary"></div>
                 <div id="animationBoundary" class="circles-container">
-                        <app-ani-circle *ngFor="let item of techItems; let idx = index" [idx]="idx" [front-image]="item.image"
-                        [back-image]="backImage" [duration]="item.delay" [delay]="item.delay"
-                        [start-x]="item.startX" [start-y]="item.startY" [front-text]="item.text">
+                    <app-ani-circle *ngFor="let item of techItems; let idx = index" [idx]="idx" [front-image]="item.image"
+                        [back-image]="backImage" [duration]="item.delay" [delay]="item.delay" [start-x]="item.startX"
+                        [start-y]="item.startY" [grid-row]="item.gridRow" [grid-col]="item.gridCol" [front-text]="item.text"
+                        [grid-center]="true">
                     </app-ani-circle>
-                    <!-- <app-ani-circle *ngFor="let item of techItems; let idx = index" [idx]="idx" [front-image]="item.image"
-                        [back-image]="backImage" [duration]="item.delay" [delay]="item.delay"
-                        [start-x]="item.startX" [start-y]="item.startY" [home-x]="item.homeX" [home-y]="item.homeY"
-                        [front-text]="item.text">
-                    </app-ani-circle> -->
                 </div>
 
 

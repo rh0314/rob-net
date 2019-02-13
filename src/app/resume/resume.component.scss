@@ -13,10 +13,10 @@
   padding: 3px;
   width: 40px;
   height: 28px;
-    &.zoomIn {
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
-  } 
+  &.zoomIn {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
   &.zoomOut {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -25,7 +25,7 @@
 
 .page-button {
   background-image: url(./../../assets/images/brushed-aluminium-vector-background.jpg);
-  background-color: grba(0,0,0,0);
+  background-color: grba(0, 0, 0, 0);
   width: 120px;
   margin-top: 8px;
   span {
@@ -34,8 +34,8 @@
   i {
     margin-left: 5px;
     margin-right: 5px;
-    color: rgb(19, 116, 228); 
-    size: 20px; 
+    color: rgb(19, 116, 228);
+    size: 20px;
     margin-right: 5px;
     margin-top: 3px;
   }
@@ -45,14 +45,19 @@
   float: left;
   z-index: 5;
   display: block;
-  color: rgb(7, 58, 116); 
+  color: rgb(7, 58, 116);
 }
 
 .zoom-button-container {
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(7, 58, 116); 
+  background-color: rgb(7, 58, 116);
   z-index: 10;
+  opacity: 0.3;
+  border-radius: 4px;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 #anchor {
@@ -64,7 +69,7 @@
 }
 
 @media (min-width:768px) {
-  .resume-page-button-container.left {  
+  .resume-page-button-container.left {
     button.page-button {
       float: right;
     }
@@ -92,21 +97,18 @@
     }
     button.page-button.right {
       float: right;
-      i { 
+      i {
         float: right;
       }
     }
-  } 
+  }
 }
 
 .page-number-display {
   min-width: 150px;
-
 }
 
-
 // TEMPLATE OVERRIDE
-
 .ng2-pdf-viewer-container {
   // overflow-y: hidden !important;
 }

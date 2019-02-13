@@ -10,16 +10,13 @@ import { AboutComponent } from './about/about.component';
 import { Error404Component } from './error404/error404.component';
 import { GlobalDataService } from './shared/global-data.service';
 import { BgOverlayDirective } from './shared/directives/bg-overlay.directive';
-import { WrapperComponent } from './wrapper/wrapper.component';
-import { VideoComponent } from './video/video.component';
 import { ResumeComponent } from './resume/resume.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-import { WalkingCatComponent } from './walking-cat/walking-cat.component';
-import { CodeInsertDirective } from './directives/code-insert.directive';
-import { RootCodeInsertDirective } from './directives/root-code-insert.directive';
+import { CodeInsertDirective } from './shared/directives/code-insert.directive';
+import { RootCodeInsertDirective } from './shared/directives/root-code-insert.directive';
 import { AniCardComponent } from './ani-card/ani-card.component';
-import { StarsComponent } from './stars/stars.component';
 import { AniCircleComponent } from './ani-circle/ani-circle.component';
+import { ScrollBoxDirective } from './shared/directives/scroll-box.directive';
 
 @NgModule({
   declarations: [
@@ -30,15 +27,12 @@ import { AniCircleComponent } from './ani-circle/ani-circle.component';
     AboutComponent,
     Error404Component,
     BgOverlayDirective,
-    WrapperComponent,
-    VideoComponent,
     ResumeComponent,
-    WalkingCatComponent,
     CodeInsertDirective,
     RootCodeInsertDirective,
     AniCardComponent,
-    StarsComponent,
     AniCircleComponent,
+    ScrollBoxDirective,
   ],
   imports: [
     BrowserModule,
