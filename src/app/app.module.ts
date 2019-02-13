@@ -12,11 +12,11 @@ import { GlobalDataService } from './shared/global-data.service';
 import { BgOverlayDirective } from './shared/directives/bg-overlay.directive';
 import { ResumeComponent } from './resume/resume.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-import { CodeInsertDirective } from './directives/code-insert.directive';
-import { RootCodeInsertDirective } from './directives/root-code-insert.directive';
+import { CodeInsertDirective } from './shared/directives/code-insert.directive';
+import { RootCodeInsertDirective } from './shared/directives/root-code-insert.directive';
 import { AniCardComponent } from './ani-card/ani-card.component';
 import { AniCircleComponent } from './ani-circle/ani-circle.component';
-import { ScrollboxDirective } from './directives/scrollbox.directive';
+import { ScrollBoxDirective } from './shared/directives/scroll-box.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { ScrollboxDirective } from './directives/scrollbox.directive';
     RootCodeInsertDirective,
     AniCardComponent,
     AniCircleComponent,
-    ScrollboxDirective,
+    ScrollBoxDirective,
   ],
   imports: [
     BrowserModule,
