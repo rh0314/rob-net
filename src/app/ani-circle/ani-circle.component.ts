@@ -32,6 +32,8 @@ export class AniCircleComponent implements OnInit, OnChanges {
   }
 
 
+  private rend: Renderer2;
+  private el: ElementRef;
 
   ngStyle: any;
   ngStyles: Array<string> = new Array<string>();
@@ -47,9 +49,12 @@ export class AniCircleComponent implements OnInit, OnChanges {
 
   
   constructor(
-    private rend: Renderer2,
-    private el: ElementRef
-  ) { }
+    private r: Renderer2,
+    private e: ElementRef
+  ) { 
+    this.rend = r;
+    this.el = e;
+  }
 
   ngOnInit() {
     this.initializeScreenSize();
