@@ -40,12 +40,12 @@
   height: 1px;
 }
 
-.navbar-collapse {
-  background-color: rgba(14, 17, 25, 0.75);
-  &.in {
-    background-color: rgba(14, 17, 25, 1);
-  }
-}
+// .navbar-collapse {
+//   background-color: rgba(14, 17, 25, 0.75);
+//   &.in {
+//     background-color: rgba(14, 17, 25, 1);
+//   }
+// }
 
 /******************************************************************************
  ******************************************************************************
@@ -56,9 +56,9 @@
 *******************************************************************************/
 
 @media(max-width: 767px) {
-  .navbar-toggle {
-    opacity: 0.6;
-  }
+  // .navbar-toggle {
+  //   opacity: 0.6;
+  // }
 }
 
 @media(min-width: 768px) {
