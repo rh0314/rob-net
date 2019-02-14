@@ -12,8 +12,6 @@ import { GlobalDataService } from './shared/global-data.service';
 import { BgOverlayDirective } from './shared/directives/bg-overlay.directive';
 import { ResumeComponent } from './resume/resume.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-import { CodeInsertDirective } from './shared/directives/code-insert.directive';
-import { RootCodeInsertDirective } from './shared/directives/root-code-insert.directive';
 import { AniCircleComponent } from './ani-circle/ani-circle.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
@@ -27,8 +25,6 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     Error404Component,
     BgOverlayDirective,
     ResumeComponent,
-    CodeInsertDirective,
-    RootCodeInsertDirective,
     AniCircleComponent,
   ],
   imports: [
