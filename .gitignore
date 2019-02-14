@@ -48,3 +48,6 @@ Thumbs.db
 
 # project files not in use
 /src/app/ani-card/*
+/src/app/shared/directives/root-code-insert.directive.ts
+src/app/shared/directives/scroll-box.directive.ts
+src/app/shared/directives/code-insert.directive.ts
