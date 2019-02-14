@@ -44,3 +44,7 @@ package-lock.json
 # System Files
 .DS_Store
 Thumbs.db
+
+
+# project files not in use
+/src/app/ani-card/*
