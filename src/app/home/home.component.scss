@@ -1,4 +1,3 @@
-@import '../responsive.scss';
 .home-headline {
   position: relative;
 }
@@ -25,6 +24,7 @@
   left: 0px;
   width: 100%;
   height: 100vmax;
+  z-index: -999;
 }
 
 @keyframes deliverContent {
@@ -55,7 +55,6 @@
 
 .container-fullwidth {
   width: 100vw;
-  overflow-x: hidden;
 }
 
 
@@ -68,48 +67,23 @@
 *******************************************************************************/
 
 
-@media(min-width: 767px) {
-  .page-headline-container {
-    max-width: 768px;
-  }
-
-  .page-headline-content {
-    font-size: 3em;
-  }
-
-  .page-subheadline-content {
-    font-size: 1.5em;
-  }
+@media(min-width: 767px) and (max-width: 991px) {
 
 }
 
 
 // md AND UP
-@media (min-width: 992px) {
-  .page-headline-content {
-    font-size: 3rem;
-  }
+@media (min-width: 992px) and (max-width: 1199px) {
 
-  .page-headline-container {
-    max-width: 992px;
-  }
 }
 
 // lg
-@media (min-width: 1200p) {
-  .router-outlet-container {
-    max-width: 1200px;
-  }
-  .page-headline-container {
-    max-width: 1200px;
-  }
+@media (min-width: 1200px) and (max-width: 1449) {
 
 }
 
-@media (min-width: 1450px) {
-  .page-headline-container {
-    max-width: 100%;
-  }
 
+@media (min-width: 1450px) {
+  
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2, ElementRef, Input, OnChanges, SimpleChange, HostListener, ViewChild } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef, Input, OnChanges, SimpleChange, HostListener, ViewChild, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-ani-circle',
@@ -17,14 +17,12 @@ export class AniCircleComponent implements OnInit, OnChanges {
   @Input('delay') delay: number = 5000;
   @Input('duration') duration: number = 3000;
   @Input('front-image') frontImage: any;
-  @Input('front-text') frontText: string;
+  @Input('main-text') mainText: string;
   @Input('back-image') backImage: any;
-  @Input('back-text') backText: string;
+  @Input('back-text') subText: string;
   @Input('idx') idx: number = -1;
 
-<<<<<<< HEAD
-=======
-  @HostListener('window:resize', ['$event']) 
+  @HostListener('window:resize', ['$event'])
   onresize(event) {
     this.onResize();
   }
@@ -32,12 +30,14 @@ export class AniCircleComponent implements OnInit, OnChanges {
   onorientationchange(event) {
     this.onResize();
   }
-
+  // @HostListener('click', ['$event'])
+  // onclick(event) {
+  //   this.hostClicked(event);
+  // }
 
   private rend: Renderer2;
   private el: ElementRef;
 
->>>>>>> master
   ngStyle: any;
   ngStyles: Array<string> = new Array<string>();
   inYoFaceBezier: string = 'cubic-bezier(0,1.33,.55,.99)';
@@ -47,31 +47,25 @@ export class AniCircleComponent implements OnInit, OnChanges {
   circleSize: number;
   maxImageSize: number;
   bufferSize: number;
-<<<<<<< HEAD
-  vwCalc = (screen.width / 100);
-  vhCalc = (screen.height / 100);
-  uUnits = 'v';
-
-  @HostListener('window:resize', ['$event'])
-  onresize(event) {
-    this.initializeScreenSize();
-    this.setImages();
-    this.setHome();
-    this.goHome();
-  }
-
-=======
   vwCalc: number;
   vhCalc: number;
->>>>>>> master
+  ttid: string;
+  ttidTag: string;
 
   constructor(
     private r: Renderer2,
     private e: ElementRef
-  ) { 
+  ) {
     this.rend = r;
     this.el = e;
   }
+
+  // alternate way of getting host clicks
+  // ngAfterViewInit() {
+  //   this.rend.listen(this.el.nativeElement, 'click', () => {
+  //     console.log('el clicked');
+  //   })
+  // }
 
   ngOnInit() {
     this.initializeScreenSize();
@@ -80,28 +74,17 @@ export class AniCircleComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(e: any) {
-    if (e.backImage) {
-      this.setBackImage();
-    }
+
   }
 
-<<<<<<< HEAD
-  tovw(val: number) {
-    return val / this.vwCalc;
+  hostClicked(e: any) {
+    console.log('hostClicked: ', e);
   }
 
-  tovh(val: number) {
-    return val / this.vhCalc;
-  }
-
-  units(hw?: string) {
-    return this.uUnits === 'px' ? 'px' : 'v' + hw;
-=======
   onResize() {
     this.initializeScreenSize();
     this.setImages();
     this.resetHome();
->>>>>>> master
   }
 
   initialize() {
@@ -109,8 +92,8 @@ export class AniCircleComponent implements OnInit, OnChanges {
       return;
     }
     const n = this.el.nativeElement;
-    this.rend.setStyle(n, 'top', this.tovh(this.startY) + this.units('h'));
-    this.rend.setStyle(n, 'left', this.tovw(this.startX) + this.units('w'));
+    this.rend.setStyle(n, 'top', this.startY + 'px');
+    this.rend.setStyle(n, 'left', this.startX + 'px');
     this.rend.setStyle(n, 'position', 'absolute');
     this.rend.setStyle(n, 'opacity', '0.0');
 
@@ -127,6 +110,9 @@ export class AniCircleComponent implements OnInit, OnChanges {
     }
 
     this.setImages();
+    this.ttid = 'tt' + this.idx;
+    this.ttidTag = '#tt' + this.idx;
+
 
     setTimeout(() => {
       this.inYourFace();
@@ -142,15 +128,9 @@ export class AniCircleComponent implements OnInit, OnChanges {
   }
 
   initializeScreenSize() {
-<<<<<<< HEAD
-    const w = screen.width;
-    this.vwCalc = w / 100;
-    this.vhCalc = screen.height / 100;
-=======
     this.vhCalc = screen.height / 100;
     this.vwCalc = screen.width / 100;
     const w = window.innerWidth;
->>>>>>> master
     this.circleSize = w * 0.18;
     this.bufferSize = this.circleSize * 0.1;
     this.areaSize = this.circleSize + this.bufferSize;
@@ -159,12 +139,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
   }
 
   setHome() {
-<<<<<<< HEAD
-
-    if (this.homeX > -11 && this.homeX < 11) {
-=======
     if (this.col > -11 && this.col < 11) {
->>>>>>> master
       let center = window.innerWidth / 2;
       const front = this.el.nativeElement.children[0].children[0];
       if (this.gc) { center = center - ((front.offsetWidth / 2) + (this.bufferSize / 2)); }
@@ -178,10 +153,10 @@ export class AniCircleComponent implements OnInit, OnChanges {
     const holdBezier = this.el.nativeElement.style.transitionTimingFunction ? this.el.nativeElement.style.transitionTimingFunction : this.el.nativeElement.style.webkitTransformTimingFunction;
     const holdDuration = this.el.nativeElement.style.transitionDuration ? this.el.nativeElement.style.transitionDuration : this.el.nativeElement.style.webkitTransformDuration;
     const holdDelay = this.el.nativeElement.style.transitionDelay ? this.el.nativeElement.style.transitionDelay : this.el.nativeElement.style.webkitTransitionDelay;
-    this.rend.setStyle(this.el.nativeElement, 'transitionTimingFunction', 'ease-out');
-    this.rend.setStyle(this.el.nativeElement, 'transitionDuration', '500ms' );
+    this.rend.setStyle(this.el.nativeElement, 'transitionTimingFunction', 'ease-in');
+    this.rend.setStyle(this.el.nativeElement, 'transitionDuration', '500ms');
     this.rend.setStyle(this.el.nativeElement, 'transitionDelay', 'none');
-    this.rend.setStyle(this.el.nativeElement, 'webkitTransformTimingFunction', 'ease-out');
+    this.rend.setStyle(this.el.nativeElement, 'webkitTransformTimingFunction', 'ease-in');
     this.rend.setStyle(this.el.nativeElement, 'webkitTransformDuration', '500ms');
     this.rend.setStyle(this.el.nativeElement, 'webkitTransitionDelay', 'none');
     this.setHome();
@@ -194,23 +169,29 @@ export class AniCircleComponent implements OnInit, OnChanges {
     this.rend.setStyle(this.el.nativeElement, 'webkitTransitionDelay', holdDelay);
   }
 
-  // centerText() {
-  //   const title = document.getElementById('circleTitle' + this.idx);
-  //   const pe = this.rend.parentNode(title);
-  //   const w = pe.getBoundingClientRect().width;
-  //   const tw = title.clientWidth;
-  //   let tnw = (tw > (w * .66)) ? (w * .66) : tw;
-  //   tnw = (w - tnw) / 2;
-  //   this.rend.setStyle(title, 'left', tnw + 'px');
-  // }
+  centerText() {
+    const title = document.getElementById('circleTitle' + this.idx);
+    const pe = this.rend.parentNode(title);
+    const w = pe.getBoundingClientRect().width;
+    const tw = title.clientWidth;
+    let tnw = (tw > (w * .66)) ? (w * .66) : tw;
+    tnw = (w - tnw) / 2;
+    this.rend.setStyle(title, 'left', tnw + 'px');
+  }
 
   setImages() {
     if (this.frontImage) {
-      this.frontImage.sizeX = (this.frontImage.sizeX && this.frontImage.sizeX <= 2 ? (this.frontImage.sizeX * this.maxImageSize) : this.maxImageSize);
-      this.frontImage.sizeY = (this.frontImage.sizeY && this.frontImage.sizeY <= 2 ? (this.frontImage.sizeY * this.maxImageSize) : this.maxImageSize);
+      if (!this.frontImage.originalX) {
+        this.frontImage.originalX = this.frontImage.sizeX;
+      }
+      if (!this.frontImage.originalY) {
+        this.frontImage.originalY = this.frontImage.sizeY;
+      }
+      this.frontImage.sizeX = (this.frontImage.originalX && this.frontImage.originalX <= 20 ? (this.frontImage.originalX * this.maxImageSize) : this.maxImageSize);
+      this.frontImage.sizeY = (this.frontImage.originalY && this.frontImage.originalY <= 20 ? (this.frontImage.originalY * this.maxImageSize) : this.maxImageSize);
       const f = this.el.nativeElement.children[0].children[0];  // gets "front" div
 
-      const imgSize = this.frontImage.sizeX + 'px ' + this.frontImage.sizeY + this.units('h');
+      const imgSize = this.frontImage.sizeX + 'px ' + this.frontImage.sizeY + 'px';
       if (f) {
         this.rend.setStyle(f, 'background-image', 'url(' + this.frontImage.path + ')');
         this.rend.setStyle(f, 'background-size', imgSize);
@@ -244,8 +225,8 @@ export class AniCircleComponent implements OnInit, OnChanges {
     const frame = this.rend.parentNode(n);
     const t = ((window.innerHeight / 2) - frame.offsetTop) + window.scrollY;
     this.rend.setStyle(n, 'transitionTimingFunction', this.inYoFaceBezier);
-    this.rend.setStyle(n, 'left', ((window.innerWidth / 2) - (f.offsetWidth / 2)) + this.units('w'));
-    this.rend.setStyle(n, 'top', t + this.units('h'));
+    this.rend.setStyle(n, 'left', ((window.innerWidth / 2) - (f.offsetWidth / 2)) + 'px');
+    this.rend.setStyle(n, 'top', t + 'px');
     this.rend.setStyle(n, 'opacity', '1');
     const color = flip.style.backgroundColor;
     // this.rend.setStyle(f, 'background-color', color.replace(/rgba\((\d{1,3}\,\s{0,1}\d{1,3}\,\d{1,3}\,\s{0,1})\d{1,3}\.{0,1}\d{1,3}\)/, 'rgba($11)'));
@@ -256,9 +237,9 @@ export class AniCircleComponent implements OnInit, OnChanges {
     const _this = this;
     const popTransform = 300;
     setTimeout(() => {
-      _this.rend.setStyle(f, 'webkitTransformDuration', popTransform + 'ms');
+      _this.rend.setStyle(f, 'webkitTransformDuration', popTransform + 'px');
       _this.rend.setStyle(f, 'webkitTransform', 'scale(1.5, 1.5)');
-      _this.rend.setStyle(f, 'transformDuration', popTransform + 'ms');
+      _this.rend.setStyle(f, 'transformDuration', popTransform + 'px');
       _this.rend.setStyle(f, 'transform', 'scale(1.5, 1.5)');
       setTimeout(() => {
         _this.goHome();
@@ -274,8 +255,8 @@ export class AniCircleComponent implements OnInit, OnChanges {
     const f = n.children[0].children[0];
     this.rend.setStyle(n, 'transitionTimingFunction', this.homeBezier);
     this.rend.setStyle(f, 'transform', 'scale(1, 1)');
-    this.rend.setStyle(n, 'left', this.tovw(this.homeX) + this.units('w'));
-    this.rend.setStyle(n, 'top', this.tovh(this.homeY) + this.units('h'));
+    this.rend.setStyle(n, 'left', this.homeX + 'px');
+    this.rend.setStyle(n, 'top', this.homeY + 'px');
     this.rend.setStyle(n, 'opacity', '1');
     // this.centerText();
   }
@@ -290,7 +271,14 @@ export class AniCircleComponent implements OnInit, OnChanges {
     return styleString;
   }
 
-  backClick() {
-    this.onResize();
+  toggleFlip() {
+    console.log('flip');
+    const n = this.el.nativeElement;
+    if (n.classList.contains('flipped')) {
+      this.rend.removeClass(n, 'flipped');
+    }
+    else {
+      this.rend.addClass(n, 'flipped');
+    }
   }
 }

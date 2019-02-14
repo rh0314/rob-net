@@ -54,6 +54,7 @@
   margin-bottom: 1em; 
   font-size: 1.25rem;
   .front {
+    background: rgba(0, 161, 201, 0.8);
     span {
       display: inline-flex;
     }
@@ -64,11 +65,13 @@
     color: rgba(255, 255, 255, 0.9);
     width: inherit;
     padding: .5rem 1rem;
-    background: rgba(0, 161, 201, 0.8);
     border-radius: 10px;
     p {
       color: #999;
     }
+  }
+  .back {
+    background: rgba(0, 161, 201, 1);
   }
 }
 

@@ -1,11 +1,19 @@
-<div class="flip">
-  <div class="front" [ngStyle]="ngStyle">
-    <div class="text-shadow">
-      
+<ng-template #ttTemplate>
+  <div class="tooltip-main-container">
+    <div class="tooltip-content">
+      {{subText ? subText : mainText}}
     </div>
   </div>
-  <div class="back">
-    <div id="{{'circleTitle' + idx}}" class="circle-title text-shadow" (click)="backClick()">{{frontText}}</div>
-    <p id="{{'circleText' + idx}}">{{backText}}</p>
+</ng-template>
+
+<div class="flip" (click)="toggleFlip()">
+  <div class="front" [ngStyle]="ngStyle">
+    <div class="text-shadow">
+
+    </div>
+  </div>
+  <div class="back" [tooltip]="ttTemplate">
+    <div id="{{'circleTitle' + idx}}" class="circle-title text-shadow">{{mainText}}</div>
+    <p id="{{'circleText' + idx}}"></p>
   </div>
 </div>

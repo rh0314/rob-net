@@ -1,4 +1,4 @@
-<div style="width: 150px;"></div>
+<!-- <div style="width: 150px;"></div> -->
 <section id="homePage" class="page-wrapper">
     <div class="container-fullwidth">
         <div class="text-center">
@@ -18,11 +18,12 @@
 
             <div class="page-main home-page-main">
                 <div id="windowBoundary"></div>
+
                 <div id="animationBoundary" class="circles-container">
                     <app-ani-circle *ngFor="let item of techItems; let idx = index" [idx]="idx" [front-image]="item.image"
-                        [back-image]="backImage" [duration]="item.delay" [delay]="item.delay" [start-x]="item.startX"
-                        [start-y]="item.startY" [grid-row]="item.gridRow" [grid-col]="item.gridCol" [front-text]="item.text"
-                        [grid-center]="true">
+                        [back-image]="item.backImage" [duration]="item.duration" [delay]="item.delay" [start-x]="item.startX"
+                        [start-y]="item.startY" [grid-row]="item.gridRow" [grid-col]="item.gridCol" [main-text]="item.text"
+                        [grid-center]="true" [back-text]="item.subText">
                     </app-ani-circle>
                 </div>
 

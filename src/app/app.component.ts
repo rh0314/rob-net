@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { GlobalDataService } from './shared/global-data.service';
+// import { GlobalDataService } from './shared/global-data.service';
 import { RouteData } from './shared/object-models/route-data';
 
 @Component({
@@ -15,9 +15,8 @@ export class AppComponent {
 
   @Input() watchData: Array<any> = [];
 
-  constructor(global: GlobalDataService) {
+  constructor() {
 
-    console.log('app', global)
   }
 
 

@@ -14,9 +14,8 @@ import { ResumeComponent } from './resume/resume.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { CodeInsertDirective } from './shared/directives/code-insert.directive';
 import { RootCodeInsertDirective } from './shared/directives/root-code-insert.directive';
-import { AniCardComponent } from './ani-card/ani-card.component';
 import { AniCircleComponent } from './ani-circle/ani-circle.component';
-import { ScrollBoxDirective } from './shared/directives/scroll-box.directive';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [
@@ -30,17 +29,16 @@ import { ScrollBoxDirective } from './shared/directives/scroll-box.directive';
     ResumeComponent,
     CodeInsertDirective,
     RootCodeInsertDirective,
-    AniCardComponent,
     AniCircleComponent,
-    ScrollBoxDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PdfViewerModule,
+    TooltipModule.forRoot()
   ],
   providers: [
-    GlobalDataService
+    // GlobalDataService
 
   ],
   bootstrap: [AppComponent]
