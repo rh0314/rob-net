@@ -36,19 +36,32 @@
   margin-right: 25px;
 }
 
+/******************************************************************************
+                       CUSTOMIZATION FOR RESPONSVE MENU
+*******************************************************************************/
+
 .header {
   height: 1px;
 }
 
-.navbar-collapse {
-  background-color: rgba(14, 17, 25, 0.75);
-  &.in {
-    background-color: rgba(14, 17, 25, 1);
+@media (max-width: 767px) {
+  .navbar-collapse {
+    opacity: .3;
+    &.in {
+      opacity: .8;
+    }
+  }
+  .navbar-container.going-down {
+    width: 100vw;
+    .navbar {
+      opacity: 0.5;
+      border-bottom: none;
+      .navbar-brand {
+        opacity: 0;
+      }
+    }
   }
 }
-
-
-
 
 /******************************************************************************
  ******************************************************************************
@@ -59,7 +72,6 @@
 *******************************************************************************/
 
 .navbar-container {
-  width: 90vw;
   margin-right: auto;
   margin-left: auto;
   dipslay: flex;
@@ -88,17 +100,19 @@
 }
 
 @media (min-width: 768px) {
+  .navbar-container {
+    width: 90vw;
+  }
   .navbar-nav {
     flex-direction: row !important;
   }
-    
 }
 
 @media (max-width: 767px) {
   .navbar .container-fluid {
-      padding-left: 0px;
-      padding-right: 0px;
-    }
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 .container>.navbar-header,

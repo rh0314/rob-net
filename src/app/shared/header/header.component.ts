@@ -9,23 +9,39 @@ import { connectableObservableDescriptor } from 'rxjs/internal/observable/Connec
 })
 export class HeaderComponent implements OnInit {
 
-  scrollTop: number;
+  // scroll: {
+  //   top: number,
+  //   previous: -1,
+  //   direction: boolean // true = up, false = down
+  // }
 
-  @HostListener('window:scroll', ['$event'])
-  onscroll(event) {
-    this.scrollTop = window.scrollY;
-    // if (this.scrollTop > 25) {
-    //   document.getElementById('navbar').style.opacity = '0.25';
-    // } 
-    // else {
-    //   document.getElementById('navbar').style.opacity = '1';
-    // }
-  }
+
+  // @HostListener('window:scroll', ['$event'])
+  // onscroll(event) {
+  //     this.scroll.top = event.srcElement.scrollTop;
+  //     this.scroll.direction = this.scroll.top > this.scroll.previous;
+  //     this.adjustMenu();
+  // }
   constructor(
     private router: Router, 
-  ) { }
+  ) {
+    
+   }
 
   ngOnInit() {
   }
+
+  // adjustMenu() {
+  //   const nContainer = document.querySelector('.navbar-container');
+  //   if (nContainer) {
+  //     if (this.scroll.direction) {
+  //       nContainer.classList.remove('going-down');
+  //     }
+  //     else {
+  //       nContainer.classList.add('going-down');
+  //     }
+
+  //   }
+  // }
 
 }
