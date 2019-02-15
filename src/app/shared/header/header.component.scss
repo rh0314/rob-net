@@ -40,12 +40,73 @@
   height: 1px;
 }
 
-// .navbar-collapse {
-//   background-color: rgba(14, 17, 25, 0.75);
-//   &.in {
-//     background-color: rgba(14, 17, 25, 1);
-//   }
-// }
+.navbar-collapse {
+  background-color: rgba(14, 17, 25, 0.75);
+  &.in {
+    background-color: rgba(14, 17, 25, 1);
+  }
+}
+
+
+
+
+/******************************************************************************
+ ******************************************************************************
+
+                F I X E S   F O R   R E S P O N S I V E   M E N U
+
+ ******************************************************************************
+*******************************************************************************/
+
+.navbar-container {
+  width: 90vw;
+  margin-right: auto;
+  margin-left: auto;
+  dipslay: flex;
+}
+
+.nav_menu {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flext;
+  display: flex !important;
+  flex-direction: row;
+}
+
+.main_menu_bg .navbar {
+  margin-bottom: 0px;
+  border-bottom: 1px solid #686868;
+  min-height: 90px;
+  width: 100%;
+  display: flex;
+}
+
+.main_menu_bg .container-fluid {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    flex-direction: row !important;
+  }
+    
+}
+
+@media (max-width: 767px) {
+  .navbar .container-fluid {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+}
+
+.container>.navbar-header,
+.container-fluid>.navbar-header,
+.container>.navbar-collapse,
+.container-fluid>.navbar-collapse {
+  width: 100%;
+}
 
 /******************************************************************************
  ******************************************************************************
