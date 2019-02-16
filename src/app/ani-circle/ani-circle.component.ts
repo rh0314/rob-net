@@ -30,10 +30,6 @@ export class AniCircleComponent implements OnInit, OnChanges {
   onorientationchange(event) {
     this.onResize();
   }
-  // @HostListener('click', ['$event'])
-  // onclick(event) {
-  //   this.hostClicked(event);
-  // }
 
   private rend: Renderer2;
   private el: ElementRef;

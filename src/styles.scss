@@ -3,13 +3,17 @@
 @import "./assets/css/font-awesome.min.css";
 @import "./assets/css/bootstrap.min.css";
 @import "./assets/css/style.css";
-@import "./assets/css/responsive.css";
+// @import "./assets/css/responsive.css";
 @import "./assets/fonts/stylesheet.css";
 @import "./assets/css/magic.css";
 @import "./assets/css/stars.scss";
 
 html {
   background-color: #0E1119
+}
+
+body {
+  font-family: 'latomedium';
 }
 
 .head_title h2 {
@@ -25,21 +29,23 @@ html {
 
 /* ***** FONTS ***** */
 
-@font-face {
-  font-family: headline;
-  src: url('./assets/fonts/fax-sans-beta.otf');
-}
+// @font-face {
+//   font-family: headline;
+//   src: url('./assets/fonts/fax-sans-beta.otf');
+// }
 
-@font-face { 
-  font-family: content-text;
-  src: url('./assets/fonts/GlacialIndifference-Regular.otf');
-}
+// @font-face { 
+//   font-family: content-text;
+//   src: url('./assets/fonts/GlacialIndifference-Regular.otf');
+// }
 
-@font-face {
-  font-family: content-text-bold;
-  src: url('./assets/fonts/GlacialIndifference-Bold.otf');
-  font-weight: bold;
-}
+// @font-face {
+//   font-family: content-text-bold;
+//   src: url('./assets/fonts/GlacialIndifference-Bold.otf');
+//   font-weight: bold;
+// }
+
+
 
 @font-face{
   font-family:'glacialIndifferenceRegular';
@@ -54,14 +60,11 @@ html {
   margin-left: 10px;
 }
 
-router-outlet section:first-of-type {
-  margin-top: 100px;
-}
-
 .page-headline {
   width: 100%;
   padding: 15px;
   margin-top: 20px;
+  font-family: 'latoheavy_italic';
 }
 
 .page-headline-content {
@@ -69,7 +72,7 @@ router-outlet section:first-of-type {
   font-weight: bold;
   font-size: 5rem;
   // font-family: 'latoheavy_italic';
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Arial, Helvetica, sans-serif;
+  font-family: 'latoregular', 'latomedium', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Arial, Helvetica, sans-serif;
   &.themed {
     // color: #48A868;
     // color: rgb(19, 116, 228);
@@ -484,6 +487,10 @@ router-outlet section:first-of-type {
 }
 // ==== TEMPLATE OVERRIDE ====
 
+#navmenu {
+  padding-bottom: 0px;
+}
+
 .navbar-default .navbar-nav>li>a {
   color: #FFF;
 
@@ -505,6 +512,12 @@ router-outlet section:first-of-type {
   background-size: cover;
 }
 
+.background-sky {
+  background: url(./assets/images/blue_sky.jpg) 100%;
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
 .wip-overlay {
   height: 133vh;
   z-index: 99999;
@@ -514,17 +527,12 @@ router-outlet section:first-of-type {
   background-position: center;
 }
 
-.background-fingers {
-  background: url(./assets/images/coding-fingers.jpg) 100%;
-
-  background-repeat: repeat-y;
-
-  background-size: cover;
-
-}
+.overlay-bright {
+    background-color: rgba(93, 187, 179, 0.397);   
+  }
 
 .overlay-60 {
-  background-color: rgba(0, 0, 0, 0.60);
+  background-color: rgba(0, 0, 0, 0.6);
  
 }
 
@@ -651,4 +659,70 @@ animation:move-twink-back 200s linear infinite;
 -o-animation:move-clouds-back 200s linear infinite;
 -webkit-animation:move-clouds-back 200s linear infinite;
 animation:move-clouds-back 200s linear infinite;
+}
+
+
+
+
+@font-face {
+  font-family: 'latobold';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./assets/fonts/lato-bold-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'latoheavy';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./assets/fonts/lato-heavy-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'latoheavy_italic';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./assets/fonts/lato-heavyitalic-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'latolight';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./assets/fonts/lato-light-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'latomedium';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./assets/fonts/lato-medium-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'latoregular';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./assets/fonts/lato-regular-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'latosemibold';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./assets/fonts/lato-semibold-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'latothin';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./assets/fonts/lato-thin-webfont.woff2') format('woff2');  
+}
+
+@font-face {
+  font-family: 'latothin_italic';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./assets/fonts/lato-thinitalic-webfont.woff2') format('woff2');
 }

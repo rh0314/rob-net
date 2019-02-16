@@ -1,4 +1,6 @@
-
+body {
+  font-family: 'latomedium';
+}
 
 
 /* ****** RESPONSIVE **********/
@@ -33,7 +35,7 @@
 
 // md ONLY
 @media (min-width: 992px) and (max-width: 1199px) {
-  max-width: 992px;
+  // max-width: 992px;
 }
 
 // md AND UP

@@ -1,6 +1,4 @@
 #about-scroll-box {
-  // overflow-y: auto;
-  // max-height: 450px;
 
   -webkit-box-shadow: 2px -3px 16px 20px rgba(59, 65, 71, 0.65);
   -moz-box-shadow: 2px -3px 16px 20px rgba(59, 65, 71, 0.65);
@@ -16,10 +14,11 @@
   p {
     color: #ffffff;
     font-size: 1.3rem;
-    line-height: 1.9rem;  }
+    line-height: 1.9rem; 
+    font-family: 'latomedium';
+   }
+
 }
-
-
 
 .about-content-bg {
   background: url('./../../assets/images/streak2.png');

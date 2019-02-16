@@ -48,10 +48,10 @@ export class HomeComponent implements OnInit {
     this.techItems = [
 
       // R0 - going across
-      { text: "HTML/H%ML5", duration: 1000, delay: 0, image: { path: "../../assets/images/internet-icons/html5.png" }, startX: -2000, startY: -16000, gridCol: -2, gridRow: 0, backImage: '../../assets/images/thumbsup-mitchell.v3.png' },
-      { text: "Bootstrap", duration: 1250, delay: 0, subText: '5+ years experience using Bootstrap components.', backImage: '../../assets/images/thumbsup-mitchell.v3.png', image: { path: "../../assets/images/internet-icons/bootstrap.png", sizeX: 1.5, sizeY: 1.5 }, startX: '9999', startY: '-999', gridCol: -1, gridRow: 0 },
+      { text: "HTML/HTML5", gridCol: -2, gridRow: 0, duration: 1000, delay: 0, image: { path: "../../assets/images/internet-icons/html5.png" }, startX: -2000, startY: -16000, backImage: '../../assets/images/thumbsup-mitchell.v3.png' },
+      { text: "Bootstrap", gridCol: 0, gridRow: 2, duration: 2500, delay: 0, subText: '5+ years experience using Bootstrap components.', backImage: '../../assets/images/thumbsup-mitchell.v3.png', image: { path: "../../assets/images/internet-icons/bootstrap.png", sizeX: 1.5, sizeY: 1.5 }, startX: '9999', startY: '-999' },
       {
-        text: "Angular (2+)", gridCol: 0, gridRow: 0, duration: 1500, delay: 0, subText: "Experienced with all angular versions",
+        text: "Angular (2+)", gridCol: -1, gridRow: 0, duration: 1500, delay: 0, subText: "Experienced with all angular versions",
         image: { path: "../../assets/images/internet-icons/angular2.png", sizeX: 1.7, sizeY: 1.9 },
         backImage: '../../assets/images/thumbsup-mitchell.v3.png', startX: 0, startY: 5000,
       },
@@ -68,35 +68,41 @@ export class HomeComponent implements OnInit {
         image: { path: "../../assets/images/internet-icons/sql.svg" }, startX: -6000, startY: 9999, backImage: '../../assets/images/thumbsup-mitchell.v3.png'
       },
       {
-        text: "C#", gridCol: 2, gridRow: 2, duration: 1500, delay: 2000,
+        text: "C#", gridCol: 1, gridRow: 1, duration: 1500, delay: 2000,
         image: { path: "../../assets/images/internet-icons/c-sharp.png" }, startX: '650', startY: '-1000', backImage: '../../assets/images/thumbsup-mitchell.v3.png'
       },
       {
-        text: "Data transformation", gridCol: 2, gridRow: 3, duration: 2500, delay: 500,
+        text: "Data transformation", gridCol: 0, gridRow: 1, duration: 2500, delay: 500,
         image: { path: "../../assets/images/internet-icons/data-transformation.png" }, startX: '-300', startY: '-9000', backImage: '../../assets/images/thumbsup-mitchell.v3.png'
       },
       {
-        text: "Database Driven Applications", gridCol: 2, gridRow: 4, duration: 2750, delay: 500,
+        text: "Database Driven Applications", gridCol: -1, gridRow: 1, duration: 2750, delay: 500,
         image: { path: "../../assets/images/internet-icons/application-database-blk.png", sizeX: 1.5, sizeY: 1.5 }, startX: 8000, startY: 2000, backImage: '../../assets/images/thumbsup-mitchell.v3.png'
       },
 
       // COL -2 (first col) - going down
-      
+
       {
-        text: "JavaScript", gridCol: -2, gridRow: 1, duration: 2000, delay: 500,
+        text: "JavaScript", gridCol: -2, gridRow: 1, duration: 3000, delay: 0,
         image: { path: "../../assets/images/internet-icons/js.png", sizeX: 1, sizeY: 1 }, startX: 400, startY: 4000, backImage: '../../assets/images/thumbsup-mitchell.v3.png'
       },
       { text: "JQuery", gridCol: -2, gridRow: 2, duration: 2250, delay: 500, image: { path: "../../assets/images/internet-icons/jquery.png", sizeX: 1.25, sizeY: 1.25 }, startX: -1000, startY: 9999, backImage: '../../assets/images/thumbsup-mitchell.v3.png' },
-      
-      { text: "AngularJS", gridCol: -2, gridRow: 3, duration: 2500, delay: 500, 
-        image: { path: "../../assets/images/internet-icons/angularjs.png", sizeX: 1.6, sizeY: 0.6 }, startX: 2000, startY: 1000, backImage: '../../assets/images/thumbsup-mitchell.v3.png' },
 
-      { text: "ReactJS", gridCol: -2, gridRow: 4, duration: 3000, delay: 0, 
-        image: { path: "../../assets/images/internet-icons/react-neg.v2.png", sizeX: '1.15', sizeY: 'auto' }, startX: 400, startY: -500, backImage: '../../assets/images/thumbsup-mitchell.v3.png' },
+      {
+        text: "AngularJS", gridCol: -1, gridRow: 2, duration: 2500, delay: 500,
+        image: { path: "../../assets/images/internet-icons/angularjs.png", sizeX: 1.6, sizeY: 0.6 }, startX: 2000, startY: 1000, backImage: '../../assets/images/thumbsup-mitchell.v3.png'
+      },
 
-        // R4, C-1
-        { text: "NodeJS", gridCol: -1, gridRow: 4, duration: 3000, delay: 500, 
-          image: { path: "../../assets/images/internet-icons/node-js.png", sizeX: 1.4 }, startX: -6000, startY: 7500, backImage: '../../assets/images/thumbsup-mitchell.v3.png' },
+      {
+        text: "ReactJS", gridCol: 1, gridRow: 2, duration: 3000, delay: 0,
+        image: { path: "../../assets/images/internet-icons/react-neg.v2.png", sizeX: '1.15', sizeY: 'auto' }, startX: 400, startY: -500, backImage: '../../assets/images/thumbsup-mitchell.v3.png'
+      },
+
+      // R4, C-1
+      {
+        text: "NodeJS", gridCol: 2, gridRow: 2, duration: 3000, delay: 500,
+        image: { path: "../../assets/images/internet-icons/node-js.png", sizeX: 1.4 }, startX: -6000, startY: 7500, backImage: '../../assets/images/thumbsup-mitchell.v3.png'
+      },
 
 
       // R0, C2
@@ -106,7 +112,7 @@ export class HomeComponent implements OnInit {
       // { text: "HTML/HTML5", image: "", startX: '', startY: '', gridCol: '', gridRow: '', duration: 0, delay: 0, backImage: '../../assets/images/thumbsup-mitchell.v3.png' },
       // { text: "Multiple-OS Proficiency", image: { path: "../../assets/images/internet-icons/multi-os.png", sizeX: 1, sizeY: 1 }, startX: '-50000', startY: '-50000', gridCol: 1, gridRow: 2, duration: 6000, delay: 2500, backImage: '../../assets/images/thumbsup-mitchell.v3.png' },
 
-      { text: "Delightful User Experience", subText: "Developed with thw user in mind and a goal of exceeding thier expectations - every time!", image: { path: "../../assets/images/internet-icons/ux-beating-heart.gif", sizeX: 1.5, sizeY: 1.5 }, startX: -1500, startY: -500, gridCol: 0, gridRow: 2, duration: 500, delay: 7500, backImage: '../../assets/images/thumbsup-mitchell.v3.png' },
+      { text: "Delightful User Experience", subText: "Applications developed with the user in mind and a goal of exceeding thier expectations - every time!", image: { path: "../../assets/images/internet-icons/ux-beating-heart.v2.gif", sizeX: 1.5, sizeY: 1.5 }, startX: -1500, startY: -500, gridCol: 0, gridRow: 0, duration: 500, delay: 7500, backImage: '../../assets/images/thumbsup-mitchell.v3.png' },
     ];
   }
 
