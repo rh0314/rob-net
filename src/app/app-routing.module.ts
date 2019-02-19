@@ -4,12 +4,14 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { Error404Component } from './error404/error404.component';
 import { ResumeComponent } from './resume/resume.component';
+import { IntroComponent } from './intro/intro.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: {} },
   { path: 'home', component: HomeComponent, data: {} },
   { path: 'about', component: AboutComponent, data: {} },
   { path: 'resume', component: ResumeComponent, data: {} },
+  { path: 'intro', component: IntroComponent },
   { path: '**', component: Error404Component }
 ];
 

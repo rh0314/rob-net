@@ -14,13 +14,15 @@ export class AniCircleComponent implements OnInit, OnChanges {
   @Input('grid-col') col: number;
   @Input('grid-row') row: number;
   @Input('grid-center') gc: boolean = true;
-  @Input('delay') delay: number = 5000;
-  @Input('duration') duration: number = 3000;
+  @Input('delay') delay: number = 500;
+  @Input('duration') duration: number = 1500;
   @Input('front-image') frontImage: any;
   @Input('main-text') mainText: string;
   @Input('back-image') backImage: any;
   @Input('back-text') subText: string;
   @Input('idx') idx: number = -1;
+  @Input('park-class') parkClass: string;
+  @Input('park-time') parkTime: number;
 
   @HostListener('window:resize', ['$event'])
   onresize(event) {
@@ -249,12 +251,29 @@ export class AniCircleComponent implements OnInit, OnChanges {
     }
     const n = this.el.nativeElement;
     const f = n.children[0].children[0];
+    if (this.homeX || this.homeY) {
+      this.rend.setStyle(n, 'left', this.homeX + 'px');
+      this.rend.setStyle(n, 'top', this.homeY + 'px');
+    }
     this.rend.setStyle(n, 'transitionTimingFunction', this.homeBezier);
     this.rend.setStyle(f, 'transform', 'scale(1, 1)');
-    this.rend.setStyle(n, 'left', this.homeX + 'px');
-    this.rend.setStyle(n, 'top', this.homeY + 'px');
     this.rend.setStyle(n, 'opacity', '1');
-    // this.centerText();
+    this.park(n);
+  }
+
+  park(n: Element) {
+    if (this.parkClass && this.parkTime > 0) {
+      setTimeout((args) => {
+        const n = args[0];
+        const classes = this.parkClass.split(' ');
+        for (let i = 0; i < classes.length; i++) {
+          this.rend.addClass(n, classes[i]);
+        }
+      }, this.parkTime, [n]);
+    }
+    else if (this.parkClass) {
+      this.rend.addClass(n, this.parkClass);
+    }
   }
 
   addBuildNgStyle(newStyle: any) {

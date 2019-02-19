@@ -29,6 +29,7 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit() {
+    var x =1;
   }
 
   // adjustMenu() {

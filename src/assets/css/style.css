@@ -4,7 +4,6 @@
 html,
 body {
     background-color: #fff;
-    font-size: 15px;
     color: #565656;
     width: 100%;
     padding: 0;
@@ -119,7 +118,6 @@ input[type="color"],
 }
 .form-control {
     border: 1px solid rgba(0, 0, 0, 0.08);
-    font-size: 16px;
     height: 45px;
 }
 .form-control:focus {
@@ -141,37 +139,37 @@ h5 {
     line-height: 2rem;
 }
 h1 {
-    font-size: 3rem;
+    /* font-size: 3rem; */
     line-height: 4rem;
     font-weight: 300;
 }
 h2 {
-    font-size: 2.5rem;
+    /* font-size: 2.5rem; */
     line-height: 3rem;
     margin-bottom: .9rem;
 }
 h3 {
     font-weight: 300;
     margin-bottom: .9rem;
-    font-size: 2.1rem;
+    /* font-size: 2.1rem; */
     line-height: 2.5rem;
 }
 h4 {
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
     line-height: 2.2rem;
     margin-bottom: 1.1rem;
 }
 h5 {
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
     margin-bottom: 1rem;
 }
 h6 {
-    font-size: 1rem;
+    /* font-size: 1rem; */
     margin-bottom: .9rem;
 }
 p {
     line-height: 1.5rem;
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
 }
 p:last-child {
     margin-bottom: 0px;
@@ -226,7 +224,7 @@ Section
 }
 section .subtitle h5 {
     margin-top: 10px;
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
     font-family: 'roboto', sans-serif;
 }
 .parallax-section {
@@ -234,14 +232,14 @@ section .subtitle h5 {
     color: #ffffff;
 }
 section .title-half h2 {
-    font-size: 3rem;
+    /* font-size: 3rem; */
     line-height: 4rem;
     font-weight: 300;
     margin-bottom: 1.4rem;
 }
 section .subtitle-half h5 {
     font-weight: 100;
-    font-size: 17px;
+    /* font-size: 17px; */
 }
 
 
@@ -329,7 +327,7 @@ Button
     font-style: normal;
     letter-spacing: 1px;
     margin: 0;
-    font-size: 16px;
+    /* font-size: 16px; */
     font-weight: 300;
     border-radius: 0;
     margin-top: 30px;
@@ -535,7 +533,7 @@ h1 span {
 
 .single_slider p{
     max-width: 70%;
-    font-size: 2.375rem;
+    /* font-size: 2.375rem; */
     margin: 10px auto;
     font-family: 'latoheavy_italic';
     line-height: 45px;
@@ -585,7 +583,7 @@ h1 span {
 }
 .single_register a{
     color: #fff;
-    font-size: 1.375rem;
+    /* font-size: 1.375rem; */
     font-family: 'lotobold';
     text-transform: uppercase;
     padding: 25px 0px;
@@ -604,7 +602,7 @@ h1 span {
     margin-bottom: 40px;
 }
 .head_title h2{
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     color:#383737;
     font-family: 'latoheavy';
 }
@@ -615,7 +613,7 @@ h1 span {
 }
 .input-group-addon {
     padding: 6px 12px;
-    font-size: 14px;
+    /* font-size: 14px; */
     font-weight: 400;
     line-height: 1;
     color: #555;
@@ -627,7 +625,7 @@ h1 span {
 .input-group-lg>.form-control, .input-group-lg>.input-group-addon, .input-group-lg>.input-group-btn>.btn {
     height: 46px;
     padding: 10px 16px;
-    font-size: 18px;
+    /* font-size: 18px; */
     line-height: 1.33;
     border-radius: 2px;
 }
@@ -719,7 +717,7 @@ h1 span {
     width: 60px;
     height: 60px;
     line-height: 60px;
-    font-size: 1.75rem;
+    /* font-size: 1.75rem; */
     color: #fff;
     border-radius: 50%;
     text-align: center;
@@ -798,7 +796,6 @@ i:hover{
     display: inline-block;
 }
 .footer .fo_bottom_socail p, a{
-    font-size: 13px;
     display: block;
 } */
 
@@ -854,7 +851,6 @@ i:hover{
 }
 
 .scrollup i {
-	font-size: 13px;
 	position: absolute;
 	opacity: 1;
 	color: #fff;

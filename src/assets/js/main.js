@@ -1,8 +1,41 @@
 "use strict";
-
-
 jQuery(document).ready(function ($) {
 
+    // var el = jQuery('.navbar-fixed-top');
+    // if (el && el[0]) {
+    //     el = el[0];
+    // }
+    // var headerElBg = (el && el.style && el.backgroundColor) ? el.style.backgroundColor : (1,1,1);
+
+    /******************************* FUNCTIONS BY ROB :) **************************/
+
+    function rgbToHex(c) {
+        var hex = c.toString(16);
+        return hex.length == 1 ? "0" + hex : hex;
+    }
+
+    function rgbToHex(r, g, b) {
+        return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+    }
+
+    function hexToRgb(hex) {
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : null;
+    }
+
+    function isHex(c) {
+        var regex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
+        return c.match(regex);
+    }
+
+    function isRgb(c) {
+        var regex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
+        return c.match(regex);
+    }
     $(window).load(function () {
         $(".loaded").fadeOut();
         $(".preloader").delay(1000).fadeOut("slow");
@@ -84,23 +117,36 @@ jQuery(document).ready(function ($) {
 
 
     jQuery(window).scroll(function () {
+        return;
         var top = jQuery(document).scrollTop();
-        var height = 175;
-        var maxO = 0.9
+        var height = 300;
+        var maxO = 0.9;
+        var minO = (window.innerWidth > 767 ? 0 : 0.5);
         var el = jQuery('.navbar-fixed-top');
         if (el && el[0]) {
             el = el[0];
         }
-
-        if (top > 0 && top < height) {
-            var o = ((((100 / height) * top) * .01) * maxO);
-            var c = "rgba(14,17,25," + o.toString() + ")";
-            el.style.backgroundColor = c;
+        var c = el.style.backgroundColor ? el.style.backgroundColor : headerElBg;
+        if (isHex(c)) {
+            c = hexToRgb(c);
+        }
+        var newC = c.replace(/\(/g, '');
+        if (top > 5 && top < height) {
+            var o = (maxO - (((top / height)) * maxO));
+            o = (o < minO ? minO : o);
+            newC = `rgba(${c}, ${o})`
+            console.log(newC);
+            el.style.backgroundColor = newC;
+            el.classList.remove('header-behind');
         }
         else if (top > height) {
-            el.style.backgroundColor = "rgba(14,17,25," + maxO + ")";
+            newC = `rgba(${c}, 0)`
+            el.style.backgroundColor = newC;
+            el.classList.add('header-behind');
         } else {
-            el.style.backgroundColor = "rgba(14,17,25,0)";
+            newC = `rgba(${c}, ${maxO})`
+
+            el.style.backgroundColor = newC;
         }
     });
 

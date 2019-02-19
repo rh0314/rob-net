@@ -1,29 +1,25 @@
 <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-<div>
-
-
-<!-- // <div id="stars"></div>
-// <div id="stars2"></div>'
-// <div id="stars3"></div>' -->
 
 
   <app-header></app-header>
 
   <!-- <div style="position: relative; height: 150px; border: 1px solid red;"></div> -->
-  <section>
-    <div style="height:150px;"></div>
-    <div id="stars" style="display:none;"></div>
+  <section style="background-color: transparent;">
+    <!-- <div id="stars" style="display:none;"></div>
     <div id="stars2"></div>
-    <div id="stars3" style="display: none;"></div>
-    <div id="backgroundImage" class="home background-servers">
-      <div id="rn-main-overlay" class="home-overlay-fluid overlay-60">
-        <div id="router-outlet-container" class="router-outlet-container">
-          <router-outlet></router-outlet>
+    <div id="stars3" style="display: none;"></div> -->
+    <!-- <div id="windowBoundary"></div> -->
+    <!-- <div id="backgroundImage" class="home background-servers">
+      <div id="rn-main-overlay" class="home-overlay-fluid overlay-60"> -->
+        <div id="router-outlet-container" class="router-outlet-container display: flex; flex-direction: column;">
+          <!-- <router-outlet></router-outlet> -->
+          <app-intro ></app-intro>
+          <!-- <app-home ></app-home>
+          <app-about></app-about> -->
         </div>
-      </div>
-    </div>
+      <!-- </div>
+    </div> -->
   </section>
-</div>
 <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
 <script src="assets/js/vendor/bootstrap.min.js"></script>
 <script src="assets/js/jquery.easypiechart.min.js"></script>

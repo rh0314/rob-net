@@ -1,23 +1,261 @@
+@import "app/variables";
+@import "app/themes.scss";
 @import "./assets/css/fonticons.css";
-@import "./assets/fonts/stylesheet.css";
 @import "./assets/css/font-awesome.min.css";
 @import "./assets/css/bootstrap.min.css";
-@import "./assets/css/style.css";
+// @import "./assets/css/style.css";
 // @import "./assets/css/responsive.css";
 @import "./assets/fonts/stylesheet.css";
 @import "./assets/css/magic.css";
 @import "./assets/css/stars.scss";
+@import "../node_modules/aos/dist/aos.css";
+$bb-primary: #000b29;
+$bb-primary-rgb: rgb(0, 11, 41);
+$bb-primary-light: #3d72ed;
+$bb-primary-dark: #283657;
+$bb-secondary: #f8f5f2;
+$bb-secondary-dark: #827262;
+$bb-accent: #d70026;
+$bb-accent-light: #ff3153;
+$bb-accent-dark: #80192a;
+$bb-accent-alt: #edb83d;
+$bb-accent-alt-light: #edb83d;
+$bb-accent-alt-dark: #6e5b30;
+@mixin shadow-darker($parent, $color) {
+  #{$parent} {
+    background-color: $color !important;
+  }
+  .shadow-dark {
+    background-color: darken($color, 25%) !important;
+  }
+  .shadow-light {
+    background-color: lighten($color, 25%) !important;
+  }
+}
+
+@mixin bg-gradient-variant($parent, $color) {
+  #{$parent} {
+    background: $color linear-gradient(180deg, mix($body-bg, $color, 15%), $color) repeat-x !important;
+  }
+}
 
 html {
-  background-color: #0E1119
+  background-color: $bb-primary; // #0E1119
 }
 
 body {
   font-family: 'latomedium';
+  font-size: 15px;
 }
 
+/*KILL THE UNWANTED COLOR*/
+
+.navbar-default,
+.navbar-brand {
+  background-color: inherit !important;
+}
+
+.rbg1 {
+  background: url(./assets/images/homebg.jpg) 100%;
+  background-repeat: repeat-y;
+  background-size: cover; // z-index: -999;
+}
+
+.background-sky {
+  background: url(./assets/images/blue_sky.jpg) 100%;
+  background-repeat: repeat-y;
+  background-size: cover; // z-index: -999;
+}
+
+.wip-overlay {
+  height: 133vh;
+  z-index: 99999;
+  background: url("./assets/images/wip-stamp.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.overlay-bright {
+  background-color: rgba(93, 187, 179, 0.397); // z-index: -999;
+}
+
+.overlay-60 {
+  background-color: rgba(0, 0, 0, 0.6); // z-index: -999;
+}
+
+.overlay-80 {
+  background-color: rgba(0, 0, 0, 0.80); // z-index: -999;
+}
+
+#windowBoundary {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh; // z-index: -999;
+}
+
+#videoBoundary {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh; // z-index: -999;
+}
+
+.router-outlet-container {
+  display: flexbox;
+}
+
+.page-wrapper {
+  margin-bottom: 100px;
+}
+
+.page-container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.page-headline {
+  width: 100%;
+  padding: 15px;
+  font-family: 'latoheavy_italic';
+}
+
+.page-headline-content {
+  padding-top: 35px;
+  padding-bottom: 20px;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 8rem; // font-family: 'latoheavy_italic';
+  font-family: 'latoheavy', 'latomedium', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Arial, Helvetica, sans-serif;
+  &.themed {
+    // color: #48A868;
+    // color: rgb(19, 116, 228);
+    color: $bb-secondary; // #3B7DF0;
+    text-shadow: 3px 3px $bb-secondary-dark; // #152D57;
+  }
+  .accented {
+    color: $bb-accent; // rgb(255, 60, 0);
+    font-style: italic;
+    text-shadow: 3px 3px $bb-accent-dark;
+  }
+}
+
+.page-subheadline-content {
+  padding-top: 30px;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: latomedium;
+  margin-right: 0px;
+  width: 100%;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  &.themed {
+    // color: #48A868;
+    // color: rgb(19, 116, 228);
+    color: $bb-secondary; //#3B7DF0;
+    text: 3px 4px $bb-secondary; // #152D57;
+  }
+  .accented {
+    color: $bb-accent; // font-style: italic;
+    text: 3px 4px $bb-accent-dark; // rgb(119, 107, 107);
+  }
+}
+
+.page-content-box {
+  -webkit-box: rgba(rgb(1, 2, 3), 4) 20px $bb-secondary-dark; // rgba(59, 65, 71, 0.65);
+  -moz-box: 2px -3px 16px 20px $bb-secondary-dark; // rgba(59, 65, 71, 0.65);
+  box: 2px -3px 27px 20px $bb-secondary-dark; // rgba(16, 15, 50, 0.75); // background-color: rgba(16, 15, 50, 0.75);
+  border-radius: 15px;
+  -moz-linear-gradient: (left, rgba(76, 74, 223, 0.65) 0%, rgba(16, 15, 50, .75) 40%, rgba(16, 15, 50, .75) 60%, rgba(15, 50, 120, .65) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(15, 14, 120, 0.65) 0%, rgba(55, 94, 151, .75) 40%, rgba(30, 66, 121, .75) 60%, rgba(80, 117, 172, .65) 100%); // (left,  rgba(15, 14, 120, 0.65) 0%, rgba(55, 94, 151, .75) 40%, rgba(30, 66, 121, .75) 60%, rgba(80, 117, 172, .65) 100%);     //(left,  rgba(15, 14, 120, .65) 0%, rgba(16, 15, 50, .75) 40%, rgba(16, 15, 50, .75) 60%, rgba(15, 50, 120, .65) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(15, 14, 120, 0.65) 0%, rgba(55, 94, 151, .75) 40%, rgba(30, 66, 121, .75) 60%, rgba(80, 117, 172, .65) 100%); //(to right, rgba(15, 14, 120, .65) 0%, rgba(16, 15, 50, .75) 40%, rgba(16, 15, 50, .75) 60%, rgba(15, 50, 120, .65) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f0e78', endColorstr='#0f3278', GradientType=0);
+  /* IE6-9 */
+  padding: 50px;
+  margin-bottom: 25px;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-content {
+  color: $bb-secondary;
+  font-size: 18px;
+  font-family: 'latolight';
+  line-height: 1.3;
+}
+
+.themed {
+  font-family: 'latolight', 'Lucinda', 'Tahoma', 'Arial';
+  color: $bb-secondary;
+  &.shnadow {
+    text-shadow: 1px 1px 1px $bb-secondary-dark;
+  }
+  &.bold {
+    font-family: 'latobold', Geneva, Verdana, sans-serif, Arial, Helvetica, sans-serif;
+  }
+  &.italic {
+    font-style: italic;
+  }
+  &.accented {
+    color: $bb-accent;
+    &.shadow {
+      text: 1px 1px $bb-accent-dark;
+    }
+  }
+}
+
+.bb-primary-fg {
+  color: $bb-primary;
+}
+
+.bb-primaryu-bg {
+  background-color: $bb-primary;
+}
+
+.bb-primary-light-fg {
+  color: $bb-primary;
+}
+
+.bb-primary-light-bg {
+  background-color: $bb-primary;
+}
+
+.bb-primary-dark-fg {
+  color: $bb-primary;
+}
+
+.bb-primary-dark-bg {
+  background-color: $bb-primary;
+}
+
+.bb-secondary-bg {
+  background-color: $bb-secondary;
+}
+
+.bb-secondary-fg {
+  background-color: $bb-secondary;
+}
+
+.bb-accent {
+  &.fg {
+    color: $bb-accent;
+  }
+  &.bg {
+    background-color: $bb-accent;
+  }
+}
+
+.bb-accent-alt {}
+
 .head_title h2 {
-  color: #CCCCCC;
+  color: $bb-secondary;
   margin-top: 18px;
   letter-spacing: 0.1rem;
   font-size: 1.75rem;
@@ -27,102 +265,17 @@ body {
   text-align: left;
 }
 
-/* ***** FONTS ***** */
-
-// @font-face {
-//   font-family: headline;
-//   src: url('./assets/fonts/fax-sans-beta.otf');
-// }
-
-// @font-face { 
-//   font-family: content-text;
-//   src: url('./assets/fonts/GlacialIndifference-Regular.otf');
-// }
-
-// @font-face {
-//   font-family: content-text-bold;
-//   src: url('./assets/fonts/GlacialIndifference-Bold.otf');
-//   font-weight: bold;
-// }
-
-
-
-@font-face{
-  font-family:'glacialIndifferenceRegular';
-  src:url('./assets/fonts/GlacialIndifference-Regular.otf');
-  font-weight:normal;
-  font-style:normal
+.text-wide-spaced-x {
+  letter-spacing: .2em
 }
 
-.page-wrapper {
-  // margin-top: 150px;
-  margin-bottom: 40px;
-  margin-left: 10px;
+.text-wide-spaced-xx {
+  letter-spacing: .4em;
 }
 
-.page-headline {
-  width: 100%;
-  padding: 15px;
-  margin-top: 20px;
-  font-family: 'latoheavy_italic';
+.text-wide-spaced-xxx {
+  letter-spacing: .6em;
 }
-
-.page-headline-content {
-  font-style: italic;
-  font-weight: bold;
-  font-size: 5rem;
-  // font-family: 'latoheavy_italic';
-  font-family: 'latoregular', 'latomedium', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Arial, Helvetica, sans-serif;
-  &.themed {
-    // color: #48A868;
-    // color: rgb(19, 116, 228);
-    color: #3B7DF0;
-    ;
-    text-shadow: 3px 3px #152D57;
-  }
-}
-
-.page-subheadline-content {
-  margin-top: 30px;
-  font-size: 2.5rem; 
-  font-weight: bold;
-  font-family: latomedium;
-  margin-right: 0px;
-  padding: 20px;
-  &.themed {
-    // color: #48A868;
-    // color: rgb(19, 116, 228);
-    color: #3B7DF0;
-    text-shadow: 3px 4px #152D57;
-    }
-}
-
-.page-content {
-  font-size: 1.3rem;
-  line-height: 2rem;
-  &.themed {
-    font-family: 'latolight', 'Lucinda', 'Tahoma', 'Arial';
-    color: #FFF;
-    &.bold {
-      &.italic {
-        font-style: italic;
-      }
-
-    }
-    .bold {
-      font-weight: bold;;
-      &.italic {
-        font-style: italic;
-      }
-    }
-    .italic {
-      font-style: italic;
-    }
-  }
-}
-
-
-
 
 /******************************************************************************
  ******************************************************************************
@@ -132,38 +285,49 @@ body {
  ******************************************************************************
 *******************************************************************************/
 
-// ************************* xs only (includes ipad portrait)
+.xxs-only {
+  @media(max-width: 574.99px) {
+    visibility: visible;
+  }
+  @media(min-width:575px) {
+    visibility: hidden;
+  }
+}
+
+.xhidden-xxs {
+  @media(max-width: 574.99px) {
+    visibility: hidden;
+  }
+  @media(min-width:575px) {
+    visibility: visible;
+  }
+}
+
 @media(max-width: 767px) {
   app-root {
     max-width: 767px;
   }
-
   .page-headline-content {
     font-size: 3em;
   }
-
   .page-subheadline-content {
     font-size: 1.25em;
   }
-
   .router-outlet-container {
     max-width: 767px;
-  };
+  }
 }
 
 @media(min-width: 767px) and (max-width: 991px) {
   .page-headline-container {
     max-width: 768px;
   }
-
   .page-headline-content {
     font-size: 3em;
   }
-
   .page-subheadline-content {
     font-size: 1.5em;
   }
-
 }
 
 // ************************* 
@@ -171,11 +335,9 @@ body {
   .page-headline-content {
     font-size: 4rem;
   }
-
   .page-headline-container {
     max-width: 992px;
   }
-
   .page-subheadline-content {
     font-size: 2.5em;
   }
@@ -194,7 +356,6 @@ body {
   .page-subheadline-content {
     font-size: 3em;
   }
-
 }
 
 @media (min-width: 1450px) {
@@ -209,460 +370,482 @@ body {
   }
 }
 
-
-
-
-
-
-
 /******************************************************************************
 *******************************************************************************/
-
-
 
 //   ==== ANIMATIONS ====
 @keyframes vanishIn {
   0% {
-  opacity: 0;
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-  -webkit-transform: scale(2, 2);
-          transform: scale(2, 2);
-  -webkit-filter: blur(90px);
-          filter: blur(90px);
-}
-
-100% {
-  opacity: 1;
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
-  -webkit-filter: blur(0px);
-          filter: blur(0px);
+    opacity: 0;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: scale(2, 2);
+    transform: scale(2, 2);
+    -webkit-filter: blur(90px);
+    filter: blur(90px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
   }
 }
-
-
-
-
 
 @keyframes tinLeftIn {
   0% {
     opacity: 0;
     -webkit-transform: scale(2, 2) translateX(-900%);
-            transform: scale(2, 2) translateX(-900%);
-            -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
+    transform: scale(2, 2) translateX(-900%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
     -webkit-filter: blur(90px);
-            filter: blur(90px);
-    }
+    filter: blur(90px);
+  }
   50% {
     opacity: 0.25;
     -webkit-transform: scale(1.75, 1.75) translateX(-300%);
-            transform: scale(1.75, 1.75) translateX(-300%);
-            -webkit-filter: blur(75px);
-            filter: blur(75px);
-  }
-// 60%, 80%, 
+    transform: scale(1.75, 1.75) translateX(-300%);
+    -webkit-filter: blur(75px);
+    filter: blur(75px);
+  } // 60%, 80%, 
   100% {
     opacity: 1;
     -webkit-transform: scale(1, 1) translateX(0);
-            transform: scale(1, 1) translateX(0);
+    transform: scale(1, 1) translateX(0);
     -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
     -webkit-filter: blur(0px);
-            filter: blur(0px);
-    }
+    filter: blur(0px);
+  }
 }
+
 .tinLeftOut {
   -webkit-animation-name: tinLeftOut;
-          animation-name: tinLeftOut;
+  animation-name: tinLeftOut;
 }
+
 @-webkit-keyframes tinLeftOut {
-  0%, 20%, 40%, 50% {
+  0%,
+  20%,
+  40%,
+  50% {
     opacity: 1;
     -webkit-transform: scale(1, 1) translateX(0);
-            transform: scale(1, 1) translateX(0);
+    transform: scale(1, 1) translateX(0);
   }
-
-  10%, 30% {
+  10%,
+  30% {
     opacity: 1;
     -webkit-transform: scale(1.1, 1.1) translateX(0);
-            transform: scale(1.1, 1.1) translateX(0);
+    transform: scale(1.1, 1.1) translateX(0);
   }
-
   100% {
     opacity: 0;
     -webkit-transform: scale(1, 1) translateX(-900%);
-            transform: scale(1, 1) translateX(-900%);
+    transform: scale(1, 1) translateX(-900%);
   }
 }
+
 @keyframes tinLeftOut {
-  0%, 20%, 40%, 50% {
+  0%,
+  20%,
+  40%,
+  50% {
     opacity: 1;
     -webkit-transform: scale(1, 1) translateX(0);
-            transform: scale(1, 1) translateX(0);
+    transform: scale(1, 1) translateX(0);
   }
-
-  10%, 30% {
+  10%,
+  30% {
     opacity: 1;
     -webkit-transform: scale(1.1, 1.1) translateX(0);
-            transform: scale(1.1, 1.1) translateX(0);
+    transform: scale(1.1, 1.1) translateX(0);
   }
-
   100% {
     opacity: 0;
     -webkit-transform: scale(1, 1) translateX(-900%);
-            transform: scale(1, 1) translateX(-900%);
+    transform: scale(1, 1) translateX(-900%);
   }
 }
+
 .tinRightIn {
   -webkit-animation-name: tinRightIn;
-          animation-name: tinRightIn;
+  animation-name: tinRightIn;
 }
+
 @-webkit-keyframes tinRightIn {
   0% {
     opacity: 0;
     -webkit-transform: scale(1, 1) translateX(900%);
-            transform: scale(1, 1) translateX(900%);
+    transform: scale(1, 1) translateX(900%);
   }
-
-  50%, 70%, 90% {
+  50%,
+  70%,
+  90% {
     opacity: 1;
     -webkit-transform: scale(1.1, 1.1) translateX(0);
-            transform: scale(1.1, 1.1) translateX(0);
+    transform: scale(1.1, 1.1) translateX(0);
   }
-
-  60%, 80%, 100% {
+  60%,
+  80%,
+  100% {
     opacity: 1;
     -webkit-transform: scale(1, 1) translateX(0);
-            transform: scale(1, 1) translateX(0);
+    transform: scale(1, 1) translateX(0);
   }
 }
+
 @keyframes tinRightIn {
   0% {
     opacity: 0;
     -webkit-transform: scale(1, 1) translateX(900%);
-            transform: scale(1, 1) translateX(900%);
+    transform: scale(1, 1) translateX(900%);
   }
-
-  50%, 70%, 90% {
+  50%,
+  70%,
+  90% {
     opacity: 1;
     -webkit-transform: scale(1.1, 1.1) translateX(0);
-            transform: scale(1.1, 1.1) translateX(0);
+    transform: scale(1.1, 1.1) translateX(0);
   }
-
-  60%, 80%, 100% {
+  60%,
+  80%,
+  100% {
     opacity: 1;
     -webkit-transform: scale(1, 1) translateX(0);
-            transform: scale(1, 1) translateX(0);
+    transform: scale(1, 1) translateX(0);
   }
 }
+
 .tinRightOut {
   -webkit-animation-name: tinRightOut;
-          animation-name: tinRightOut;
+  animation-name: tinRightOut;
 }
+
 @-webkit-keyframes tinRightOut {
-  0%, 20%, 40%, 50% {
+  0%,
+  20%,
+  40%,
+  50% {
     opacity: 1;
     -webkit-transform: scale(1, 1) translateX(0);
-            transform: scale(1, 1) translateX(0);
+    transform: scale(1, 1) translateX(0);
   }
-
-  10%, 30% {
+  10%,
+  30% {
     opacity: 1;
     -webkit-transform: scale(1.1, 1.1) translateX(0);
-            transform: scale(1.1, 1.1) translateX(0);
+    transform: scale(1.1, 1.1) translateX(0);
   }
-
   100% {
     opacity: 0;
     -webkit-transform: scale(1, 1) translateX(900%);
-            transform: scale(1, 1) translateX(900%);
+    transform: scale(1, 1) translateX(900%);
   }
 }
+
 @keyframes tinRightOut {
-  0%, 20%, 40%, 50% {
+  0%,
+  20%,
+  40%,
+  50% {
     opacity: 1;
     -webkit-transform: scale(1, 1) translateX(0);
-            transform: scale(1, 1) translateX(0);
+    transform: scale(1, 1) translateX(0);
   }
-
-  10%, 30% {
+  10%,
+  30% {
     opacity: 1;
     -webkit-transform: scale(1.1, 1.1) translateX(0);
-            transform: scale(1.1, 1.1) translateX(0);
+    transform: scale(1.1, 1.1) translateX(0);
   }
-
   100% {
     opacity: 0;
     -webkit-transform: scale(1, 1) translateX(900%);
-            transform: scale(1, 1) translateX(900%);
+    transform: scale(1, 1) translateX(900%);
   }
 }
+
 .tinUpIn {
   -webkit-animation-name: tinUpIn;
-          animation-name: tinUpIn;
+  animation-name: tinUpIn;
 }
+
 @-webkit-keyframes tinUpIn {
   0% {
     opacity: 0;
     -webkit-transform: scale(1, 1) translateY(-900%);
-            transform: scale(1, 1) translateY(-900%);
+    transform: scale(1, 1) translateY(-900%);
   }
-
-  50%, 70%, 90% {
+  50%,
+  70%,
+  90% {
     opacity: 1;
     -webkit-transform: scale(1.1, 1.1) translateY(0);
-            transform: scale(1.1, 1.1) translateY(0);
+    transform: scale(1.1, 1.1) translateY(0);
   }
-
-  60%, 80%, 100% {
+  60%,
+  80%,
+  100% {
     opacity: 1;
     -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
 }
+
 @keyframes tinUpIn {
   0% {
     opacity: 0;
     -webkit-transform: scale(1, 1) translateY(-900%);
-            transform: scale(1, 1) translateY(-900%);
+    transform: scale(1, 1) translateY(-900%);
   }
-
-  50%, 70%, 90% {
+  50%,
+  70%,
+  90% {
     opacity: 1;
     -webkit-transform: scale(1.1, 1.1) translateY(0);
-            transform: scale(1.1, 1.1) translateY(0);
+    transform: scale(1.1, 1.1) translateY(0);
   }
-
-  60%, 80%, 100% {
+  60%,
+  80%,
+  100% {
     opacity: 1;
     -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
 }
+
 .tinUpOut {
   -webkit-animation-name: tinUpOut;
-          animation-name: tinUpOut;
+  animation-name: tinUpOut;
 }
+
 @-webkit-keyframes tinUpOut {
-  0%, 20%, 40%, 50% {
+  0%,
+  20%,
+  40%,
+  50% {
     opacity: 1;
     -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
-
-  10%, 30% {
+  10%,
+  30% {
     opacity: 1;
     -webkit-transform: scale(1.1, 1.1) translateY(0);
-            transform: scale(1.1, 1.1) translateY(0);
+    transform: scale(1.1, 1.1) translateY(0);
   }
-
   100% {
     opacity: 0;
     -webkit-transform: scale(1, 1) translateY(-900%);
-            transform: scale(1, 1) translateY(-900%);
+    transform: scale(1, 1) translateY(-900%);
   }
 }
+
 @keyframes tinUpOut {
-  0%, 20%, 40%, 50% {
+  0%,
+  20%,
+  40%,
+  50% {
     opacity: 1;
     -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
-
-  10%, 30% {
+  10%,
+  30% {
     opacity: 1;
     -webkit-transform: scale(1.1, 1.1) translateY(0);
-            transform: scale(1.1, 1.1) translateY(0);
+    transform: scale(1.1, 1.1) translateY(0);
   }
-
   100% {
     opacity: 0;
     -webkit-transform: scale(1, 1) translateY(-900%);
-            transform: scale(1, 1) translateY(-900%);
+    transform: scale(1, 1) translateY(-900%);
   }
 }
-// ==== TEMPLATE OVERRIDE ====
 
+// ==== TEMPLATE OVERRIDE ====
 #navmenu {
   padding-bottom: 0px;
 }
 
 .navbar-default .navbar-nav>li>a {
-  color: #FFF;
-
+  color: $bb-secondary;
 }
 
 .home-overlay-fluid {
-  padding: 0px 0px;
-  height: 100vmax;
+  padding: 0px 0px; // height: 100vmax;
 }
 
-.home{
+.home {
   text-align: center;
-
-}
-
-.background-servers {
-  background: url(./assets/images/homebg.jpg) 100%;
-  background-repeat: repeat-y;
-  background-size: cover;
-}
-
-.background-sky {
-  background: url(./assets/images/blue_sky.jpg) 100%;
-  background-repeat: repeat-y;
-  background-size: cover;
-}
-
-.wip-overlay {
-  height: 133vh;
-  z-index: 99999;
-  background: url("./assets/images/wip-stamp.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.overlay-bright {
-    background-color: rgba(93, 187, 179, 0.397);   
-  }
-
-.overlay-60 {
-  background-color: rgba(0, 0, 0, 0.6);
- 
-}
-
-.overlay-80 {
-  background-color: rgba(0, 0, 0, 0.80);
- 
 }
 
 .sercelist {
-  margin-top: 20px !important;
-  // border: 1px solid rgba(128, 128, 128, 0.801);
+  margin-top: 20px !important; // border: 1px solid rgba(128, 128, 128, 0.801);
   border: none !important;
 }
 
 body {
-  background-color: Black;
+  background-color: $bb-primary;
 }
 
-
-
-
+/* ============================================================================================== 
+    COLORS
+================================================================================================= */
 
 /* ============================================================================================== 
 SED Innovations
 https://sed.am
 https://mkrtchyan.ga
 ================================================================================================= */
+
 * {
   margin: 0;
   padding: 0;
 }
+
 header {
-  background-color:rgba(33, 33, 33, 0.9);
-  color:#ffffff;
-  display:block;
-  font: 14px/1.3 Arial,sans-serif;
-  height:50px;
-  position:relative;
-  z-index:5;
+  background-color: rgba($bb-primary-rgb, 0.9);
+  color: $bb-secondary;
+  display: block;
+  font: 14px/1.3 Arial, sans-serif;
+  height: 50px;
+  position: relative; // z-index:5;
 }
-h2{
+
+h2 {
   margin-top: 30px;
   text-align: center;
 }
-header h2{
+
+header h2 {
   font-size: 22px;
   margin: 0 auto;
   padding: 10px 0;
   width: 80%;
   text-align: center;
 }
-header a, a:visited {
-  text-decoration:none;
-  color:#fcfcfc;
+
+header a,
+a:visited {
+  text-decoration: none;
+  color: $bb-accent-dark;
 }
 
 @keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
 }
+
 @-webkit-keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
 }
+
 @-moz-keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
 }
+
 @-ms-keyframes move-twink-back {
-  from {background-position:0 0;}
-  to {background-position:-10000px 5000px;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
 }
 
 @keyframes move-clouds-back {
-  from {background-position:0 0;}
-  to {background-position:10000px 0;}
-}
-@-webkit-keyframes move-clouds-back {
-  from {background-position:0 0;}
-  to {background-position:10000px 0;}
-}
-@-moz-keyframes move-clouds-back {
-  from {background-position:0 0;}
-  to {background-position:10000px 0;}
-}
-@-ms-keyframes move-clouds-back {
-  from {background-position: 0;}
-  to {background-position:10000px 0;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
 }
 
-.stars, .twinkling, .clouds {
-position:absolute;
-top:0;
-left:0;
-right:0;
-bottom:0;
-width:100%;
-height:100vmax;
-display:block;
+@-webkit-keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+@-moz-keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+@-ms-keyframes move-clouds-back {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+.stars,
+.twinkling,
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vmax;
+  display: block;
 }
 
 .stars {
-background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
-z-index:0;
+  background: #000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  z-index: 0;
 }
 
-.twinkling{
-background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
-z-index:1;
-
--moz-animation:move-twink-back 200s linear infinite;
--ms-animation:move-twink-back 200s linear infinite;
--o-animation:move-twink-back 200s linear infinite;
--webkit-animation:move-twink-back 200s linear infinite;
-animation:move-twink-back 200s linear infinite;
+.twinkling {
+  background: transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  z-index: 1;
+  -moz-animation: move-twink-back 200s linear infinite;
+  -ms-animation: move-twink-back 200s linear infinite;
+  -o-animation: move-twink-back 200s linear infinite;
+  -webkit-animation: move-twink-back 200s linear infinite;
+  animation: move-twink-back 200s linear infinite;
 }
 
-.clouds{
-  background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
-  z-index:3;
-
--moz-animation:move-clouds-back 200s linear infinite;
--ms-animation:move-clouds-back 200s linear infinite;
--o-animation:move-clouds-back 200s linear infinite;
--webkit-animation:move-clouds-back 200s linear infinite;
-animation:move-clouds-back 200s linear infinite;
+.clouds {
+  background: transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+  z-index: 3;
+  -moz-animation: move-clouds-back 200s linear infinite;
+  -ms-animation: move-clouds-back 200s linear infinite;
+  -o-animation: move-clouds-back 200s linear infinite;
+  -webkit-animation: move-clouds-back 200s linear infinite;
+  animation: move-clouds-back 200s linear infinite;
 }
-
-
-
 
 @font-face {
   font-family: 'latobold';
@@ -717,7 +900,7 @@ animation:move-clouds-back 200s linear infinite;
   font-family: 'latothin';
   font-weight: normal;
   font-style: normal;
-  src: url('./assets/fonts/lato-thin-webfont.woff2') format('woff2');  
+  src: url('./assets/fonts/lato-thin-webfont.woff2') format('woff2');
 }
 
 @font-face {
@@ -725,4 +908,11 @@ animation:move-clouds-back 200s linear infinite;
   font-weight: normal;
   font-style: normal;
   src: url('./assets/fonts/lato-thinitalic-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'glacialIndifferenceRegular';
+  src: url('./assets/fonts/GlacialIndifference-Regular.otf');
+  font-weight: normal;
+  font-style: normal
 }

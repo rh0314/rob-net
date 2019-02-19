@@ -14,6 +14,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AniCircleComponent } from './ani-circle/ani-circle.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { IntroComponent } from './intro/intro.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     BgOverlayDirective,
     ResumeComponent,
     AniCircleComponent,
+    IntroComponent,
   ],
   imports: [
     BrowserModule,

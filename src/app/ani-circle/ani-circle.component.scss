@@ -5,6 +5,7 @@
   display: inline-block;
   .front,
   .back {
+    // z-index: 115;
     display: block;
     transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
     transition-duration: .5s;
