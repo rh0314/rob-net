@@ -11,7 +11,7 @@ import { DOCUMENT } from "@angular/common";
 })
 export class AppComponent implements OnInit {
   title = 'rob-net';
-
+  aos: any;
   aosConfig = {
     offset: 0,
     delay: 500, 
@@ -21,10 +21,9 @@ export class AppComponent implements OnInit {
   };
 
   constructor(
-    @Inject(DOCUMENT) document
+    @Inject(DOCUMENT) document,
 
     ) {
-
   }
 
   ngOnInit() {

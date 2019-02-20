@@ -289,19 +289,21 @@ body {
   @media(max-width: 574.99px) {
     visibility: visible;
   }
-  @media(min-width:575px) {
+  @media(min-width: 575px) {
     visibility: hidden;
   }
 }
 
-.xhidden-xxs {
-  @media(max-width: 574.99px) {
-    visibility: hidden;
+.hidden-xxs {
+  @media(min-width: 1px) and (max-width: 574.99px) {
+    display: none;
   }
-  @media(min-width:575px) {
-    visibility: visible;
+
+  @media(min-width: 575px) {
+    display: inherit;
   }
 }
+
 
 @media(max-width: 767px) {
   app-root {

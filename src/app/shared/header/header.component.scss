@@ -1,9 +1,13 @@
 @import "../../variables";
 
 .navbar-nav {
-  font-size: 0.2em;
+  font-size: 2em;
   color: $bb-secondary;
   text-shadow: 2px 2px 2px $bb-secondary-dark;
+  padding-right: 15px;
+  li {
+    cursor: pointer;
+  }
 }
 
 .nav_menu {
@@ -26,7 +30,6 @@
   position: fixed;
   top: 0px;
   font-family: 'latomedium','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 7.5vw;
   background-color: rgba($bb-primary, 0.0);
   // z-index: 200;
   &.header-behind {
