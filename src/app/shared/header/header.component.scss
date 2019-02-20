@@ -38,14 +38,29 @@
 }
 
 //   background-color: rgba(14, 17, 25, 0.8);
-.main_menu_bg .navbar-default .navbar-nav>.active>a {
-  color: $bb-accent; // $bb-accent-two; // #e84c3d;
+.main_menu_bg .navbar-default .navbar-nav.active>a {
+  color: $bb-accent !important; // $bb-accent-two; // #e84c3d;
   text-shadow: 2px 2px 2px $bb-accent-dark;
   background-color: transparent;
   border-bottom: 1px solid #FFF;
   margin-bottom: -1px;
   padding-bottom: 33px;
 }
+
+.navbar-default .navbar-nav>.active>a {
+  color: $bb-accent;
+  background-color: $bb-primary;
+}
+.navbar-default .navbar-nav>.active>a:hover, 
+.navbar-default .navbar-nav>.active>a:focus {
+  color: $bb-accent-alt;
+  background-color: $bb-primary;
+}
+
+
+// .main_menu_bg .navbar-default .navbar-nav>a:hover {
+//   color: $bb-accent-alt;
+// }
 
 .navbar-right {
   margin-right: 25px;

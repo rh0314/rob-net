@@ -19,11 +19,11 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li routerLinkActive="active"><a [routerLink]="['/home']">Home</a></li>
-                                    <li routerLinkActive="active"><a [routerLink]="['/about']" routerLinkActive="active">About</a></li>
+                                <ul class="nav navbar-nav navbar-right" [hidden]="!showLinks">
+                                    <li (click)="menuClick('home')" routerLinkActive="active"><a [routerLink]="['/home']">Home</a></li>
+                                    <li (click)="menuClick('about')" routerLinkActive="active"><a [routerLink]="['/about']" routerLinkActive="active">About</a></li>
                                     <!-- <li routerLinkActive="active"><a [routerLink]="['/video']">Video</a></li> -->
-                                    <li routerLinkActive="active"><a [routerLink]="['/resume']">Resume</a></li>
+                                    <li (click)="menuClick('resume')" routerLinkActive="active"><a [routerLink]="['/resume']">Resume</a></li>
                                 </ul>
                             </div>
                         </div>

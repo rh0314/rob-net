@@ -1,6 +1,7 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { Router, RouterLinkActive } from '@angular/router';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+import { Component, OnInit, Inject } from '@angular/core';
+// import { Router, RouterLinkActive, ActivatedRoute } from '@angular/router';
+import { DOCUMENT } from "@angular/common";
+import { injectRootLimpMode } from '@angular/core/src/di/injector_compatibility';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,8 @@ import { connectableObservableDescriptor } from 'rxjs/internal/observable/Connec
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  currentPage: string = 'intro';
+  showLinks: boolean = false;
 
   // scroll: {
   //   top: number,
@@ -23,13 +26,29 @@ export class HeaderComponent implements OnInit {
   //     this.adjustMenu();
   // }
   constructor(
-    private router: Router, 
+    @Inject(DOCUMENT) document,
   ) {
-    
-   }
+
+  }
 
   ngOnInit() {
-    var x =1;
+    this.showLinks = this.currentPage == 'intro';
+  }
+
+  menuClick(page) {
+    if (this.currentPage === 'intro') {
+      const intro = document.getElementById('introPage');
+
+      if (intro) {
+        intro.style.transitionProperty = 'top';
+        intro.style.transitionDuration = '1500ms';
+        intro.style.transitionTimingFunction = 'ease-out';
+        intro.style.top = '-2000px';
+      }
+      else {
+        console.error('intro NOT FOUND!');
+      }
+    }
   }
 
   // adjustMenu() {
@@ -44,5 +63,6 @@ export class HeaderComponent implements OnInit {
 
   //   }
   // }
+
 
 }

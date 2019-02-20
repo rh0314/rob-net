@@ -104,6 +104,28 @@ body {
   height: 100vh; // z-index: -999;
 }
 
+.page-hidden {
+  opacity: 0;
+  transition-property: opacity;
+  // top: -2000px;
+}
+
+.page-in {
+  display: inline-block;
+  transition-property: opacity;
+  transition-delay: 500ms;
+  transition-duration: 1250ms;
+  // top: 0px;
+  opacity: 1;
+}
+
+.page-out {
+  transition-property: opacity;
+  transition-duration: 500ms;
+  opacity: 0;
+}
+
+
 .router-outlet-container {
   display: flexbox;
 }

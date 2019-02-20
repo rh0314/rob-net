@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import * as AOS from 'aos';
-import { AotSummaryResolver } from '@angular/compiler';
 import { DOCUMENT } from "@angular/common";
+// import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -11,10 +11,11 @@ import { DOCUMENT } from "@angular/common";
 })
 export class AppComponent implements OnInit {
   title = 'rob-net';
-  aos: any;
+  currentPage: string = "intro";
+
   aosConfig = {
     offset: 0,
-    delay: 500, 
+    delay: 500,
     duration: 800,
     easing: 'ease-out',
     anchorPlacement: 'top'
@@ -22,8 +23,9 @@ export class AppComponent implements OnInit {
 
   constructor(
     @Inject(DOCUMENT) document,
-
-    ) {
+    // private router: Router,
+    // private route: ActivatedRoute
+  ) {
   }
 
   ngOnInit() {
@@ -34,10 +36,23 @@ export class AppComponent implements OnInit {
     document.addEventListener('aos:out', (detail) => {
       console.log('ani out: ', detail);
     });
-    
+
+    if (window.scrollY > 10) {
+      this.scrollToTop(2500, 0, 0);
+    }
   }
 
-
+  scrollToTop(delay: number, x: number, y: number) {
+    if (delay) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: x,
+          left: y,
+          behavior: 'smooth'
+        });
+      }, delay);
+    }
+  }
 
 
 
