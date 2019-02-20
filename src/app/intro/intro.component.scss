@@ -3,6 +3,32 @@
   min-height: 125px;
 }
 
+// .transition-out {
+//   animation: move-out 3s;
+// }
+
+// @keyframes move-out {
+//   100% {
+//     --rotate: 180deg;
+//   }
+//   60% {
+//     --scale: .3;
+//   }
+//   100% {
+//     --scale: 0;
+//     --translate-y: 2500px;
+//   }
+// }
+
+// .transition-out {
+//   --rotate: 180deg;
+//   --translate-y: 3000px;
+//   --scale: .3;
+
+//   transform:
+//     translateY(var(--translate-y, ))
+// }
+
 .intro-wrapper {
   position: relative;
   top: 0px;
