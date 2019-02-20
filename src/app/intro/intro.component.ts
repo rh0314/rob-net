@@ -24,8 +24,8 @@ export class IntroComponent implements OnInit {
   }
 
   transitionIt(el) {
-    el.style.transition = 'transform 3s ease-out';
-    el.style.transform = 'rotate(720deg) scale(0, 0)'
+    el.style.transition = 'transform 2s ease-in';
+    el.style.transform = 'rotate(1440deg) scale(0, 0)'
     // setTimeout(() => {
     //   el.style.transition = 'transform 1s ease-in';
     //   el.style.transform = 'translate-y -1000px';
