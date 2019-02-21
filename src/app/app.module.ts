@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { Error404Component } from './error404/error404.component';
 import { GlobalDataService } from './shared/global-data.service';
+import { GlobalFunctionsService } from './shared/global-functions.service'
 import { BgOverlayDirective } from './shared/directives/bg-overlay.directive';
 import { ResumeComponent } from './resume/resume.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
@@ -36,8 +37,8 @@ import { IntroComponent } from './intro/intro.component';
     TooltipModule.forRoot()
   ],
   providers: [
-    // GlobalDataService
-
+    GlobalDataService,
+    GlobalFunctionsService
   ],
   bootstrap: [AppComponent]
 })

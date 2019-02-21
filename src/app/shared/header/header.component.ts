@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 // import { Router, RouterLinkActive, ActivatedRoute } from '@angular/router';
 import { DOCUMENT } from "@angular/common";
-import { injectRootLimpMode } from '@angular/core/src/di/injector_compatibility';
+import { GlobalDataService } from '../global-data.service';
 
 @Component({
   selector: 'app-header',
@@ -27,6 +27,7 @@ export class HeaderComponent implements OnInit {
   // }
   constructor(
     @Inject(DOCUMENT) document,
+    private globalData: GlobalDataService
   ) {
 
   }

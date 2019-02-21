@@ -1,7 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import * as AOS from 'aos';
 import { DOCUMENT } from "@angular/common";
-// import { ActivatedRoute, Router } from '@angular/router';
+import { GlobalDataService } from './shared/global-data.service';
+import { GlobalFunctionsService } from './shared/global-functions.service'
+import { elementStart } from '@angular/core/src/render3';
 
 
 @Component({
@@ -11,7 +13,11 @@ import { DOCUMENT } from "@angular/common";
 })
 export class AppComponent implements OnInit {
   title = 'rob-net';
-  currentPage: string = "intro";
+
+  showStars1: boolean;
+  showStars2: boolean;
+  showStars3: boolean;
+  showAllStars: boolean;
 
   aosConfig = {
     offset: 0,
@@ -23,8 +29,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     @Inject(DOCUMENT) document,
-    // private router: Router,
-    // private route: ActivatedRoute
+    private dataService: GlobalDataService,
+    private globalFunctions: GlobalFunctionsService
   ) {
   }
 
@@ -38,21 +44,19 @@ export class AppComponent implements OnInit {
     });
 
     if (window.scrollY > 10) {
-      this.scrollToTop(2500, 0, 0);
+      this.globalFunctions.scrollToTop(2500, 0, 0);
     }
+
+    this.showStars1 = this.dataService.showStars1;
+    this.showStars2 = this.dataService.showStars2;
+    this.showStars3 = this.dataService.showStars3;
+    this.showAllStars = this.dataService.showAllStars;
+    console.log(this.showStars1, this.showStars2, this.showStars3, this.showAllStars);
+    this.dataService.setProperty('homeHidden', true); 
+    this.dataService.setProperty('headerHidden', true);
   }
 
-  scrollToTop(delay: number, x: number, y: number) {
-    if (delay) {
-      setTimeout(() => {
-        window.scrollTo({
-          top: x,
-          left: y,
-          behavior: 'smooth'
-        });
-      }, delay);
-    }
-  }
+
 
 
 

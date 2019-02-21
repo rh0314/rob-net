@@ -1,24 +1,24 @@
-<script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<!-- <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> -->
 
 
   <app-header></app-header>
 
   <!-- <div style="position: relative; height: 150px; border: 1px solid red;"></div> -->
   <section style="background-color: transparent;">
-    <!-- <div id="stars" style="display:none;"></div>
-    <div id="stars2"></div>
-    <div id="stars3" style="display: none;"></div> -->
+    <!-- <div id="stars" [hidden]="(!(showAllStars || showStars1))"></div>
+    <div id="stars2" [hidden]="(!(showAllStars || showStars2))"></div>
+    <div id="stars3" [hidden]="(!(showAllStars || showStars3))"></div> -->
     <!-- <div id="windowBoundary"></div> -->
-    <!-- <div id="backgroundImage" class="home background-servers">
-      <div id="rn-main-overlay" class="home-overlay-fluid overlay-60"> -->
-        <div id="router-outlet-container" class="router-outlet-container display: flex; flex-direction: column;">
+    <!-- <div id="backgroundImage" class="home background-servers"> -->
+      <div id="rn-main-overlay" class="home-overlay-fluid overlay-60"></div>
+        <div id="router-outlet-container" class="router-outlet-container" style="position: relative;">
           <!-- <router-outlet></router-outlet> -->
-          <app-intro id="introPage" class="intro"></app-intro>
-          <!-- <app-home id="homePage" class="home page-hidden"></app-home>
-          <app-about id="aboutPage" class="about page-hidden"></app-about> -->
+          <app-intro [hidden]="dataService.getProperty('introHidden')" class="intro" style="position: absolute;"></app-intro>
+          <app-home [hidden]="dataService.getProperty('homeHidden')" style="position: absolute;"></app-home>
+          <!-- <app-about style="position: absolute;"></app-about> -->
         </div>
-      <!-- </div>
-    </div> -->
+      <!-- </div> -->
+   
   </section>
 <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
 <script src="assets/js/vendor/bootstrap.min.js"></script>

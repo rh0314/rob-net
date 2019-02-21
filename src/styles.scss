@@ -39,8 +39,14 @@ $bb-accent-alt-dark: #6e5b30;
   }
 }
 
-html {
-  background-color: $bb-primary; // #0E1119
+.bg-fade-in-primary-light {
+  transition: background-color 1s ease-in;
+  background-color: $bb-primary-dark;
+}
+
+.bg-fade-in-background-2 {
+  transition: background-image 1s ease-in;
+  background-image: url(./assets/images/coding-3-flip-2.png);
 }
 
 body {
@@ -106,16 +112,14 @@ body {
 
 .page-hidden {
   opacity: 0;
-  transition-property: opacity;
-  // top: -2000px;
+  transition-property: opacity; // top: -2000px;
 }
 
 .page-in {
   display: inline-block;
   transition-property: opacity;
   transition-delay: 500ms;
-  transition-duration: 1250ms;
-  // top: 0px;
+  transition-duration: 1250ms; // top: 0px;
   opacity: 1;
 }
 
@@ -124,7 +128,6 @@ body {
   transition-duration: 500ms;
   opacity: 0;
 }
-
 
 .router-outlet-container {
   display: flexbox;
@@ -153,13 +156,11 @@ body {
   font-size: 8rem; // font-family: 'latoheavy_italic';
   font-family: 'latoheavy', 'latomedium', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Arial, Helvetica, sans-serif;
   &.themed {
-    // color: #48A868;
-    // color: rgb(19, 116, 228);
     color: $bb-secondary; // #3B7DF0;
     text-shadow: 3px 3px $bb-secondary-dark; // #152D57;
   }
   .accented {
-    color: $bb-accent; // rgb(255, 60, 0);
+    color: $bb-accent-alt;
     font-style: italic;
     text-shadow: 3px 3px $bb-accent-dark;
   }
@@ -174,15 +175,18 @@ body {
   width: 100%;
   padding-left: 10vw;
   padding-right: 10vw;
+  * {
+    box-shadow: none !important;
+  }
   &.themed {
     // color: #48A868;
     // color: rgb(19, 116, 228);
     color: $bb-secondary; //#3B7DF0;
-    text: 3px 4px $bb-secondary; // #152D57;
+    text-shadow: 3px 4px $bb-secondary-dark; // #152D57;
   }
   .accented {
-    color: $bb-accent; // font-style: italic;
-    text: 3px 4px $bb-accent-dark; // rgb(119, 107, 107);
+    color: $bb-accent-alt; // font-style: italic;
+    text-shadow: 3px 4px $bb-accent-alt-dark; // rgb(119, 107, 107);
   }
 }
 
@@ -228,7 +232,7 @@ body {
   &.accented {
     color: $bb-accent;
     &.shadow {
-      text: 1px 1px $bb-accent-dark;
+      text-shadow: 1px 1px $bb-accent-dark;
     }
   }
 }
@@ -237,7 +241,7 @@ body {
   color: $bb-primary;
 }
 
-.bb-primaryu-bg {
+.bb-primary-bg {
   background-color: $bb-primary;
 }
 
@@ -246,7 +250,7 @@ body {
 }
 
 .bb-primary-light-bg {
-  background-color: $bb-primary;
+  background-color: $bb-primary-light;
 }
 
 .bb-primary-dark-fg {
@@ -254,7 +258,7 @@ body {
 }
 
 .bb-primary-dark-bg {
-  background-color: $bb-primary;
+  background-color: $bb-primary-dark;
 }
 
 .bb-secondary-bg {
@@ -263,15 +267,6 @@ body {
 
 .bb-secondary-fg {
   background-color: $bb-secondary;
-}
-
-.bb-accent {
-  &.fg {
-    color: $bb-accent;
-  }
-  &.bg {
-    background-color: $bb-accent;
-  }
 }
 
 .bb-accent-alt {}
@@ -320,12 +315,10 @@ body {
   @media(min-width: 1px) and (max-width: 574.99px) {
     display: none;
   }
-
   @media(min-width: 575px) {
     display: inherit;
   }
 }
-
 
 @media(max-width: 767px) {
   app-root {
@@ -714,9 +707,7 @@ body {
   border: none !important;
 }
 
-body {
-  background-color: $bb-primary;
-}
+body {}
 
 /* ============================================================================================== 
     COLORS

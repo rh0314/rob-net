@@ -1,8 +1,7 @@
 import { Component, OnInit, Inject, OnChanges } from '@angular/core';
-import { Router, Route, ActivatedRoute, Params, Data } from '@angular/router';
+// import { Router, Route, ActivatedRoute, Params, Data } from '@angular/router';
 import { GlobalDataService } from '../shared/global-data.service';
 import { DOCUMENT, NgForOf } from "@angular/common";
-import { EventListener } from '@angular/core/src/debug/debug_node';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +11,8 @@ import { EventListener } from '@angular/core/src/debug/debug_node';
 export class HomeComponent implements OnInit {
   techItems: Array<any>;
   backImage: any;
+
+  // move to global service
   scrollData = {
     beenToTop: false,
     currentTop: 0,
@@ -20,6 +21,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     @Inject(DOCUMENT) document,
+    private globalData: GlobalDataService
   ) { }
 
   ngOnInit() {

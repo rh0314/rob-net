@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalFunctionsService } from '../shared/global-functions.service';
+import { GlobalDataService } from '../shared/global-data.service';
 
 @Component({
   selector: 'app-intro',
@@ -8,36 +10,38 @@ import { Component, OnInit } from '@angular/core';
 export class IntroComponent implements OnInit {
   currentPage: string = 'intro';
 
-  constructor() { }
+  constructor(
+    private globalData: GlobalDataService,
+    private globalFunctions: GlobalFunctionsService
+  ) { }
 
   ngOnInit() {
+    // this.clickEnter('home');
   }
 
   clickEnter(page) {
     const intro = document.getElementById('intro');
     if (intro) {
-      this.transitionIt(intro);
+      this.globalFunctions.spinOut(intro);
+      setTimeout(() => {
+        this.globalFunctions.swapClass('main_menu', 'header-in', 'header-out');
+        this.globalFunctions.swapClass('homePage', 'home-in', 'home-out');
+        this.globalFunctions.addClass('stars', 'fade-out');
+        this.globalFunctions.addClass('stars2', 'fade-out');
+        this.globalFunctions.addClass('stars3', 'fade-out');
+        setTimeout(() => {
+          this.globalData.setProperty('introHidden', true);
+          this.globalFunctions.swapClassByQuery('body', 'bg-fade-in-background-2', 'bg-fade-in-background-1');
+          this.globalData.setProperty('headerHidden', false);
+          this.globalData.setProperty('homeHidden', false);
+          this.globalFunctions.swapClass('homePage', 'home-in', 'home-out');
+        }, 1000);
+      }, 2000);
     }
     else {
       console.error('intro NOT FOUND!');
     }
   }
 
-  transitionIt(el) {
-    el.style.transition = 'transform 2s ease-in';
-    el.style.transform = 'rotate(1440deg) scale(0, 0)'
-    // setTimeout(() => {
-    //   el.style.transition = 'transform 1s ease-in';
-    //   el.style.transform = 'translate-y -1000px';
-
-    //   // el.style.transition = 'transform 3s ease-in';
-    //   // el.style.transform += 'scale(0.1, 0.1)';
-    //   // setTimeout(() => {
-    //   //   el.style.transition = 'transform 1s ease-in-out';
-    //   //   el.style.transform += 'translateY(-1000px)';
-    //   // }, 850);
-    // }, 2000);
-
-  }
 
 }
