@@ -1,6 +1,10 @@
 .pdf-viewer-container {
-  // overflow-y: auto;
-  padding-top: 8px;
+  z-index: 200;
+  padding-top: 60px;
+}
+
+.pdf-button-anchor {
+  z-index: 220;
 }
 
 .page-button-container {
@@ -8,6 +12,20 @@
   border: 1px solid #8e8d8d;
   border-radius: 4px;
 }
+
+.zoom-button-container {
+  z-index: 220;
+}
+
+.zoom-button-container-text {
+  width: 100px;
+  float: left;
+  font-weight: bold;
+  font-size: 1em;
+  color: #FFF;
+  text-align: center;
+}
+
 
 .zoom-button {
   padding: 3px;
@@ -43,7 +61,7 @@
 
 .zoom-button {
   float: left;
-  // z-index: 105;
+  z-index: 205;
   display: block;
   color: rgb(7, 58, 116);
 }
@@ -51,8 +69,7 @@
 .zoom-button-container {
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(7, 58, 116);
-  // z-index: 110;
+  background-color: rgb(7, 58, 116); // z-index: 110;
   opacity: 0.3;
   border-radius: 4px;
   &:hover {
@@ -62,10 +79,11 @@
 
 #anchor {
   position: relative;
+  z-index: 201;
 }
 
 #zoomBtnHolder {
-  position: fixed;
+  position: absolute;
 }
 
 @media (min-width:768px) {

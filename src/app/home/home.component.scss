@@ -1,5 +1,7 @@
-#homePage {
+#homePage {}
 
+.wrapped-content {
+  app-home {}
 }
 
 .home-top-spacer {
@@ -61,31 +63,31 @@
 
 app-ani-circle.park {
   transform: scale(0.4, 0.4);
-  &.x0 {
+  &.r0 {
     top: 0px !important;
     left: 91vw !important;
   }
-  &.x1 {
+  &.l0 {
     top: 0px !important;
     left: 1vw !important;
   }
-  &.x2 {
+  &.r1 {
     top: 12vh !important;
     left: 91vw !important;
   }
-  &.a1 {
+  &.l2 {
     left: 1vw !important;
     top: 24vh !important;
   }
-  &.x4 {
+  &.l1 {
     top: 12vh !important;
     left: 1vw !important;
   }
-  &.x5 {
+  &.r3 {
     top: 36vh !important;
     left: 91vw !important;
   }
-  &.x6 {
+  &.l3 {
     top: 36vh !important;
     left: 1vw !important;
   }
@@ -168,5 +170,4 @@ app-ani-circle.park {
   transition: translate 1.5s ease-in;
   display: block;
   transform: translate(0px, 0px);
-
 }

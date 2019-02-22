@@ -1,5 +1,4 @@
 @import "../../variables";
-
 .navbar-nav {
   font-size: 2em;
   color: $bb-secondary;
@@ -29,8 +28,36 @@
 .navbar-fixed-top {
   position: fixed;
   top: 0px;
-  font-family: 'latomedium','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'latomedium', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: transparent;
+}
+
+.main_menu_bg {
+  ul {
+    background-color: transparent;
+    li {
+      a {
+        color: $bb-secondary;
+      }
+    }
+    li:hover {
+      a {
+        color: $bb-accent-light;
+      }
+    }
+    li.active {
+      a {
+        background-color: transparent;
+        color: $bb-accent;
+      }
+    }
+    li:hover {
+      a {
+        background-color: transparent;
+        color: $bb-accent-light;
+        }
+    }
+}
 }
 
 // .main_menu_bg .navbar-default .navbar-nav.active>a {
@@ -38,25 +65,27 @@
 //   text-shadow: 2px 2px 2px $bb-accent-dark;
 //   background-color: transparent;
 // }
-
-.navbar-default .navbar-nav>.active>a {
-  color: $bb-accent;
-  background-color: transparent;
-  border-bottom: 1px solid $bb-accent-alt;
-margin-bottom: -1px;
-padding-bottom: 33px;
-}
-.navbar-default .navbar-nav>.active>a:hover, 
-.navbar-default .navbar-nav>.active>a:focus {
-  color: $bb-accent !important;
-  background-color: transparent;
-}
-
-
+// .navbar-default .navbar-nav>li {
+//   backgrtound-color: green;
+//   &:hover>a {
+//     color: $bb-accent;
+//   }
+// }
+// .navbar-default .navbar-nav>.active>a {
+//   color: $bb-accent;
+//   background-color: transparent;
+//   border-bottom: 1px solid $bb-accent-alt;
+// margin-bottom: -1px;
+// padding-bottom: 33px;
+// }
+// .navbar-default .navbar-nav>.active>a:hover, 
+// .navbar-default .navbar-nav>.active>a:focus {
+//   color: $bb-accent !important;
+//   background-color: transparent;
+// }
 // .main_menu_bg .navbar-default .navbar-nav>a:hover {
 //   color: $bb-accent-alt;
 // }
-
 .navbar-right {
   margin-right: 25px;
 }
@@ -126,12 +155,11 @@ padding-bottom: 33px;
   width: 100%;
   display: flex;
   background-color: transparent;
-
 }
 
 .navbar-default {
   border: none;
-} 
+}
 
 .main_menu_bg .container-fluid {
   margin-top: 20px;

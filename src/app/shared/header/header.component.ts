@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 // import { Router, RouterLinkActive, ActivatedRoute } from '@angular/router';
 import { DOCUMENT } from "@angular/common";
 import { GlobalDataService } from '../global-data.service';
+import { GlobalFunctionsService } from '../global-functions.service';
 
 @Component({
   selector: 'app-header',
@@ -9,48 +10,20 @@ import { GlobalDataService } from '../global-data.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  currentPage: string = 'intro';
-  showLinks: boolean = false;
+  menuClick = this.globalFunctions.menuClick;
 
-  // scroll: {
-  //   top: number,
-  //   previous: -1,
-  //   direction: boolean // true = up, false = down
-  // }
-
-
-  // @HostListener('window:scroll', ['$event'])
-  // onscroll(event) {
-  //     this.scroll.top = event.srcElement.scrollTop;
-  //     this.scroll.direction = this.scroll.top > this.scroll.previous;
-  //     this.adjustMenu();
-  // }
   constructor(
     @Inject(DOCUMENT) document,
-    private globalData: GlobalDataService
+    private globalData: GlobalDataService,
+    private globalFunctions: GlobalFunctionsService
   ) {
 
   }
 
   ngOnInit() {
-    this.showLinks = this.currentPage == 'intro';
+  
   }
 
-  menuClick(page) {
-    if (this.currentPage === 'intro') {
-      const intro = document.getElementById('introPage');
-
-      if (intro) {
-        intro.style.transitionProperty = 'top';
-        intro.style.transitionDuration = '1500ms';
-        intro.style.transitionTimingFunction = 'ease-out';
-        intro.style.top = '-2000px';
-      }
-      else {
-        console.error('intro NOT FOUND!');
-      }
-    }
-  }
 
   // adjustMenu() {
   //   const nContainer = document.querySelector('.navbar-container');

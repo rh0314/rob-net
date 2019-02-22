@@ -13,8 +13,7 @@ export class ResumeComponent implements OnInit {
   pdfViewer: Element;
   showAll: true;
   zoomLevel: number = 1;
-  zbt = 115;
-  zbl: number;
+  zbtOffset = 320;
 
   ngOnInit() {
     window.addEventListener('resize', e => {
@@ -28,14 +27,18 @@ export class ResumeComponent implements OnInit {
 
   moveButtons() {
     const btns = document.getElementById('zoomBtnHolder');
-    const anchor = document.getElementById('anchor');
-    const am = anchor ? anchor.getBoundingClientRect().right - ( (anchor.getBoundingClientRect().right - anchor.getBoundingClientRect().left) / 2) : 0;
+    const anchor = document.getElementById('pdfAnchor');
+    const wrapper = document.getElementById('contentWrapper');
+    const ct = wrapper ? wrapper.getBoundingClientRect().top : 0;
+    const am = anchor ? anchor.getBoundingClientRect().right - ((anchor.getBoundingClientRect().right - anchor.getBoundingClientRect().left) / 2) : 0;
+    const at = anchor ? anchor.getBoundingClientRect().top : 0;
     const bw = btns ? btns.getBoundingClientRect().width : 0;
-    this.zbl = am - (bw * .5);
+    const zbt = this.zbtOffset - at;
+    const zbl = am - (bw * .5);
     if (btns) {
-      btns.style.top = this.zbt + 'px';
-      btns.style.left = this.zbl + 'px';
-      console.log('btns', btns.getBoundingClientRect());
+      btns.style.top = zbt + 'px';
+      btns.style.left = zbl + 'px';
+      console.log('btns', btns.getBoundingClientRect(), 'pdfAnchor" ', anchor.getBoundingClientRect(), 'at', at, 'zbt', zbt, 'ct', ct);
     }
   }
 

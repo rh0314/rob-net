@@ -2,8 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import * as AOS from 'aos';
 import { DOCUMENT } from "@angular/common";
 import { GlobalDataService } from './shared/global-data.service';
-import { GlobalFunctionsService } from './shared/global-functions.service';
-import { AppRoutingModule } from './app-routing.module';
+import { GlobalFunctionsService } from './shared/global-functions.service'
 
 
 @Component({
@@ -42,8 +41,6 @@ export class AppComponent implements OnInit {
       this.globalFunctions.scrollToTop(2500, 0, 0);
     }
 
-    this.dataService.setProperty('homeHidden', true); 
-    this.dataService.setProperty('headerHidden', true);
   }
 
 

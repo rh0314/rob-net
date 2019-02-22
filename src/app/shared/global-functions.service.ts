@@ -1,11 +1,30 @@
 import { Injectable } from '@angular/core';
+import { GlobalDataService } from '../shared/global-data.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalFunctionsService {
 
-  constructor() { }
+  constructor(
+    private globalData: GlobalDataService
+  ) { }
+
+  onScroll(event) {
+    if (!(this.globalData && this.globalData.scrollData) ) {
+      return
+    }
+    const previousTop = this.globalData.scrollData.currentTop
+    this.globalData.scrollData.currentTop = event.srcElement.scrollingElement.scrollTop;
+    if (this.globalData.scrollData.currentTop <= 100) {
+      this.globalData.scrollData.beenToTop = true;
+    }
+    this.globalData.scrollData.direction = (this.globalData.scrollData.currentTop < previousTop);
+    console.log('globalFunctions: onScroll: ', this.globalData.scrollData);
+  }
+//    this.globalData.fadeCircles(this.scrollData.currentTop);
+
 
 
   addClass(name: string, className: string) {
@@ -40,7 +59,9 @@ export class GlobalFunctionsService {
     el.style.transform = 'rotate(1440deg) scale(0, 0)'
   }
 
-
+  menuClick(page: string, activeRoute: ActivatedRoute) {
+    
+  }
 
   scrollToTop(delay: number, x: number, y: number) {
     if (delay) {

@@ -129,6 +129,10 @@ body {
   opacity: 0;
 }
 
+.top-spacer {
+  height: 150px;
+}
+
 .router-outlet-container {
   display: flexbox;
 }
@@ -690,9 +694,9 @@ body {
   padding-bottom: 0px;
 }
 
-.navbar-default .navbar-nav>li>a {
-  color: $bb-secondary;
-}
+// .navbar-default .navbar-nav>li>a {
+//   color: $bb-secondary;
+// }
 
 .home-overlay-fluid {
   padding: 0px 0px; // height: 100vmax;

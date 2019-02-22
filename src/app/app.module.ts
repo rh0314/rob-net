@@ -16,6 +16,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AniCircleComponent } from './ani-circle/ani-circle.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { IntroComponent } from './intro/intro.component';
+import { ContentWrapperComponent } from './content-wrapper/content-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { IntroComponent } from './intro/intro.component';
     ResumeComponent,
     AniCircleComponent,
     IntroComponent,
+    ContentWrapperComponent,
   ],
   imports: [
     BrowserModule,
