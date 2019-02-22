@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -15,9 +16,6 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AniCircleComponent } from './ani-circle/ani-circle.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { IntroComponent } from './intro/intro.component';
-import { LayoutWrapperComponent } from './layout-wrapper/layout-wrapper.component';
-import { AppRoutingModule } from './app-routing.module';
-
 
 @NgModule({
   declarations: [
@@ -31,19 +29,16 @@ import { AppRoutingModule } from './app-routing.module';
     ResumeComponent,
     AniCircleComponent,
     IntroComponent,
-    LayoutWrapperComponent,
-
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     PdfViewerModule,
-
     TooltipModule.forRoot()
   ],
   providers: [
     GlobalDataService,
-    GlobalFunctionsService,
-    AppRoutingModule
+    GlobalFunctionsService
   ],
   bootstrap: [AppComponent]
 })
