@@ -1,0 +1,11 @@
+<p>
+    <a routerLink="./app/intro">Intro</a> &mdash;
+    <a routerLink="./layout-b">Home</a> &mdash;
+    <strong>secondary choices for home</strong>
+    <a [routerLink]="[{ outlets: { secondary: 'about' } }]">Open</a> /
+    <a [routerLink]="[{ outlets: { seconfary: 'resume' } }]">Close</a>
+</p>
+<!-- The PRIMARY outlet. -->
+<router-outlet></router-outlet>
+<!-- The NAMED outlet for the CHAT widget. -->
+<router-outlet name="secondary"></router-outlet>

@@ -16,7 +16,7 @@ export class IntroComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.clickEnter('home');
+
   }
 
   clickEnter(page) {
@@ -26,9 +26,6 @@ export class IntroComponent implements OnInit {
       setTimeout(() => {
         this.globalFunctions.swapClass('main_menu', 'header-in', 'header-out');
         this.globalFunctions.swapClass('homePage', 'home-in', 'home-out');
-        this.globalFunctions.addClass('stars', 'fade-out');
-        this.globalFunctions.addClass('stars2', 'fade-out');
-        this.globalFunctions.addClass('stars3', 'fade-out');
         setTimeout(() => {
           this.globalData.setProperty('introHidden', true);
           this.globalFunctions.swapClassByQuery('body', 'bg-fade-in-background-2', 'bg-fade-in-background-1');
