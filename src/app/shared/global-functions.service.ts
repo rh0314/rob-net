@@ -14,8 +14,12 @@ export class GlobalFunctionsService {
 
   transitionIntroOut(destination: string) {
     const intro = document.getElementById('intro');
+    const streak = document.getElementById('blueStreak');
     if (intro) {
       this.spinOut(intro);
+      if (streak) {
+        this.shrinkOut(streak, { x: .5 });
+      }
       setTimeout(() => {
         this.swapClass('main_menu', 'header-in', 'header-out');
         this.swapClassByQuery('body', 'bg-fade-in-background-2', 'bg-fade-in-background-1');
@@ -236,10 +240,31 @@ export class GlobalFunctionsService {
     }
   }
 
+  swapAllByClass(name: string, classNameIn: string, classNameOut: string, delay: number = 0) {
+    setTimeout(() => {
+      let els = document.querySelectorAll('.' +  name);
+      if (els && els.length) {
+        for (let i = 0; i < els.length; i++) {
+          if (classNameIn) {
+            els[i].classList.add(classNameIn);
+          }
+          else if (!classNameOut) {
+            els[i].classList.remove(classNameOut);
+          }
+        }
+      }
+    }, delay);
+  }
+
 
   spinOut(el) {
     el.style.transition = 'transform 1.5s ease-in';
     el.style.transform = 'rotate(1440deg) scale(0, 0)'
+  }
+
+  shrinkOut(el, endScale) {
+    el.style.transition = 'transform 1.5s ease-in';
+    el.style.transform = 'scale(' + (endScale.x ? endScale.x : 1) + ', ' + (endScale.y ? endScale.y : 1) + ')';
   }
 
   menuClick(page: string, activeRoute: ActivatedRoute) {

@@ -40,7 +40,6 @@ $bb-accent-alt-dark: #6e5b30;
 }
 
 .bg-fade-in-primary-light {
-  transition: background-color 1s ease-in;
   background-color: $bb-primary-dark;
 }
 
@@ -51,12 +50,15 @@ $bb-accent-alt-dark: #6e5b30;
 }
 
 .body-background-image-1 {
-  background-image: url(./assets/images/coding-3-flip-75.png);
+  background-image: url(./assets/images/coding-3-flip-75a.png); // background-image: url(./assets/images/lightning-combined-high.gif);
+  opacity: 0.8;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .bg-fade-in-background-2 {
   transition: background-image 1s ease-in;
-  background-image: url(./assets/images/coding-4-flip-2.png);
+  background-image: url(./assets/images/coding-4-flip-2a.png);
 }
 
 body {
@@ -78,18 +80,6 @@ body {
 .navbar-default,
 .navbar-brand {
   background-color: inherit !important;
-}
-
-.rbg1 {
-  background: url(./assets/images/homebg.jpg) 100%;
-  background-repeat: repeat-y;
-  background-size: cover; // z-index: -999;
-}
-
-.background-sky {
-  background: url(./assets/images/blue_sky.jpg) 100%;
-  background-repeat: repeat-y;
-  background-size: cover; // z-index: -999;
 }
 
 .wip-overlay {
@@ -229,8 +219,6 @@ body {
   margin-left: 10vw;
   margin-right: 10vw;
 }
-
-
 
 .page-content {
   color: $bb-secondary;
@@ -731,156 +719,18 @@ body {
 body {}
 
 /* ============================================================================================== 
-    COLORS
+                                      BOOTSTRAP OVERRIDE
 ================================================================================================= */
 
-/* ============================================================================================== 
-SED Innovations
-https://sed.am
-https://mkrtchyan.ga
-================================================================================================= */
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: rgba($bb-primary-rgb, 0.9);
-  color: $bb-secondary;
-  display: block;
-  font: 14px/1.3 Arial, sans-serif;
-  height: 50px;
-  position: relative; // z-index:5;
-}
-
-h2 {
-  margin-top: 30px;
-  text-align: center;
-}
-
-header h2 {
-  font-size: 22px;
-  margin: 0 auto;
-  padding: 10px 0;
-  width: 80%;
-  text-align: center;
-}
-
-header a,
-a:visited {
-  text-decoration: none;
-  color: $bb-accent-dark;
-}
-
-@keyframes move-twink-back {
-  from {
-    background-position: 0 0;
+.park {
+  .tooltip-inner {
+    //transform: translate(0px, 0px);
+    max-width: 13vw !important;
+    .tooltip-content {
+      font-size: 1.5vw !important;
+      color: rgb(241, 232, 232);
+    }
   }
-  to {
-    background-position: -10000px 5000px;
-  }
-}
-
-@-webkit-keyframes move-twink-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -10000px 5000px;
-  }
-}
-
-@-moz-keyframes move-twink-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -10000px 5000px;
-  }
-}
-
-@-ms-keyframes move-twink-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -10000px 5000px;
-  }
-}
-
-@keyframes move-clouds-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 10000px 0;
-  }
-}
-
-@-webkit-keyframes move-clouds-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 10000px 0;
-  }
-}
-
-@-moz-keyframes move-clouds-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 10000px 0;
-  }
-}
-
-@-ms-keyframes move-clouds-back {
-  from {
-    background-position: 0;
-  }
-  to {
-    background-position: 10000px 0;
-  }
-}
-
-.stars,
-.twinkling,
-.clouds {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100vmax;
-  display: block;
-}
-
-.stars {
-  background: #000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
-  z-index: 0;
-}
-
-.twinkling {
-  background: transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
-  z-index: 1;
-  -moz-animation: move-twink-back 200s linear infinite;
-  -ms-animation: move-twink-back 200s linear infinite;
-  -o-animation: move-twink-back 200s linear infinite;
-  -webkit-animation: move-twink-back 200s linear infinite;
-  animation: move-twink-back 200s linear infinite;
-}
-
-.clouds {
-  background: transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
-  z-index: 3;
-  -moz-animation: move-clouds-back 200s linear infinite;
-  -ms-animation: move-clouds-back 200s linear infinite;
-  -o-animation: move-clouds-back 200s linear infinite;
-  -webkit-animation: move-clouds-back 200s linear infinite;
-  animation: move-clouds-back 200s linear infinite;
 }
 
 @font-face {
@@ -951,4 +801,8 @@ a:visited {
   src: url('./assets/fonts/GlacialIndifference-Regular.otf');
   font-weight: normal;
   font-style: normal
+}
+
+#preload-01 {
+  background: url(./assets/images/coding-4-flip-2a.png) no-repeat -9999px -9999px;
 }

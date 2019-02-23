@@ -65,62 +65,62 @@
 
 app-ani-circle.park {
 
-  transform: scale(0.4, 0.4);
-  &.r0 {
-    top: 0px !important;
-    left: 91vw !important;
+  transform: scale(0.7 , 0.7);
+  &.r1c1 {
+    top: -15vh !important;
+    left: 0vw !important;
   }
-  &.l0 {
-    top: 0px !important;
-    left: 1vw !important;
+  &.r1c2 {
+    top: -20vh !important;
+    left: 15vw !important;
   }
-  &.r1 {
-    top: 12vh !important;
-    left: 91vw !important;
+  &.r1c3 {
+    top: -20vh !important;
+    left: 30vw !important;
   }
-  &.l2 {
-    left: 1vw !important;
-    top: 24vh !important;
+  &.r1c4 {
+    left: 45vw !important;
+    top: -20vh !important;
   }
-  &.l1 {
-    top: 12vh !important;
-    left: 1vw !important;
+  &.r1c5 {
+    top: -20vh !important;
+    left: 60vw !important;
   }
-  &.r3 {
-    top: 36vh !important;
-    left: 91vw !important;
+  &.r1c6 {
+    top: -18vh !important;
+    left: 75vw !important;
   }
-  &.l3 {
-    top: 36vh !important;
-    left: 1vw !important;
+  &.r1c7 {
+    top: -15vh !important;
+    left: 90vw !important;
   }
-  &.x7 {
-    top: 24vh !important;
-    left: 91vw !important;
+  &.r2c1 {
+    top: 2vh !important;
+    left: 0vw !important;
   }
-  &.x8 {
-    top: 48vh !important;
-    left: 1vw !important;
+  &.r2c7 {
+    top: 2vh !important;
+    left: 90vw !important;
   }
-  &.x9 {
-    top: 48vh !important;
-    left: 91vw !important;
+  &.r3c1 {
+    top: 20vh !important;
+    left: 0.5vw !important;
   }
-  &.x10 {
-    top: 60vh !important;
-    left: 1vw !important;
+  &.r3c7 {
+    top: 20vh !important;
+    left: 90vw !important;
   }
-  &.x11 {
-    top: 60vh !important;
-    left: 91vw !important;
+  &.r4c3 {
+    top: 37vh !important;
+    left: 30vw !important;
   }
-  &.x12 {
-    top: 72vh !important;
-    left: 1vw !important;
+  &.r4c4 {
+    top: 37vh !important;
+    left: 45vw !important;
   }
-  &.x13 {
-    top: 72vh !important;
-    left: 91vw !important;
+  &.r4c5 {
+    top: 37vh !important;
+    left: 60vw !important;
   }
   &.x14 {
     top: 84vh !important;
@@ -135,6 +135,20 @@ app-ani-circle.park {
   }
   &.yl {
     left: 91vw !important;
+  }
+  &.mute {
+    opacity: 0.1;
+    transition-property: transform opacity;
+    transition-duration: 1.5s;
+    transition-timing-function: ease-in;
+    transform: rotateX(360deg) scale(.5, .5);
+    &:hover {
+      transition-property: transform opacity;
+      transition-duration: 1.5s;
+      transition-timing-function: ease-in;
+      transform: rotateX(0deg) scale(1, 1);
+        opacity: 1;
+    }
   }
 }
 

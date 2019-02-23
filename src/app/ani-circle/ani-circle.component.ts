@@ -225,7 +225,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
     this.rend.setStyle(n, 'transitionTimingFunction', this.inYoFaceBezier);
     this.rend.setStyle(n, 'left', ((window.innerWidth / 2) - (f.offsetWidth / 2)) + 'px');
     this.rend.setStyle(n, 'top', t + 'px');
-    this.rend.setStyle(n, 'opacity', '1');
+    this.rend.setStyle(n, 'opacity', '');
     const color = flip.style.backgroundColor;
     // this.rend.setStyle(f, 'background-color', color.replace(/rgba\((\d{1,3}\,\s{0,1}\d{1,3}\,\d{1,3}\,\s{0,1})\d{1,3}\.{0,1}\d{1,3}\)/, 'rgba($11)'));
 
@@ -257,7 +257,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
     }
     this.rend.setStyle(n, 'transitionTimingFunction', this.homeBezier);
     this.rend.setStyle(f, 'transform', 'scale(1, 1)');
-    this.rend.setStyle(n, 'opacity', '1');
+    this.rend.setStyle(n, 'opacity', '');
     this.park(n);
   }
 

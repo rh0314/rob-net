@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import '../variables';
 // base
 .flip {
   position: absolute;
@@ -13,9 +14,9 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    color: rgba(255, 255, 255, 0.9);
-    height: 18vw;
-    width: 18vw;
+    color: rgba(255, 255, 255, 0.0); //0.9
+    height: 13.5vw;
+    width: 13.5vw;
     background-size: 9vw;
     border-radius: 9vw;
     .circle-title {
@@ -33,17 +34,18 @@
       /* height: 75%; */
       left: 12.5%;
       text-align: center;
+      color: $bb-secondary;
     }
   }
   .front {
     transform: rotateY(0deg);
     opacity: 0.9;
-    background: rgba(0, 161, 201, 0.8);
+    background: rgba(0, 161, 201, 0.0); //0.9
   }
   .back {
     transform: rotateY(-180deg);
     opacity: 0;
-    background: rgba(0, 161, 201, 1);
+    background: rgba(0, 161, 201, 0); //1
     background-size: 9vw;
     p {
       color: #999;
@@ -76,13 +78,6 @@
   }
 }
 
-.tooltip-main-container {
-  .tooltip-content {
-    font-size: 20px;
-    width: 300px;
-    color: rgb(241, 232, 232);
-  }
-}
 
 /* ****** RESPONSIVE **********/
 

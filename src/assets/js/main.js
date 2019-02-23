@@ -125,29 +125,14 @@ jQuery(document).ready(function ($) {
         if (el && el[0]) {
             el = el[0];
         }
-        // var c = el.style.backgroundColor ? el.style.backgroundColor : headerElBg;
-        // if (isHex(c)) {
-        //     c = hexToRgb(c);
-        // }
-        // var newC = c.replace(/\(/g, '');
         if (top > 5 && top < height) {
             var o = (maxO - (((top / height)) * maxO));
             o = (o < minO ? minO : o);
             el.style.opacity = o;
-            // newC = `rgba(${c}, ${o})`
-            console.log(newC);
-            // el.style.backgroundColor = newC;
-            // el.classList.remove('header-behind');
         }
         else if (top > height) {
-            // newC = `rgba(${c}, 0)`
-            // el.style.backgroundColor = newC;
             el.style.opacity = o;
-            // el.classList.add('header-behind');
         } else {
-            // newC = `rgba(${c}, ${maxO})`
-
-            // el.style.backgroundColor = newC;
             el.style.opacity = maxO;
         }
     });
