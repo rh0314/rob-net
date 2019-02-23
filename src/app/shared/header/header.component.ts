@@ -11,13 +11,14 @@ import { GlobalFunctionsService } from '../global-functions.service';
 })
 export class HeaderComponent implements OnInit {
   menuClick = this.globalFunctions.menuClick;
+  globalData: any;
 
   constructor(
     @Inject(DOCUMENT) document,
-    private globalData: GlobalDataService,
+    globalData: GlobalDataService,
     private globalFunctions: GlobalFunctionsService
   ) {
-
+    this.globalData = globalData;
   }
 
   ngOnInit() {
