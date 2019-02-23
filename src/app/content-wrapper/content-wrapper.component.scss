@@ -1,3 +1,20 @@
   .after-home-spacer {
-    height: 50vh;
+    height: 200px;
+  }
+
+  #wrappedAboutContent {
+    margin-top: -150px;
+    display: inline-block;
+    transition-property: opacity;
+    transition-delay: 0ms;
+    transition-duration: 750ms;
+    opacity: 0;
+  }
+
+  #wrappedAboutContent.triggered {
+    display: inline-block;
+    transition-property: opacity;
+    transition-delay: 0ms;
+    transition-duration: 1000ms; 
+    opacity: 1;
   }

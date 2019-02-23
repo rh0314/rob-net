@@ -1,5 +1,5 @@
 <header id="main_menu" class="header" [hidden]="globalData.getProperty('headerHidden')">
-    <div id="rn-main-menu-bg" class="main_menu_bg navbar-fixed-top">
+    <div id="mainMenuBg" class="main_menu_bg navbar-fixed-top">
         <div class="navbar-container">
             <div class="row">
                 <div class="nav_menu wow fadeInUp" data-wow-duration="1s">
@@ -20,10 +20,13 @@
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li (click)="menuClick('home')" routerLinkActive="active"><a [routerLink]="['/home']">Home</a></li>
-                                    <li (click)="menuClick('about')" routerLinkActive="active"><a [routerLink]="['/about']">About</a></li>
-                                    <li (click)="menuClick('resume')" routerLinkActive="active"><a [routerLink]="['/resume']">Resume</a></li>
-                                    <li (click)="menuClick('content')" routerLinkActive="active"><a [routerLink]="['/content']">Content Wrapper</a></li>
+                                    <li routerLinkActive="active"><a [routerLink]="['/home']">Home</a></li>
+                                    <li routerLinkActive="active"><a [routerLink]="['/about']">About</a></li>
+                                    <li routerLinkActive="active"><a [routerLink]="['/resume']">Resume</a></li>
+                                    <!-- <li routerLinkActive="active"><a [routerLink]="['/content/home']">Home</a></li>
+                                    <li routerLinkActive="active"><a [routerLink]="['/content/about']">About</a></li>
+                                    <li routerLinkActive="active"><a [routerLink]="['/content/resume']">Resume</a></li> -->
+                                    <!-- <li (click)="menuClick('content')" routerLinkActive="active"><a [routerLink]="['/content']">Content Wrapper</a></li> -->
                                 </ul>
                             </div>
                         </div>

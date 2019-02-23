@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     @Inject(DOCUMENT) document,
-    private dataService: GlobalDataService,
+    private globalData: GlobalDataService,
     private globalFunctions: GlobalFunctionsService
   ) {
   }
@@ -40,7 +40,9 @@ export class AppComponent implements OnInit {
     if (window.scrollY > 10) {
       this.globalFunctions.scrollToTop(2500, 0, 0);
     }
-
+    // this.globalData.watchOnScroll.push({id: 'wrappedAboutContent' })
+    // this.globalData.watchOnScroll.push({id: 'contentWrapper'});
+    this.globalFunctions.setIntroClasses(200);
   }
 
 

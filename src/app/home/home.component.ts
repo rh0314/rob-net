@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, OnChanges } from '@angular/core';
+import { Component, OnInit, Inject, OnChanges, OnDestroy } from '@angular/core';
 // import { Router, Route, ActivatedRoute, Params, Data } from '@angular/router';
 import { GlobalDataService } from '../shared/global-data.service';
 import { GlobalFunctionsService } from '../shared/global-functions.service';
@@ -9,7 +9,7 @@ import { DOCUMENT, NgForOf } from "@angular/common";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   techItems: Array<any>;
   backImage: any;
 
@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.globalData.setProperty('headerHidden', false);
+    this.globalFunctions.swapClass('homePage', 'page-in',  'page-out', 500);
     this.initItems();
     window.addEventListener('scroll', (event) => {
       this.globalFunctions.onScroll(event);
@@ -31,6 +32,10 @@ export class HomeComponent implements OnInit {
   ngAfterViewInit() {
     window.addEventListener('resize', this.globalFunctions.onScroll);
     window.addEventListener('scroll', this.globalFunctions.onScroll);
+  }
+
+  ngOnDestroy() {
+    this.globalFunctions.swapClass('homePage', 'page-out', 'page-in');
   }
 
   initialResize() {
@@ -70,19 +75,19 @@ export class HomeComponent implements OnInit {
       {
         text: "Delightful User Experience", subText: "Applications developed with the user in mind and a goal of exceeding thier expectations - every time!",
         image: { path: "../../assets/images/internet-icons/ux-beating-heart.v2.gif", sizeX: 1.5, sizeY: 1.5 },
-        startX: -1500, startY: -500, gridCol: -2, gridRow: 1, duration: 500, delay: 2500,
-        backImage: '../../assets/images/thumbsup-mitchell.v3.png', parkTime: 10000, parkClass: 'park l1'
+        startX: -1500, startY: -500, gridCol: 0, gridRow: 1, duration: 750, delay: 500,
+        backImage: '../../assets/images/thumbsup-mitchell.v3.png', parkTime: 4000, parkClass: 'park l3'
       },
-      {
-        text: "Custom Applications", subText: "Applications designed and delivered to meet your specifications.",
-        //image: { path: "../../assets/images/internet-icons/ux-beating-heart.v2.gif", sizeX: 1.5, sizeY: 1.5 },
-        startX: -1500, startY: -500, gridCol: 0, gridRow: 1, duration: 1000, delay: 750,
-        backImage: '../../assets/images/thumbsup-mitchell.v3.png', parkTime: 10000, parkClass: 'park l2'
-      },
-      {
-        text: "Database Driven Applications", gridCol: 2, gridRow: 1, duration: 500, delay: 500,
-        image: { path: "../../assets/images/internet-icons/application-database-blk.png", sizeX: 1.5, sizeY: 1.5 }, startX: 8000, startY: 2000, backImage: '../../assets/images/thumbsup-mitchell.v3.png', parkTime: 10000, parkClass: 'park l3'
-      },
+      // {
+      //   text: "Custom Applications", subText: "Applications designed and delivered to meet your specifications.",
+      //   //image: { path: "../../assets/images/internet-icons/ux-beating-heart.v2.gif", sizeX: 1.5, sizeY: 1.5 },
+      //   startX: -1500, startY: -500, gridCol: 0, gridRow: 1, duration: 1000, delay: 750,
+      //   backImage: '../../assets/images/thumbsup-mitchell.v3.png', parkTime: 10000, parkClass: 'park l2'
+      // },
+      // {
+      //   text: "Database Driven Applications", gridCol: 2, gridRow: 1, duration: 500, delay: 500,
+      //   image: { path: "../../assets/images/internet-icons/application-database-blk.png", sizeX: 1.5, sizeY: 1.5 }, startX: 8000, startY: 2000, backImage: '../../assets/images/thumbsup-mitchell.v3.png', parkTime: 10000, parkClass: 'park l3'
+      // },
 
       // R0 - going across
       // { text: "HTML/HTML5", gridCol: -2, gridRow: 0, duration: 1000, delay: 0, image: { path: "../../assets/images/internet-icons/html5.png" }, startX: -2000, startY: -16000, backImage: '../../assets/images/thumbsup-mitchell.v3.png', parkClass: 'park x1', parkTime: 10000 },

@@ -1,5 +1,8 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
+import { GlobalFunctionsService } from '../shared/global-functions.service';
+import { GlobalDataService } from '../shared/global-data.service';
+import { RoutesRecognized } from '@angular/router';
 
 @Component({
   selector: 'app-resume',
@@ -14,15 +17,27 @@ export class ResumeComponent implements OnInit {
   showAll: true;
   zoomLevel: number = 1;
   zbtOffset = 320;
+  savedZoom: number = 1;
+
+  constructor(private global: GlobalDataService,
+    private globalFunctions: GlobalFunctionsService
+  ) { }
 
   ngOnInit() {
     window.addEventListener('resize', e => {
       this.moveButtons();
+      this.resized();
     });
     window.addEventListener('scroll', e => {
       this.moveButtons();
     });
     this.moveButtons();
+    this.globalFunctions.swapClass('resumePage', 'page-in', 'page-out', 500);
+    // this.resized();
+  }
+
+  ngOnDestroy() {
+    this.globalFunctions.swapClass('resumePage', 'page-out', 'page-in');
   }
 
   moveButtons() {
@@ -38,8 +53,24 @@ export class ResumeComponent implements OnInit {
     if (btns) {
       btns.style.top = zbt + 'px';
       btns.style.left = zbl + 'px';
-      console.log('btns', btns.getBoundingClientRect(), 'pdfAnchor" ', anchor.getBoundingClientRect(), 'at', at, 'zbt', zbt, 'ct', ct);
+      // console.log('btns', btns.getBoundingClientRect(), 'pdfAnchor" ', anchor.getBoundingClientRect(), 'at', at, 'zbt', zbt, 'ct', ct);
     }
+  }
+
+  resized() {
+    this.pdfViewer = document.getElementById('pdf-viewer-container');
+    let pdfWidth = this.pdfViewer.getBoundingClientRect().width;
+    while (pdfWidth > window.innerHeight || (this.zoomLevel < this.savedZoom && pdfWidth > (window.innerWidth * .85))) {
+      if (pdfWidth >= window.innerWidth) {
+        this.savedZoom = this.zoomLevel;
+        this.zoomUp(false);
+      }
+      else if (this.zoomLevel < this.savedZoom && pdfWidth < (window.innerWidth * .8)) {
+        this.zoomUp(true);
+      }
+      pdfWidth = this.pdfViewer.getBoundingClientRect().width;
+    }
+
   }
 
   zoomUp(up: boolean) {
@@ -47,7 +78,7 @@ export class ResumeComponent implements OnInit {
   }
 
   afterLoadComplete(pdfData: any) {
-    console.log('pdfData', pdfData);
+    // console.log('pdfData', pdfData);
     this.totalPages = pdfData.numPages;
     this.isLoaded = true;
 

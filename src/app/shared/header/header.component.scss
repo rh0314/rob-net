@@ -9,6 +9,8 @@
   }
 }
 
+
+
 .nav_menu {
   margin-bottom: 20px;
 }
@@ -43,6 +45,7 @@
     li:hover {
       a {
         color: $bb-accent-light;
+        opacity: 1;
       }
     }
     li.active {
@@ -55,9 +58,9 @@
       a {
         background-color: transparent;
         color: $bb-accent-light;
-        }
+      }
     }
-}
+  }
 }
 
 // .main_menu_bg .navbar-default .navbar-nav.active>a {

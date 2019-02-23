@@ -10,31 +10,56 @@ export class GlobalDataService {
   private _storageObject: any = {
     nonIntroPages: []
   };
-  
+
   showStars1 = true;
   showStars2 = true;
   showStars3 = true;
-  
+
   scrollData = {
     beenToTop: false,
     currentTop: 0,
     direction: false  // up = true, down = false
   }
 
-  
-  get currentPage():string {
+  introBgClass = '';
+  nonIntroBgClass = '';
+
+  watchOnScroll = [
+
+  ];
+
+  scrollRoutes: Array<any> = [
+    {
+      route: '/content/home',
+      above: [],
+      self: 'wrappedHomeContent'
+    },
+    {
+      route: '/content/about',
+      above: ['wrappedHomeContent'],
+      self: 'wrappedAboutContent'
+    },
+    {
+      route: '/content/resume',
+      above: ['wrappedHomeContent', 'wrappedAboutContent'],
+      self: 'wrappedResumeContent'
+    }
+  ]
+
+
+  get currentPage(): string {
     return this._currentPage;
   }
-  set currentPage(value:string) {
+  set currentPage(value: string) {
     this._currentPage = value;
   }
-  get showHeader():boolean {
+  get showHeader(): boolean {
     return this._showHeader;
   }
   set showHeader(value: boolean) {
     this._showHeader = value;
   }
-  get showAllStars():boolean {
+  get showAllStars(): boolean {
     return this.showStars1 && this.showStars2 && this.showStars3;
   }
   get router(): Router {
@@ -50,6 +75,6 @@ export class GlobalDataService {
   constructor(
     private activatedRoute: ActivatedRoute,
     private _router: Router
-    ) {
-   }
+  ) {
+  }
 }
