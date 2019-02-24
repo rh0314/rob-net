@@ -25,7 +25,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
   @Input('park-class') parkClass: string;
   @Input('park-time') parkTime: number;
   @Input('mouse-event') mouseEvent: Function;
-  
+
 
   @HostListener('window:resize', ['$event'])
   onresize(event) {
@@ -115,10 +115,12 @@ export class AniCircleComponent implements OnInit, OnChanges {
     this.ttid = 'tt' + this.idx;
     this.ttidTag = '#tt' + this.idx;
 
+    this.removeTooltip();
 
     setTimeout(() => {
       this.inYourFace();
     }, this.delay)
+
   }
 
   iniitializeLater() {
@@ -140,12 +142,24 @@ export class AniCircleComponent implements OnInit, OnChanges {
 
   }
 
-  // addEventListener(el: Element) {
-  //   const fn = new Function('callingObject', 'if (aniCircleEvent) { eval(aniCircleEvet(this)); }');
-  //   el.addEventListener('mouseover', () => {
-  //     eval('aniCircleEvent')
-  //   });
-  // }
+  // remove bootstrap tooltip if there's nothing to show in it.  (The bootstrap 
+  //   tooltip still shows an empty bubble if there's no text -- irritating!)
+  removeTooltip() {
+    if (!this.subText) {
+      const child = this.el.nativeElement.children[0];
+      if (child) {
+        const gChildren = child.children;
+        for (let i = 0; i < gChildren.length; i++) {
+          if (gChildren[i].classList.contains('tooltip')) {
+            this.rend.removeChild(child, gChildren[i]);
+            if (gChildren[i - 1].getAttribute('ng-reflect-tooltip')) {
+              this.rend.setAttribute(gChildren[i - 1], 'ng-reflect-tooltip', '');
+            }
+          }
+        }
+      }
+    }
+  }
 
   setHome() {
     if (this.col > -11 && this.col < 11) {
@@ -236,7 +250,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
     this.rend.setStyle(n, 'transitionTimingFunction', this.inYoFaceBezier);
     this.rend.setStyle(n, 'left', ((window.innerWidth / 2) - (f.offsetWidth / 2)) + 'px');
     this.rend.setStyle(n, 'top', t + 'px');
-    this.rend.setStyle(n, 'opacity', '1');
+    this.rend.setStyle(n, 'opacity', '');
     const color = flip.style.backgroundColor;
     // this.rend.setStyle(f, 'background-color', color.replace(/rgba\((\d{1,3}\,\s{0,1}\d{1,3}\,\d{1,3}\,\s{0,1})\d{1,3}\.{0,1}\d{1,3}\)/, 'rgba($11)'));
 
@@ -268,7 +282,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
     }
     this.rend.setStyle(n, 'transitionTimingFunction', this.homeBezier);
     this.rend.setStyle(f, 'transform', 'scale(1, 1)');
-    this.rend.setStyle(n, 'opacity', '1');
+    this.rend.setStyle(n, 'opacity', '');
     this.park(n);
   }
 

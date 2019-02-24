@@ -223,9 +223,13 @@ export class GlobalFunctionsService {
     setTimeout(() => {
       const el = document.getElementById(name);
       if (el) {
-        el.classList.remove(classNameOut);
-        el.classList.add(classNameIn);
-      }
+        if (classNameIn) {
+          el.classList.add(classNameIn);
+        }
+        if (classNameOut) {
+          el.classList.remove(classNameOut);
+        }
+    }
     }, wait);
   }
 
@@ -248,7 +252,7 @@ export class GlobalFunctionsService {
           if (classNameIn) {
             els[i].classList.add(classNameIn);
           }
-          else if (!classNameOut) {
+          if (classNameOut) {
             els[i].classList.remove(classNameOut);
           }
         }
