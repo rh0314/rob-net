@@ -123,9 +123,9 @@ app-ani-circle.park {
     top: 37vh !important;
     left: 60vw !important;
   }
-  &.y1 {
-    left: 84vh !important;
-    left: 91vw !important;
+  &.r4c6 {
+    top: 37vh !important;
+    left: 75vw !important;
   }
   &.y {
     left: 1vw !important;
@@ -134,11 +134,8 @@ app-ani-circle.park {
     left: 91vw !important;
   }
   &.mute {
-    opacity: 0.2;
-    transition-property: transform opacity;
-    transition-duration: 1.5s;
-    transition-timing-function: ease-in;
-    // transform: rotateX(360deg) scale(.5, .5);
+    transform: scale(-30%, -30%);
+    opacity: .5;
     &:hover {
       opacity: 1;
     }
