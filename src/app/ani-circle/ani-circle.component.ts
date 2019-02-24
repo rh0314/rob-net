@@ -140,12 +140,12 @@ export class AniCircleComponent implements OnInit, OnChanges {
 
   }
 
-  addEventListener(el: Element) {
-    const fn = new Function('callingObject', 'if (aniCircleEvent) { eval(aniCircleEvet(this)); }');
-    el.addEventListener('mouseover', () => {
-      eval('aniCircleEvent')
-    });
-  }
+  // addEventListener(el: Element) {
+  //   const fn = new Function('callingObject', 'if (aniCircleEvent) { eval(aniCircleEvet(this)); }');
+  //   el.addEventListener('mouseover', () => {
+  //     eval('aniCircleEvent')
+  //   });
+  // }
 
   setHome() {
     if (this.col > -11 && this.col < 11) {
