@@ -134,7 +134,8 @@ app-ani-circle.park {
     left: 91vw !important;
   }
   &.mute {
-    transform: scale(30%, 30%);
+    transform: scale(-30%, -30%);
+    opacity: .5;
     &:hover {
       opacity: 1;
     }
