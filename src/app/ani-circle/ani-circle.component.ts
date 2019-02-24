@@ -1,4 +1,5 @@
 import { Component, OnInit, Renderer2, ElementRef, Input, OnChanges, SimpleChange, HostListener, ViewChild, AfterViewInit } from '@angular/core';
+import { fn } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-ani-circle',
@@ -23,6 +24,8 @@ export class AniCircleComponent implements OnInit, OnChanges {
   @Input('idx') idx: number = -1;
   @Input('park-class') parkClass: string;
   @Input('park-time') parkTime: number;
+  @Input('mouse-event') mouseEvent: Function;
+  
 
   @HostListener('window:resize', ['$event'])
   onresize(event) {
@@ -99,6 +102,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
     this.rend.setStyle(n, 'webkitTransitionDuration', this.duration + 'ms');
     this.rend.setStyle(n, 'transition', 'top left bottom right width height opacity transform');
     this.rend.setStyle(n, 'transitionDuration', this.duration + 'ms');
+    this.addEventListener(n);
 
     if (this.idx % 2 === 0) {
       const flip = n.children[0];
@@ -134,6 +138,13 @@ export class AniCircleComponent implements OnInit, OnChanges {
     this.areaSize = this.circleSize + this.bufferSize;
     this.maxImageSize = this.circleSize * 0.5;
 
+  }
+
+  addEventListener(el: Element) {
+    const fn = new Function('callingObject', 'if (aniCircleEvent) { eval(aniCircleEvet(this)); }');
+    el.addEventListener('mouseover', () => {
+      eval('aniCircleEvent')
+    });
   }
 
   setHome() {
@@ -225,7 +236,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
     this.rend.setStyle(n, 'transitionTimingFunction', this.inYoFaceBezier);
     this.rend.setStyle(n, 'left', ((window.innerWidth / 2) - (f.offsetWidth / 2)) + 'px');
     this.rend.setStyle(n, 'top', t + 'px');
-    this.rend.setStyle(n, 'opacity', '');
+    this.rend.setStyle(n, 'opacity', '1');
     const color = flip.style.backgroundColor;
     // this.rend.setStyle(f, 'background-color', color.replace(/rgba\((\d{1,3}\,\s{0,1}\d{1,3}\,\d{1,3}\,\s{0,1})\d{1,3}\.{0,1}\d{1,3}\)/, 'rgba($11)'));
 
@@ -257,7 +268,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
     }
     this.rend.setStyle(n, 'transitionTimingFunction', this.homeBezier);
     this.rend.setStyle(f, 'transform', 'scale(1, 1)');
-    this.rend.setStyle(n, 'opacity', '');
+    this.rend.setStyle(n, 'opacity', '1');
     this.park(n);
   }
 

@@ -3,7 +3,7 @@
 
     <div id="pdfAnchor" class="pdf-button-anchor">
         <div id="innerAnchor" style="width: 100%">
-            <div id="zoomBtnHolder" class="zoom-button-container">
+            <div id="zoomBtnHolder" class="zoom-button-container vertical">
                 <button id="btnZoomDown" class="zoom-button zoomOut" (click)="zoomUp(false)"
                     [disabled]="(zoomLevel <= 0.25)">
                     <i class="fa fa-minus"></i>
@@ -14,8 +14,34 @@
                     <i class="fa fa-plus"></i>
                 </button>
             </div>
+            <div class="vert-zoom-button-container horizontal" id="vertZoomBtnHolder">
+                <table>
+                    <tr>
+                        <td>
+                            <button id="btnVertZoomDown" class="zoom-button zoomOut" (click)="zoomUp(false)"
+                                [disabled]="(zoomLevel <= 0.25)">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="vert-zoom-button-container-text">
+                                {{zoomLevel | number:'1.0-1'}}</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button id="btnVertZoomUp" class="zoom-button zoomIn" (click)="zoomUp(true)"
+                                [disabled]="(zoomLevel >= 3)">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div id="pdf-viewer-container" class="pdf-viewer-container">
+        <div id="pdfViewerContainer" class="pdf-viewer-container">
             <pdf-viewer id="pdfViewer" src="../assets/rob-harrison-resume.pdf" [show-all]="true" [page]="page"
                 (after-load-complete)="afterLoadComplete($event)" [autoresize]="true" [zoom]="zoomLevel"
                 page-rendered="pageRendered($event)">

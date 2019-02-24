@@ -26,14 +26,12 @@ export class ResumeComponent implements OnInit {
   ngOnInit() {
     window.addEventListener('resize', e => {
       this.moveButtons();
-      this.resized();
     });
     window.addEventListener('scroll', e => {
       this.moveButtons();
     });
     this.moveButtons();
     this.globalFunctions.swapClass('resumePage', 'page-in', 'page-out', 500);
-    // this.resized();
   }
 
   ngOnDestroy() {
@@ -50,27 +48,16 @@ export class ResumeComponent implements OnInit {
     const bw = btns ? btns.getBoundingClientRect().width : 0;
     const zbt = this.zbtOffset - at;
     const zbl = am - (bw * .5);
-    if (btns) {
+    const wh = window.innerHeight;
+    const ww = window.innerWidth;
+    const y = window.scrollY;
+    if (y < 200 && btns) {
       btns.style.top = zbt + 'px';
       btns.style.left = zbl + 'px';
-      // console.log('btns', btns.getBoundingClientRect(), 'pdfAnchor" ', anchor.getBoundingClientRect(), 'at', at, 'zbt', zbt, 'ct', ct);
     }
-  }
-
-  resized() {
-    this.pdfViewer = document.getElementById('pdf-viewer-container');
-    let pdfWidth = this.pdfViewer.getBoundingClientRect().width;
-    while (pdfWidth > window.innerHeight || (this.zoomLevel < this.savedZoom && pdfWidth > (window.innerWidth * .85))) {
-      if (pdfWidth >= window.innerWidth) {
-        this.savedZoom = this.zoomLevel;
-        this.zoomUp(false);
-      }
-      else if (this.zoomLevel < this.savedZoom && pdfWidth < (window.innerWidth * .8)) {
-        this.zoomUp(true);
-      }
-      pdfWidth = this.pdfViewer.getBoundingClientRect().width;
+    else {
+      
     }
-
   }
 
   zoomUp(up: boolean) {
@@ -85,13 +72,13 @@ export class ResumeComponent implements OnInit {
   }
 
   nextPage() {
-    this.pdfViewer = document.getElementById('pdf-viewer-container');
+    this.pdfViewer = document.getElementById('pdfViewerContainer');
     this.page++;
     this.pdfViewer.scrollTop = 0;
   }
 
   prevPage() {
-    this.pdfViewer = document.getElementById('pdf-viewer-container');
+    this.pdfViewer = document.getElementById('pdfViewerContainer');
     this.page--;
     this.pdfViewer.scrollTop = 0;
   }

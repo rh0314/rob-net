@@ -129,9 +129,11 @@ jQuery(document).ready(function ($) {
             var o = (maxO - (((top / height)) * maxO));
             o = (o < minO ? minO : o);
             el.style.opacity = o;
+            $('#mainMenuBg').removeClass('menu-slide-up');
         }
         else if (top > height) {
             el.style.opacity = o;
+            $('#mainMenuBg').addClass('menu-slide-up');
         } else {
             el.style.opacity = maxO;
         }

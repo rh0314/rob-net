@@ -61,11 +61,8 @@
   width: 100vw;
 }
 
-
-
 app-ani-circle.park {
-
-  transform: scale(0.7 , 0.7);
+  transform: scale(0.7, 0.7);
   &.r1c1 {
     top: -15vh !important;
     left: 0vw !important;
@@ -137,17 +134,13 @@ app-ani-circle.park {
     left: 91vw !important;
   }
   &.mute {
-    opacity: 0.1;
+    opacity: 0.2;
     transition-property: transform opacity;
     transition-duration: 1.5s;
     transition-timing-function: ease-in;
-    transform: rotateX(360deg) scale(.5, .5);
+    // transform: rotateX(360deg) scale(.5, .5);
     &:hover {
-      transition-property: transform opacity;
-      transition-duration: 1.5s;
-      transition-timing-function: ease-in;
-      transform: rotateX(0deg) scale(1, 1);
-        opacity: 1;
+      opacity: 1;
     }
   }
 }
