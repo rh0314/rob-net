@@ -102,7 +102,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
     this.rend.setStyle(n, 'webkitTransitionDuration', this.duration + 'ms');
     this.rend.setStyle(n, 'transition', 'top left bottom right width height opacity transform');
     this.rend.setStyle(n, 'transitionDuration', this.duration + 'ms');
-    this.addEventListener(n);
+    // this.addEventListener(n);
 
     if (this.idx % 2 === 0) {
       const flip = n.children[0];

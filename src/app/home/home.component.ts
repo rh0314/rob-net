@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngAfterViewInit() {
     window.addEventListener('resize', this.globalFunctions.onScroll);
     window.addEventListener('scroll', this.globalFunctions.onScroll);
-    this.globalFunctions.swapAllByClass('park', 'mute', '', 30000);
+    this.globalFunctions.swapAllByClass('park', 'mute', '', 45000);
   }
 
   ngOnDestroy() {
@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       },
       {
         text: "Custom Applications", subText: "Applications designed and delivered to meet your specifications.",
-        image: { path: "../../assets/images/internet-icons/application-icon.png", sizeX: 1, sizeY: 1 },
+        image: { path: "../../assets/images/internet-icons/application-laptop.png", sizeX: 1, sizeY: 1 },
         startX: -1500, startY: -500, gridCol: 0, gridRow: 1, duration: 1000, delay: 4000,
         parkTime: 5000, parkClass: 'park r4c3'
       },
@@ -145,10 +145,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       // { text: "JQuery", gridCol: -2, gridRow: 2, duration: 2250, delay: 500, image: { path: "../../assets/images/internet-icons/jquery.png", sizeX: 1.25, sizeY: 1.25 }, startX: -1000, startY: 9999,  parkTime: 12000, parkClass: 'park x11' },
 
       {
-        text: "AngularJS", gridCol: -1, gridRow: 2, duration: 2500, delay: 500,
+        text: "AngularJS", gridCol: -1, gridRow: 2, duration: 1500, delay: 3500,
         subText: "",
-        image: { path: "../../assets/images/internet-icons/angularjs.png", sizeX: 1.6, sizeY: 0.6 },
-        startX: 2000, startY: 1000, parkTime: 11000, parkClass: 'park x12'
+        image: { path: "../../assets/images/internet-icons/angularjs.png", sizeX: 1.5, sizeY: 0.6 },
+        startX: 2000, startY: 1000, parkTime: 5000, parkClass: 'park r4c2'
       },
 
       {
