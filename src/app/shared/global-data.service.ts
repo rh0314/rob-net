@@ -11,15 +11,19 @@ export class GlobalDataService {
     nonIntroPages: []
   };
 
-  showStars1 = true;
-  showStars2 = true;
-  showStars3 = true;
+  pageBgClasses = {
+    intro: 'bg-fade-in-background-1',
+    home: 'bg-fade-in-background-2',
+    about: 'bg-fade-in-background-2',
+    resume: 'bg-fade-in-background-2',
+    code: 'bg-fade-in-background-2'
+  };
 
   scrollData = {
     beenToTop: false,
     currentTop: 0,
     direction: false  // up = true, down = false
-  }
+  };
 
   introBgClass = '';
   nonIntroBgClass = '';
@@ -27,25 +31,6 @@ export class GlobalDataService {
   watchOnScroll = [
 
   ];
-
-  scrollRoutes: Array<any> = [
-    {
-      route: '/content/home',
-      above: [],
-      self: 'wrappedHomeContent'
-    },
-    {
-      route: '/content/about',
-      above: ['wrappedHomeContent'],
-      self: 'wrappedAboutContent'
-    },
-    {
-      route: '/content/resume',
-      above: ['wrappedHomeContent', 'wrappedAboutContent'],
-      self: 'wrappedResumeContent'
-    }
-  ]
-
 
   get currentPage(): string {
     return this._currentPage;
@@ -58,9 +43,6 @@ export class GlobalDataService {
   }
   set showHeader(value: boolean) {
     this._showHeader = value;
-  }
-  get showAllStars(): boolean {
-    return this.showStars1 && this.showStars2 && this.showStars3;
   }
   get router(): Router {
     return this._router;
