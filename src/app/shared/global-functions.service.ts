@@ -61,10 +61,10 @@ export class GlobalFunctionsService {
 
       const keys = Object.keys(_this.globalData.pageBgClasses);
       for (let i = 0; (i < keys.length && !done); i++) {
-        console.log(_this.globalData.router.url.replace(/\//g, ''));
-        if (_this.globalData.router.url.replace(/\//g, '') == keys[i]) {
+        const route = _this.globalData.router.url.replace(/\//g, '');
+        if (route == keys[i]) {
           body.classList.add(_this.globalData.pageBgClasses[keys[i]]);
-          _this.globalData.setProperty('headerHidden', false);
+          _this.globalData.setProperty('headerHidden', (route === 'intro'));
           done = true;
         }
       }
