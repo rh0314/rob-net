@@ -47,25 +47,31 @@ export class GlobalFunctionsService {
 
 
   setIntroClasses(wait: number = 0) {
-    this.stripClassByQuery('#mainMenuBg', 'bg-has-back-colort');
+    const _this = this;
+    let done = false;
     setTimeout(() => {
-      if (this.globalData.router.url === '/intro') {
-        this.swapClassByQuery('body', 'bg-fade-in-background-1', 'bg-fade-in-background-2');
-        this.globalData.setProperty('headerHidden', true);
-      }
-      else {
-        const keys = Object.keys(this.globalData.pageBgClasses);
-        for (let i  = 0; i < keys.length; i++) {
-          if (this.globalData.router.url.replace(/\//g, '') == keys[i]) {
-            this.swapClassByQuery('body', this.globalData.pageBgClasses.intro, this.globalData.pageBgClasses[keys[i]]);
-            this.globalData.setProperty('headerHidden', false);
-          }
-          else {
-            this.stripClassByQuery('body', this.globalData.pageBgClasses[keys[i]]);
-            this.globalData.setProperty('headerHidden', false);
-            this.addClass('mainMenuBg', 'bg-default');
-          }
+      const body = this.getElementByQuery('body');
+      const bodyClasses = body.classList;
+      if (bodyClasses && bodyClasses.length) {
+        for (let i = 0; i < bodyClasses.length; i++) {
+          bodyClasses.remove(bodyClasses[i]);
         }
+      }
+      _this.stripClassByQuery('#mainMenuBg', 'bg-has-back-color');
+
+      const keys = Object.keys(_this.globalData.pageBgClasses);
+      for (let i = 0; (i < keys.length && !done); i++) {
+        console.log(_this.globalData.router.url.replace(/\//g, ''));
+        if (_this.globalData.router.url.replace(/\//g, '') == keys[i]) {
+          body.classList.add(_this.globalData.pageBgClasses[keys[i]]);
+          _this.globalData.setProperty('headerHidden', false);
+          done = true;
+        }
+      }
+
+      if (!done) {
+        _this.globalData.setProperty('headerHidden', false);
+        body.classList.add('bg-has-back-color');
       }
     }, wait);
   }
@@ -74,10 +80,10 @@ export class GlobalFunctionsService {
     setTimeout(() => {
       const el = this.getElementByQuery('body');
       const keys = Object.keys(this.globalData.pageBgClasses);
-      for (let i  = 0; i < keys.length; i++) {
+      for (let i = 0; i < keys.length; i++) {
         el.classList.remove(this.globalData.pageBgClasses[keys[i]]);
       }
-  }, wait);
+    }, wait);
   }
 
 
@@ -138,10 +144,10 @@ export class GlobalFunctionsService {
 
   getElementByQuery(query: string) {
     let el = document.querySelector(query);
-      if (el && el[0]) {
-        el = el[0];
-      }
-      return el;
+    if (el && el[0]) {
+      el = el[0];
+    }
+    return el;
   }
 
 

@@ -9,18 +9,7 @@
 @import "./assets/css/magic.css";
 @import "./assets/css/stars.scss";
 @import "../node_modules/aos/dist/aos.css";
-$bb-primary: #000b29;
-$bb-primary-rgb: rgb(0, 11, 41);
-$bb-primary-light: #3d72ed;
-$bb-primary-dark: #283657;
-$bb-secondary: #f8f5f2;
-$bb-secondary-dark: #827262;
-$bb-accent: #d70026;
-$bb-accent-light: #ff3153;
-$bb-accent-dark: #80192a;
-$bb-accent-alt: #edb83d;
-$bb-accent-alt-light: #edb83d;
-$bb-accent-alt-dark: #6e5b30;
+
 @mixin shadow-darker($parent, $color) {
   #{$parent} {
     background-color: $color !important;
@@ -43,7 +32,7 @@ $bb-accent-alt-dark: #6e5b30;
   background-color: $bb-primary-dark;
 }
 
-.bg-has-back-colort {
+.bg-has-back-color {
   background-color: $bb-primary !important;
 }
 

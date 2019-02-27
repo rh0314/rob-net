@@ -3,7 +3,9 @@ import * as AOS from 'aos';
 import { DOCUMENT } from "@angular/common";
 import { GlobalDataService } from './shared/global-data.service';
 import { GlobalFunctionsService } from './shared/global-functions.service'
-
+import { Router, NavigationStart } from "@angular/router";
+import { Event as NavigationEvent } from "@angular/router";
+import { filter } from "rxjs/operators";
 
 @Component({
   selector: 'app-root',
@@ -24,8 +26,27 @@ export class AppComponent implements OnInit {
   constructor(
     @Inject(DOCUMENT) document,
     private globalData: GlobalDataService,
-    private globalFunctions: GlobalFunctionsService
+    private globalFunctions: GlobalFunctionsService,
+    private router: Router
   ) {
+    router.events
+            .pipe(
+                // The "events" stream contains all the navigation events. For this demo,
+                // though, we only care about the NavigationStart event as it contains
+                // information about what initiated the navigation sequence.
+                filter(
+                    ( event: NavigationEvent ) => {
+ 
+                        return( event instanceof NavigationStart );
+ 
+                    }
+                )
+            ).subscribe(
+      (event: NavigationStart) => {
+        console.log(event);
+        this.globalFunctions.setIntroClasses();
+      }
+    )
   }
 
   ngOnInit() {

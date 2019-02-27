@@ -1,0 +1,35 @@
+@import "../variables";
+.error-404-page-wrapper {
+  background-color: rgba($bb-primary, 0);
+  height: 100vh;
+  background-image: url(../../assets//images/studio-404.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  position: relative;
+}
+
+.error-404-page-content {
+  width: 100%;
+  padding-top: 150px;
+  letter-spacing: 20px;
+  text-align: center;
+  color: rgb(28, 4, 248);
+  font-size: 50px;
+  position: relative;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bold;
+  text-shadow: 4px 4px 3px #FDED06, -4px -4px 3px #FDED06, 4px -4px 3px #FDED06, -4px 4px 3px #FDED06, 
+               5px 5px 3px rgba(253, 237, 6, 0.9), 5px 5px 3px rgba(253, 237, 6, 0.9), -5px -5px 3px rgba(253, 237, 6, 0.9), 5px -5px 3px rgba(253, 237, 6, 0.9), 
+               6px 6px 3px rgba(251, 161, 6, 1.0), -6px -6px 3px rgba(251, 161, 6, 1.0), 6px -6px 3px rgba(251, 161, 6, 1.0), -6px 6px 3px rgba(251, 161, 6, 0.9), 
+               7px 7px 3px rgba(251, 161, 6, 0.9), -7px -7px 3px rgba(251, 161, 6, 0.9), 7px -7px 3px rgba(251, 161, 6, 0.9), -7px 7px 3px rgba(251, 161, 6, 0.9), 
+               8px 8px 3px rgba(251, 161, 6, 0.9), -8px -8px 3px rgba(251, 161, 6, 0.9), 8px -8px 3px rgba(251, 161, 6, 0.9), -8px 8px 3px rgba(251, 161, 6, 0.9), 
+               9px 9px 3px rgba(252, 4, 10, 0.9), -9px -9px 3px rgba(252, 4, 10, 0.9), 9px -9px 3px rgba(252, 4, 10, 0.9), -9px 9px 3px rgba(252, 4, 10, 0.85), 
+               10px 10px 3px rgba(252, 4, 10, 0.85), -10px -10px 3px rgba(252, 4, 10, 0.855), 10px -10px 3px rgba(252, 4, 10, 0.85), -10px 10px 3px rgba(252, 4, 10, 0.85),
+               11px 11px 3px rgba(252, 4, 10, 0.85), -11px -11px 3px rgba(252, 4, 10, 0.855), 11px -11px 3px rgba(252, 4, 10, 0.85), -11px 11px 3px rgba(252, 4, 10, 0.85),
+               12px 12px 3px rgba(252, 4, 10, 0.85), -12px -12px 3px rgba(252, 4, 10, 0.855), 12px -12px 3px rgba(252, 4, 10, 0.85), -12px 12px 3px rgba(252, 4, 10, 0.85);
+}
+
+.page-not-found {
+  padding-left: 30px;
+}
