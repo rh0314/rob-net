@@ -70,7 +70,7 @@ export class GlobalFunctionsService {
       }
 
       if (!done) {
-        _this.globalData.setProperty('headerHidden', false);
+        _this.globalData.setProperty('headerHidden', true);
         body.classList.add('bg-has-back-color');
       }
     }, wait);
