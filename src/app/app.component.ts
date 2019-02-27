@@ -30,18 +30,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     AOS.init(this.aosConfig);
-    document.addEventListener('aos:in', (detail) => {
-      console.log('ani in: ', detail);
-    });
-    document.addEventListener('aos:out', (detail) => {
-      console.log('ani out: ', detail);
-    });
 
     if (window.scrollY > 10) {
       this.globalFunctions.scrollToTop(2500, 0, 0);
     }
-    // this.globalData.watchOnScroll.push({id: 'wrappedAboutContent' })
-    // this.globalData.watchOnScroll.push({id: 'contentWrapper'});
     this.globalFunctions.setIntroClasses(200);
   }
 
