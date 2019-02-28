@@ -16,7 +16,8 @@ export class GlobalDataService {
     home: 'bg-fade-in-background-2',
     about: 'bg-fade-in-background-2',
     resume: 'bg-fade-in-background-2',
-    code: 'bg-fade-in-background-2'
+    code: 'bg-fade-in-background-2',
+    pipes: 'bg-fade-in-background-2'
   };
 
   scrollData = {

@@ -16,6 +16,9 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AniCircleComponent } from './ani-circle/ani-circle.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { IntroComponent } from './intro/intro.component';
+import { PipesDemoComponent } from './code-demos/pipes-demo/pipes-demo.component';
+import { ROrderByPipe } from '../../../ngx-ripes/src/app/pipes/rOrderBy-pipe';
+import { RMbGbPipe } from '../../../ngx-ripes/src/app/pipes/rmbgb-pipe';
 
 @NgModule({
   declarations: [
@@ -29,16 +32,22 @@ import { IntroComponent } from './intro/intro.component';
     ResumeComponent,
     AniCircleComponent,
     IntroComponent,
+    PipesDemoComponent,
+    RMbGbPipe,
+    ROrderByPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PdfViewerModule,
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
   ],
   providers: [
     GlobalDataService,
-    GlobalFunctionsService
+    GlobalFunctionsService,
+    // RMbGbPipe,
+    // ROrderByPipe
+
   ],
   bootstrap: [AppComponent]
 })
