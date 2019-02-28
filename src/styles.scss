@@ -9,7 +9,6 @@
 @import "./assets/css/magic.css";
 @import "./assets/css/stars.scss";
 @import "../node_modules/aos/dist/aos.css";
-
 @mixin shadow-darker($parent, $color) {
   #{$parent} {
     background-color: $color !important;
@@ -44,16 +43,25 @@
   font-size: 15px;
 }
 
-.bg-fade-in-background-1 {
+.rh-background-1 {
   background-image: url(./assets/images/coding-3-flip-75a.png); // background-image: url(./assets/images/lightning-combined-high.gif);
   opacity: 0.8;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.bg-fade-in-background-2 {
+.rh-background-2 {
   transition: background-image 1s ease-in;
   background-image: url(./assets/images/coding-4-flip-2a.png);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.rh-background-3 {
+  transition: background-image 1s ease-in;
+  background-image: url(./assets/images/blue-grid-paper-background-millimeter.jpg);
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 #mainMenuBg {
@@ -145,6 +153,43 @@
   font-family: 'latoheavy_italic';
 }
 
+.lato {
+  font-family: 'latolight';
+}
+
+.lato {
+  font-family: 'latolight';
+  .accented {
+    color: $bb-accent-alt;
+    &.sub {
+      color: $bb-accent-alt-dark;
+    }
+    &.high {
+      color: $bb-accent-alt-light;
+    }
+    &.primary {
+      color: $bb-accent;
+      font-family: 'latomedium';
+      &.high {
+        color: $bb-accent-light;
+      }
+    }
+  }
+}
+
+.themed {
+  color: $bb-secondary;
+  &.shnadow {
+    text-shadow: 1px 1px 1px $bb-secondary-dark;
+  }
+  &.bold {
+    font-family: 'latobold', Geneva, Verdana, sans-serif, Arial, Helvetica, sans-serif;
+  }
+  &.italic {
+    font-style: italic;
+  }
+}
+
 .page-headline-content {
   padding-top: 35px;
   padding-bottom: 20px;
@@ -176,8 +221,6 @@
     box-shadow: none !important;
   }
   &.themed {
-    // color: #48A868;
-    // color: rgb(19, 116, 228);
     color: $bb-secondary; //#3B7DF0;
     text-shadow: 3px 4px $bb-secondary-dark; // #152D57;
   }
@@ -207,26 +250,6 @@
   font-size: 18px;
   font-family: 'latolight';
   line-height: 1.3;
-}
-
-.themed {
-  font-family: 'latolight', 'Lucinda', 'Tahoma', 'Arial';
-  color: $bb-secondary;
-  &.shnadow {
-    text-shadow: 1px 1px 1px $bb-secondary-dark;
-  }
-  &.bold {
-    font-family: 'latobold', Geneva, Verdana, sans-serif, Arial, Helvetica, sans-serif;
-  }
-  &.italic {
-    font-style: italic;
-  }
-  &.accented {
-    color: $bb-accent;
-    &.shadow {
-      text-shadow: 1px 1px $bb-accent-dark;
-    }
-  }
 }
 
 p {

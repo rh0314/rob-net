@@ -12,12 +12,12 @@ export class GlobalDataService {
   };
 
   pageBgClasses = {
-    intro: 'bg-fade-in-background-1',
-    home: 'bg-fade-in-background-2',
-    about: 'bg-fade-in-background-2',
-    resume: 'bg-fade-in-background-2',
-    code: 'bg-fade-in-background-2',
-    pipes: 'bg-fade-in-background-2'
+    intro: 'rh-background-1',
+    home: 'rh-background-2',
+    about: 'rh-background-2',
+    resume: 'rh-background-2',
+    code: 'rh-background-3',
+    pipes: 'rh-background-3'
   };
 
   scrollData = {

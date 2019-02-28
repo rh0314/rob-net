@@ -22,7 +22,7 @@ export class GlobalFunctionsService {
       }
       setTimeout(() => {
         this.swapClass('main_menu', 'header-in', 'header-out');
-        // this.swapClassByQuery('body', 'bg-fade-in-background-2', 'bg-fade-in-background-1');
+        // this.swapClassByQuery('body', 'rh-background-2', 'rh-background-1');
         this.navigateTo(destination);
       }, 2000);
     }

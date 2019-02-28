@@ -1,6 +1,7 @@
 @import '../../variables';
 @import '../../../fonts';
 
+
 .sample-usage-container {
   color: rgb(241, 236, 236);
   font-family: 'latolight', "Segoe UI", Tahoma, Geneva, Verdana, "sans-serif";
@@ -12,14 +13,14 @@
 
 h1,
 h2 {
-  font-family: 'lato-heavy', Arial, Helvetica, sans-serif;
+  font-family: 'latoheavy', Arial, Helvetica, sans-serif;
 }
 
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'lato-bold', Arial, Helvetica, sans-serif;
+  font-family: 'latobold', Arial, Helvetica, sans-serif;
   margin-top: 30px;
 }
 
@@ -27,8 +28,19 @@ p {
   font-size: 18px;
 }
 
+p.sub-p {
+  font-family: 'latothin_italic', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
 a {
   color: lightblue;
+  &:hover, &:active {
+    color: $bb-accent-light;
+    text-decoration: none;
+  }
+  
 }
 
 code {
@@ -46,7 +58,7 @@ code {
 table {
   color: #333;
   border-radius: 4px;
-  box-shadow: 4px 4px 3px rgba(238, 232, 232, 0.795);
+  // box-shadow: 4px 4px 3px rgba(238, 232, 232, 0.795);
   background-color: #FFF;
   pre {
     display: block;
