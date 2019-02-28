@@ -22,7 +22,7 @@ export class GlobalFunctionsService {
       }
       setTimeout(() => {
         this.swapClass('main_menu', 'header-in', 'header-out');
-        this.swapClassByQuery('body', 'bg-fade-in-background-2', 'bg-fade-in-background-1');
+        // this.swapClassByQuery('body', 'bg-fade-in-background-2', 'bg-fade-in-background-1');
         this.navigateTo(destination);
       }, 2000);
     }
@@ -70,7 +70,7 @@ export class GlobalFunctionsService {
       }
 
       if (!done) {
-        _this.globalData.setProperty('headerHidden', false);
+        _this.globalData.setProperty('headerHidden', true);
         body.classList.add('bg-has-back-color');
       }
     }, wait);
