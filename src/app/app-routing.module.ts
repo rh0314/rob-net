@@ -6,12 +6,14 @@ import { Error404Component } from './error404/error404.component';
 import { ResumeComponent } from './resume/resume.component';
 import { IntroComponent } from './intro/intro.component';
 import { PipesDemoComponent } from './code-demos/pipes-demo/pipes-demo.component';
+import { CodeDemosComponent } from './code-demos/code-demos.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, data: {  } },
   { path: 'about', component: AboutComponent, data: {} },
   { path: 'resume', component: ResumeComponent, data: {} },
   { path: 'intro', component: IntroComponent },
+  { path: 'code', component: CodeDemosComponent },
   { path: 'pipes', component: PipesDemoComponent },
 
   { path: '', redirectTo: '/intro', pathMatch: 'full' },

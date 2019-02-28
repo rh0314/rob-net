@@ -177,6 +177,22 @@
   }
 }
 
+.angle-bracketed-content::before {
+  content: "<";
+}
+
+.angle-bracketed-content::after {
+  content: ">";
+}
+
+.angle-bracketed-content.hover-braces:hover::after {
+  content: "}}";
+}
+
+.angle-bracketed-content.hover-braces:hover::before {
+  content: "{{";
+}
+
 .themed {
   color: $bb-secondary;
   &.shnadow {

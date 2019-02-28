@@ -19,6 +19,7 @@ import { IntroComponent } from './intro/intro.component';
 import { PipesDemoComponent } from './code-demos/pipes-demo/pipes-demo.component';
 import { ROrderByPipe } from '../../../ngx-ripes/src/app/pipes/rOrderBy-pipe';
 import { RMbGbPipe } from '../../../ngx-ripes/src/app/pipes/rmbgb-pipe';
+import { CodeDemosComponent } from './code-demos/code-demos.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RMbGbPipe } from '../../../ngx-ripes/src/app/pipes/rmbgb-pipe';
     IntroComponent,
     PipesDemoComponent,
     RMbGbPipe,
-    ROrderByPipe
+    ROrderByPipe,
+    CodeDemosComponent
   ],
   imports: [
     BrowserModule,
