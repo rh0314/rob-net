@@ -127,12 +127,6 @@ export class PipesDemoComponent implements OnInit {
   ];
 
 
-
-
-
-
-
-
   constructor() { }
 
   ngOnInit() {
