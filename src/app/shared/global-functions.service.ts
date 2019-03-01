@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GlobalDataService } from './global-data.service';
 import { ActivatedRoute } from '@angular/router';
-import { TriggerElement, ElementCoords } from './global-classes';
 
 @Injectable({
   providedIn: 'root'

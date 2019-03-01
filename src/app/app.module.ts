@@ -38,8 +38,9 @@ import { CcRewardsComponent } from './code-demos/cc-rewards/cc-rewards.component
     RMbGbPipe,
     ROrderByPipe,
     CodeDemosComponent,
-    CcRewardsComponent
+    CcRewardsComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,

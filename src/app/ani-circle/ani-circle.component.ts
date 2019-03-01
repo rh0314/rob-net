@@ -1,5 +1,4 @@
 import { Component, OnInit, Renderer2, ElementRef, Input, OnChanges, SimpleChange, HostListener, ViewChild, AfterViewInit } from '@angular/core';
-import { fn } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-ani-circle',
