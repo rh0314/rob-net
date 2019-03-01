@@ -1,7 +1,5 @@
 @import '../../variables';
 @import '../../../fonts';
-
-
 .sample-usage-container {
   color: rgb(241, 236, 236);
   font-family: 'latolight', "Segoe UI", Tahoma, Geneva, Verdana, "sans-serif";
@@ -20,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'latobold', Arial, Helvetica, sans-serif;
+  font-family: 'latomedium', Arial, Helvetica, sans-serif;
   margin-top: 30px;
 }
 
@@ -36,18 +34,20 @@ p.sub-p {
 
 a {
   color: lightblue;
-  &:hover, &:active {
+  &:hover,
+  &:active {
     color: $bb-accent-light;
     text-decoration: none;
   }
-  
 }
 
 code {
-  padding: 8px 5px 8px 5px;
   font-size: 20px;
   display: inline-block;
-  margin-bottom: 10px;
+  .add-space {
+    padding: 8px 5px 8px 5px;
+    margin-bottom: 10px;
+  }
   pre {
     border: none !important;
     background-color: inherit;
@@ -55,10 +55,37 @@ code {
   }
 }
 
+.contents-table {
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 60px;
+  a {
+    color: $bb-primary-light;
+  }
+  a:hover {
+    color: $bb-accent-light;
+  }
+  a:active {
+    color: $bb-accent-light;
+  }
+  table {
+    text-shadow: none;
+    color: #333;
+    border-color: #000;
+    font-size: 16px;
+    background-color: #eeeeee;
+    thead {
+      font-weight: bold;
+      background-color: rgb(182, 182, 182);
+    }
+  }
+}
+
 table {
   color: #333;
   border-radius: 4px;
-  // box-shadow: 4px 4px 3px rgba(238, 232, 232, 0.795);
+  font-size: 16px; // box-shadow: 4px 4px 3px rgba(238, 232, 232, 0.795);
   background-color: #FFF;
   pre {
     display: block;
@@ -71,11 +98,11 @@ table {
     border-radius: inherit;
   }
   code {
-    padding: inherit;
+    padding: none;
     font-size: 90%;
     color: inherit;
     background-color: inherit;
-    border-radius: inherit;;
+    border-radius: inherit;
     border: none;
   }
   &.table-striped {
@@ -83,11 +110,9 @@ table {
       tr:nth-of-type(even) {
         background-color: lightgray;
       }
-    } 
-  } 
+    }
+  }
 }
-
-
 
 code.block {
   // font-weight: bold;
@@ -123,6 +148,7 @@ code.block {
   width: 25px;
   height: 25px;
   float: left;
+  margin-right: 10px;
 }
 
 .component-spacer {
@@ -213,4 +239,3 @@ code.block {
     text-align: left;
   }
 }
-

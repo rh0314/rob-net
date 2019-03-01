@@ -1,7 +1,67 @@
 <div class="top-spacer"></div>
 <div class="page-wrapper sample-usage-container">
 
-  <h2 id="rmbgbSampleTitle">rmbgb Pipe Usage and Example</h2>
+  <h1>Angular Custom Pipes</h1>
+  <h4>(Usage demo below)</h4>
+  <div class="contents-table">
+    <table class="table table-responsive">
+      <thead>
+        <tr>
+          <td>
+            What it's Called
+          </td>
+          <td>
+            What it does
+          </td>
+          <td>
+            Repository
+          </td>
+          <td>
+            Demo
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            rMbGb
+          </td>
+          <td>
+            This is a relatively simple extension of the native Angular decimal Pipe that converts numeric data from
+            raw number to usits of Bytes (Bytes, KB, MB, GB, TB, PB -- whatever is appropriate based on the number).
+          </td>
+          <td>
+            <a href="https://github.com/robharrison-ad/ngx-ripes/blob/master/src/app/pipes/rmbgb-pipe.ts"
+              target="_blank">Github Link</a>
+          </td>
+          <td>
+            <a [routerLink]="['/pipes']" fragment="r-mbgb">Demo Link</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            rOrderBy
+          </td>
+          <td>
+            Custom Angular pipe for sorting data - mostly usable in conjunction with <code>*ngFor</code> loops. Sorts any part of an
+            array, whether it's only a single layer deep (i.e., an array of strings or integers) or if you need to
+            sort an array of objects by a property that's multiple layers deep (i.e., student.class.school.district, if you
+            were sorting a list of students by school district name.) </td>
+          <td>
+            <a href="https://github.com/robharrison-ad/ngx-ripes/blob/master/src/app/pipes/rOrderBy-pipe.ts"
+              target="_blank">Github Link</a>
+          </td>
+          <td>
+            <a [routerLink]="['/pipes']" fragment="r-order-by">Demo Link</a>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+
+  <h2 id="r-mbgb">rmbgb Pipe Usage and Example</h2>
 
 
   <div class="info-wrapper">
@@ -60,7 +120,7 @@
 
   <hr />
 
-  <h1 id="rOrderBySampleTitle">rOrderBy Pipe Usage and Example</h1>
+  <h1 id="r-order-by">rOrderBy Pipe Usage and Example</h1>
 
 
   <div class="info-wrapper">
@@ -71,7 +131,7 @@
     <p class="sub-p">
       The order by pipe can function as a standard order-by pipe (sorts data alphabetically, numerically, etc.) but also
       sorts objects and arrays of objects on any element, regardless of how deep the desired sort element is.
-      </p>
+    </p>
   </div>
 
   <div class="info-wrapper">
@@ -80,7 +140,8 @@
     <div><code> <span class="ngb">data | rOrderBy </span> </code></div>
     <br />
 
-    <div>(easy, schmeazy!) <img src="../../../assets/images/emoticon-smiley-regular.png" align="left" class="emoticon" /> </div>
+    <div>(easy, schmeazy!) <img src="../../../assets/images/emoticon-smiley-regular.png" align="left"
+        class="emoticon" /> </div>
     <br />
   </div>
   <table

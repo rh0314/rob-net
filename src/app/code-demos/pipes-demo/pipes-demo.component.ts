@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-pipes-demo',
   templateUrl: './pipes-demo.component.html',
   styleUrls: ['./pipes-demo.component.scss']
 })
-export class PipesDemoComponent implements OnInit {
+export class PipesDemoComponent implements OnInit, AfterViewInit {
+  private fragment: string;
 
   testNumberArray = [1, 2, 3, 79, 108, 100099, -16, 70000, 43.1206];
-
-
   sampleUsers = [
     {
       userId: 4838,
@@ -127,9 +127,30 @@ export class PipesDemoComponent implements OnInit {
   ];
 
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private router: Router) {
+    router.events.subscribe(s => {
+      if (s instanceof NavigationEnd) {
+        const tree = router.parseUrl(router.url);
+        if (tree.fragment) {
+          const element = document.querySelector("#" + tree.fragment);
+          if (element) { element.scrollIntoView({
+            block: "start",
+            inline: "nearest",
+            behavior: "smooth"
+          }); }
+        }
+      }
+    });
+   }
 
   ngOnInit() {
+    this.route.fragment.subscribe(fragment => { this.fragment = fragment });
   }
+
+  ngAfterViewInit(): void {
+
+  }
+
+
 
 }

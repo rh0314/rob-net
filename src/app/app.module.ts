@@ -20,6 +20,7 @@ import { PipesDemoComponent } from './code-demos/pipes-demo/pipes-demo.component
 import { ROrderByPipe } from '../../../ngx-ripes/src/app/pipes/rOrderBy-pipe';
 import { RMbGbPipe } from '../../../ngx-ripes/src/app/pipes/rmbgb-pipe';
 import { CodeDemosComponent } from './code-demos/code-demos.component';
+import { CcRewardsComponent } from './code-demos/cc-rewards/cc-rewards.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CodeDemosComponent } from './code-demos/code-demos.component';
     PipesDemoComponent,
     RMbGbPipe,
     ROrderByPipe,
-    CodeDemosComponent
+    CodeDemosComponent,
+    CcRewardsComponent
   ],
   imports: [
     BrowserModule,

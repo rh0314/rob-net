@@ -111,14 +111,14 @@
 
 .page-hidden {
   opacity: 0;
-  transition-property: opacity; // top: -2000px;
+  transition-property: opacity; 
 }
 
 .page-in {
   display: inline-block;
   transition-property: opacity;
   transition-delay: 500ms;
-  transition-duration: 1250ms; // top: 0px;
+  transition-duration: 750ms; 
   opacity: 1;
 }
 

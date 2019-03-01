@@ -1,3 +1,5 @@
+@import "../variables";
+
 .code-demos-container {
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
@@ -24,3 +26,18 @@
   font-style: italic;
 }
 
+ul {
+  li {
+    a {
+      color: $bb-accent-alt;
+      font-size: 20px;
+    }
+    a:hover {
+      color: $bb-accent-alt-light;
+      text-decoration: none;
+    }
+    &:active {
+      color: $bb-accent-alt-light;
+    }
+  }
+}

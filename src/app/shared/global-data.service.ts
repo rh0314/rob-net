@@ -17,7 +17,8 @@ export class GlobalDataService {
     about: 'rh-background-2',
     resume: 'rh-background-2',
     code: 'rh-background-3',
-    pipes: 'rh-background-3'
+    pipes: 'rh-background-3', 
+    'cc-rewards': 'rh-background-3'
   };
 
   scrollData = {

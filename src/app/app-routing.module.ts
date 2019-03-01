@@ -7,6 +7,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { IntroComponent } from './intro/intro.component';
 import { PipesDemoComponent } from './code-demos/pipes-demo/pipes-demo.component';
 import { CodeDemosComponent } from './code-demos/code-demos.component';
+import { CcRewardsComponent } from './code-demos/cc-rewards/cc-rewards.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, data: {  } },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'intro', component: IntroComponent },
   { path: 'code', component: CodeDemosComponent },
   { path: 'pipes', component: PipesDemoComponent },
+  { path: 'cc-rewards', component: CcRewardsComponent },
 
   { path: '', redirectTo: '/intro', pathMatch: 'full' },
   { path: '**', component: Error404Component }
