@@ -12,7 +12,7 @@ export class Error404Component implements OnInit, AfterViewInit {
   ngOnInit() {
   }
 
-  // ngAfterViewInit() {
+  ngAfterViewInit() {
   //   let p: Element | HTMLElement | HTMLCollectionOf<Element> = document.getElementsByClassName('pacman-container');
   //   if (p && p[0]) {
   //     p = p[0];
@@ -20,6 +20,6 @@ export class Error404Component implements OnInit, AfterViewInit {
   //       p.classList.add('move')
   //     }, 500);
   //   }
-  // }
+  }
 
 }
