@@ -76,7 +76,15 @@
 
 }
 
-.home-button-container {
+.eaten {
+  transition-property: opacity;
+  transition-delay: 0ms;
+  transition-duration: 300ms;
+  opacity: 0;
+  transition-timing-function: ease-out;
+}
+
+.home-button-container.eaten {
   button {
     animation: eaten;
     animation-delay: 4s;
@@ -157,8 +165,6 @@ background-color:yellow;
 
 
 
-
-.uneat {}
 
 // .pacman {
 //   width: 0;
