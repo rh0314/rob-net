@@ -13,7 +13,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.1.0",
-    "@angular/cli": "^7.3.0",
+    "@angular/cli": "^7.3.4",
     "@angular/common": "~7.1.0",
     "@angular/compiler": "~7.1.0",
     "@angular/compiler-cli": "^7.1.4",
@@ -26,9 +26,11 @@
     "bootstrap": "4.2.1",
     "core-js": "^2.5.4",
     "express": "^4.16.4",
+    "jquery": "^3.3.1",
     "ng2-pdf-viewer": "^5.2.3",
     "ngx-bootstrap": "^3.2.0",
     "path": "^0.12.7",
+    "popper.js": "^1.14.7",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "typescript": "~3.1.6",
@@ -36,7 +38,6 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.11.0",
-    "@angular/cli": "^7.3.0",
     "@angular/compiler-cli": "^7.1.4",
     "@angular/language-service": "~7.1.0",
     "@types/jasmine": "~2.8.8",

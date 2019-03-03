@@ -329,6 +329,26 @@ p {
   letter-spacing: .6em;
 }
 
+.debug {
+  border: 5px solid orange;
+  min-height: 5px;
+  &.r {
+    border: 2px solid red;
+  }
+  &.y {
+    border: 2px solid yellow;
+  }
+  &.g {
+    border: 2px solid lime;
+  }
+  &.p {
+    border: 2px solid magenta;
+  }
+  &.b {
+    border: 2px solid cyan;
+  }
+}
+
 /******************************************************************************
  ******************************************************************************
 

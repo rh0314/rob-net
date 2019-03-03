@@ -17,8 +17,8 @@ import { AniCircleComponent } from './ani-circle/ani-circle.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { IntroComponent } from './intro/intro.component';
 import { PipesDemoComponent } from './code-demos/pipes-demo/pipes-demo.component';
-import { ROrderByPipe } from '../../../ngx-ripes/src/app/pipes/rOrderBy-pipe';
-import { RMbGbPipe } from '../../../ngx-ripes/src/app/pipes/rmbgb-pipe';
+import { ROrderByPipe } from './shared/rOrderBy-pipe';
+import { RMbGbPipe } from './shared/rmbgb-pipe';
 import { CodeDemosComponent } from './code-demos/code-demos.component';
 import { CcRewardsComponent } from './code-demos/cc-rewards/cc-rewards.component';
 
