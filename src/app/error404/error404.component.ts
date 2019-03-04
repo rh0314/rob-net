@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { getNativeByTNode } from '@angular/core/src/render3/util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-error404',
@@ -8,7 +8,7 @@ import { getNativeByTNode } from '@angular/core/src/render3/util';
 })
 export class Error404Component implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -24,12 +24,16 @@ export class Error404Component implements OnInit, AfterViewInit {
     //   }
   }
 
+  homeClick() {
+    this.router.navigate(['/home']);
+  }
+
   checkPacman() {
     setTimeout(() => {
       let p = document.getElementById('pacman');
       const b = document.getElementById('homeBtn');
       if (p && b)  {
-        if (p.getBoundingClientRect().left >= ((window.innerWidth / 2) - 250)) {
+        if (p.getBoundingClientRect().left >= ((window.innerWidth / 2) - 300) && p.getBoundingClientRect().left < (window.innerWidth + 150) ) {
           b.classList.add('eaten');
         }
         else {

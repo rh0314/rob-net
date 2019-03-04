@@ -42,13 +42,14 @@
     top: 75px;
     left: calc(50vw - 163px);
     border: none;
-    background: transparent;
+    // background: transparent;
     width: 374px;
     z-index: 0;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 13%, rgba(0,212,255,0) 100%);
   }
   .pacman-container {
     position: absolute;
-    top: 45px; 
+    top: 45px;
     transition-property: left;
     transition-duration: 8s;
     transition-timing-function: linear;
@@ -72,9 +73,7 @@
   }
 }
 
-.pacman{
-
-}
+.pacman {}
 
 .eaten {
   transition-property: opacity;
@@ -82,6 +81,12 @@
   transition-duration: 300ms;
   opacity: 0;
   transition-timing-function: ease-out;
+}
+
+@media(max-width: 991px) {
+  .home-button-container {
+    font-size: 30px;
+  }
 }
 
 .home-button-container.eaten {
@@ -92,79 +97,113 @@
   }
 }
 
-
-.pacman-top{
-  background-color:yellow;
-  height:60px;
-  width:120px;
-  border-radius:100px 100px 0 0;
+.pacman-top {
+  background-color: yellow;
+  height: 60px;
+  width: 120px;
+  border-radius: 100px 100px 0 0;
   animation: spin1 0.5s infinite linear;
 }
 
-.pacman-bottom{
-background-color:yellow;
-  height:60px;
-  width:120px;
-  border-radius:0 0 100px 100px;
+.pacman-bottom {
+  background-color: yellow;
+  height: 60px;
+  width: 120px;
+  border-radius: 0 0 100px 100px;
   animation: spin2 0.5s infinite linear;
 }
 
 @keyframes move-pacman {
-  0% { left: 0px; margin-left: -150px; }
-  100% { left: 100%; margin-left: 50px; }
-
+  0% {
+    left: 0px;
+    margin-left: -150px;
+  }
+  100% {
+    left: 200%;
+    margin-left: 50px;
+  }
 }
 
 @keyframes spin1 {
-	0%  {transform: rotate(0deg);}
-	50%{transform: rotate(-35deg);}
-  
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-35deg);
+  }
 }
+
 @keyframes spin2 {
-	0%  {transform: rotate(0deg);}
-  50%{transform: rotate(35deg);}	
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(35deg);
+  }
 }
 
 @-moz-keyframes spin1 {
-	0%  {transform: rotate(0deg);}
-	50%{transform: rotate(-35deg);}
-  
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-35deg);
+  }
 }
+
 @-moz-keyframes spin2 {
-	0%  {transform: rotate(0deg);}
-  50%{transform: rotate(35deg);}	
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(35deg);
+  }
 }
 
 @-webkit-keyframes spin1 {
-	0%  {transform: rotate(0deg);}
-	50%{transform: rotate(-35deg);}
-  
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-35deg);
+  }
 }
+
 @-webkit-keyframes spin2 {
-	0%  {transform: rotate(0deg);}
-  50%{transform: rotate(35deg);}	
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(35deg);
+  }
 }
 
 @keyframes eaten {
-	0%  {transition: opacity 1;}
-  50%{transition: opacity 0;}
-  
+  0% {
+    transition: opacity 1;
+  }
+  50% {
+    transition: opacity 0;
+  }
 }
 
 @-moz-keyframes eaten {
-	0%  {transition: opacity 1;}
-  50%{transition: opacity 0;}
-  
+  0% {
+    transition: opacity 1;
+  }
+  50% {
+    transition: opacity 0;
+  }
 }
 
 @keyframes eaten {
-	0%  {transition: opacity 1;}
-  50%{transition: opacity 0;}
-  
+  0% {
+    transition: opacity 1;
+  }
+  50% {
+    transition: opacity 0;
+  }
 }
-
-
-
 
 // .pacman {
 //   width: 0;
