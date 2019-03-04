@@ -1,4 +1,4 @@
-.loading {
+.loader {
   width: 100%;
   left: 0px;
   background-image: url(../images/animated-heartbeat.gif);
@@ -6,3 +6,4 @@
   background-repeat: no-repeat;
   z-index: 9999;
 }
+

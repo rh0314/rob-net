@@ -166,6 +166,7 @@ app-ani-circle.park {
   }
   &:hover {
     transform: rotate(320deg);
+    -webkit-animation-name: puffIn;
   }
 }
 
@@ -204,4 +205,49 @@ app-ani-circle.park {
   transition: translate 1.5s ease-in;
   display: block;
   transform: translate(0px, 0px);
+}
+
+@keyframes stretch {
+  0% {
+    -webkit-transform: skew(65deg, -61deg) rotate(61deg) scaleX(2);
+    transform: skew(65deg, -61deg) rotate(61deg) scaleX(2);
+  }
+  50% {
+    -moz-transform: scale(0.3) rotate(329deg) skew(2deg, 31deg);
+    -webkit-transform: scale(0.3) rotate(329deg) skew(2deg, 31deg);
+    -o-transform: scale(0.3) rotate(329deg) skew(2deg, 31deg);
+    -ms-transform: scale(0.3) rotate(329deg) skew(2deg, 31deg);
+    transform: scale(0.3) rotate(329deg) skew(2deg, 31deg);  
+  }
+  70% {
+    -moz-transform: scale(1.5) rotate(50deg) skew(27deg, -51deg);
+    -webkit-transform: scale(1.5) rotate(50deg) skew(27deg, -51deg);
+    -o-transform: scale(1.5) rotate(50deg) skew(27deg, -51deg);
+    -ms-transform: scale(1.5) rotate(50deg) skew(27deg, -51deg);
+    transform: scale(1.5) rotate(50deg) skew(27deg, -51deg);  }
+  80% {
+    -moz-transform: scale(0.7) rotate(64deg) skew(27deg, -64deg);
+    -webkit-transform: scale(0.7) rotate(64deg) skew(27deg, -64deg);
+    -o-transform: scale(0.7) rotate(64deg) skew(27deg, -64deg);
+    -ms-transform: scale(0.7) rotate(64deg) skew(27deg, -64deg);
+    transform: scale(0.7) rotate(64deg) skew(27deg, -64deg);  }
+  90% {
+    -moz-transform: scale(1.1) rotate(64deg) skew(44deg, -64deg);
+    -webkit-transform: scale(1.1) rotate(64deg) skew(44deg, -64deg);
+    -o-transform: scale(1.1) rotate(64deg) skew(44deg, -64deg);
+    -ms-transform: scale(1.1) rotate(64deg) skew(44deg, -64deg);
+    transform: scale(1.1) rotate(64deg) skew(44deg, -64deg);  }
+  95% {
+    -moz-transform: scale(0.9) rotate(19deg) skew(-22deg, -19deg);
+    -webkit-transform: scale(0.9) rotate(19deg) skew(-22deg, -19deg);
+    -o-transform: scale(0.9) rotate(19deg) skew(-22deg, -19deg);
+    -ms-transform: scale(0.9) rotate(19deg) skew(-22deg, -19deg);
+    transform: scale(0.9) rotate(19deg) skew(-22deg, -19deg);  }
+  100% {
+    -moz-transform:none;
+    -webkit-transform:none;
+    -o-transform:none;
+    -ms-transform:none;
+    transform:none;
+    }
 }
