@@ -1,5 +1,42 @@
-export class config {
-  public objects =   [
+export class NgxDecorConfig {
+  iconType: IconType;
+  trigger: Trigger;
+  iconClass: string;
+  iconErrorClass: string;
+  iconErrorStyle: Array<string>;
+  textboxErrorClass: string;
+  textboxErrorStyle: Array<string>;
+    
+  constructor(config: NgxDecorConfig) {
+    this.iconType = config.iconType;
+    this.trigger = config.trigger;
+    this.iconClass = config.iconClass;
+    this.iconErrorClass = config.iconErrorClass;
+    this.iconErrorStyle = config.iconErrorStyle;
+    this.textboxErrorClass = config.textboxErrorClass;
+    this.textboxErrorStyle = config.textboxErrorStyle;
+  }
+}
+
+export class Trigger {
+  name: string;
+  type: TriggerType;
+}
+
+export enum IconType {
+  "Error" = 0
+}
+
+export enum TriggerType {
+  "Boolean" = 0,
+  "Function" = 1
+}
+
+
+
+
+export class Config {
+   objects =   [
     {
       "text": "HTML/HTML5",
       "image": {
@@ -129,7 +166,7 @@ export class config {
     //     "sizeY": 1.1
     //   }
     // }
-  ]
+  ];
 
 }
 
