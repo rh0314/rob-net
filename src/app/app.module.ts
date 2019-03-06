@@ -9,7 +9,6 @@ import { AboutComponent } from './about/about.component';
 import { Error404Component } from './error404/error404.component';
 import { GlobalDataService } from './shared/global-data.service';
 import { GlobalFunctionsService } from './shared/global-functions.service'
-import { BgManagerDirective } from './shared/directives/bg-overlay.directive';
 import { ResumeComponent } from './resume/resume.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AniCircleComponent } from './ani-circle/ani-circle.component';
@@ -29,7 +28,6 @@ import { CcRewardsComponent } from './code-demos/cc-rewards/cc-rewards.component
     HomeComponent,
     AboutComponent,
     Error404Component,
-    BgManagerDirective,
     ResumeComponent,
     AniCircleComponent,
     IntroComponent,
