@@ -21,16 +21,6 @@ export class GlobalDataService {
     'cc-rewards': 'rh-background-3'
   };
 
-  // pageBgImages = {
-  //   intro: 'assets/images/coding-3-flip-75a.png)',
-  //   home: 'assets/images/coding-4-flip-2a.png',
-  //   about: 'assets/images/coding-4-flip-2a.png',
-  //   resume: 'assets/images/coding-4-flip-2a.png',
-  //   code: 'assets/images/blue-grid-paper-background-millimeter.jpg',
-  //   pipes: 'assets/images/blue-grid-paper-background-millimeter.jpg', 
-  //   'cc-rewards': 'assets/images/blue-grid-paper-background-millimeter.jpg'
-  // }
-
   scrollData = {
     beenToTop: false,
     currentTop: 0,

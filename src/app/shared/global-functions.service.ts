@@ -62,7 +62,6 @@ export class GlobalFunctionsService {
     console.log('globalFunctions: onScroll: ', this.globalData.scrollData);
   }
 
-
   setIntroClasses(wait: number = 0) {
     const _this = this;
     let done = false;
@@ -95,25 +94,6 @@ export class GlobalFunctionsService {
     }, wait);
 
   }
-
-  // getBgImage(): string { 
-  //   let done = false;
-  //   let bgImagePath: string;
-
-
-  //   const keys = Object.keys(this.globalData.pageBgClasses);
-  //   for (let i = 0; (i < keys.length && !done); i++) {
-  //     const route = this.globalData.router.url.replace(/\//g, '').split('#')[0];
-  //     if (route == keys[i]) {
-  //       // body.classList.add(_this.globalData.pageBgClasses[keys[i]]);
-  //       bgImagePath = this.globalData.pageBgImages[keys[i]];
-  //       this.globalData.setProperty('headerHidden', (route === 'intro'));
-  //       done = true;
-  //     }
-  //   }
-
-  //   return bgImagePath;
-  // }
 
   clearIntroClasses(wait: number = 50) {
     setTimeout(() => {
@@ -192,7 +172,6 @@ export class GlobalFunctionsService {
     }
     return el;
   }
-
 
   spinOut(el) {
     el.style.transition = 'transform 1.5s ease-in';
