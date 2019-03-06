@@ -21,6 +21,16 @@ export class GlobalDataService {
     'cc-rewards': 'rh-background-3'
   };
 
+  // pageBgImages = {
+  //   intro: 'assets/images/coding-3-flip-75a.png)',
+  //   home: 'assets/images/coding-4-flip-2a.png',
+  //   about: 'assets/images/coding-4-flip-2a.png',
+  //   resume: 'assets/images/coding-4-flip-2a.png',
+  //   code: 'assets/images/blue-grid-paper-background-millimeter.jpg',
+  //   pipes: 'assets/images/blue-grid-paper-background-millimeter.jpg', 
+  //   'cc-rewards': 'assets/images/blue-grid-paper-background-millimeter.jpg'
+  // }
+
   scrollData = {
     beenToTop: false,
     currentTop: 0,
@@ -33,6 +43,21 @@ export class GlobalDataService {
   watchOnScroll = [
 
   ];
+
+  backgroundManagerStyle = {
+    'position': 'fixed',
+    'border': '3px solid red',
+    'top': '0px',
+    'left': '0px',
+    'margin': '0px',
+    'padding': '0px',
+    'width': '100vw',
+    'height': '100vh',
+    'background-image': 'none',
+    'background-repeat': 'no-repeat',
+    'z-index': '-1',
+    'background-size': 'cover'
+    }
 
   get currentPage(): string {
     return this._currentPage;

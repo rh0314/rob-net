@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
     easing: 'ease-out',
     anchorPlacement: 'top'
   };
+  backgroundImagePath: string;
 
   constructor(
     @Inject(DOCUMENT) document,

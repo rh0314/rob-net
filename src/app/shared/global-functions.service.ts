@@ -48,6 +48,7 @@ export class GlobalFunctionsService {
   setIntroClasses(wait: number = 0) {
     const _this = this;
     let done = false;
+    let bgImagePath: string = "";
     setTimeout(() => {
       const body = this.getElementByQuery('body');
       const bodyClasses = body.classList;
@@ -72,8 +73,29 @@ export class GlobalFunctionsService {
         _this.globalData.setProperty('headerHidden', true);
         body.classList.add('bg-has-back-color');
       }
+      return bgImagePath;
     }, wait);
+    
   }
+
+  // getBgImage(): string { 
+  //   let done = false;
+  //   let bgImagePath: string;
+
+
+  //   const keys = Object.keys(this.globalData.pageBgClasses);
+  //   for (let i = 0; (i < keys.length && !done); i++) {
+  //     const route = this.globalData.router.url.replace(/\//g, '').split('#')[0];
+  //     if (route == keys[i]) {
+  //       // body.classList.add(_this.globalData.pageBgClasses[keys[i]]);
+  //       bgImagePath = this.globalData.pageBgImages[keys[i]];
+  //       this.globalData.setProperty('headerHidden', (route === 'intro'));
+  //       done = true;
+  //     }
+  //   }
+
+  //   return bgImagePath;
+  // }
 
   clearIntroClasses(wait: number = 50) {
     setTimeout(() => {

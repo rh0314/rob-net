@@ -10,7 +10,7 @@ import { DOCUMENT, NgForOf } from "@angular/common";
 })
 export class HomeComponent implements OnInit, OnDestroy {
   templateItems: Array<any>;
-  backImage: any;
+  backgroundImagePath: any;
   pipes: any;
 
   // move to global service

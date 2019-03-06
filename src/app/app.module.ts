@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -10,7 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { Error404Component } from './error404/error404.component';
 import { GlobalDataService } from './shared/global-data.service';
 import { GlobalFunctionsService } from './shared/global-functions.service'
-import { BgOverlayDirective } from './shared/directives/bg-overlay.directive';
+import { BgManagerDirective } from './shared/directives/bg-overlay.directive';
 import { ResumeComponent } from './resume/resume.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AniCircleComponent } from './ani-circle/ani-circle.component';
@@ -30,7 +29,7 @@ import { CcRewardsComponent } from './code-demos/cc-rewards/cc-rewards.component
     HomeComponent,
     AboutComponent,
     Error404Component,
-    BgOverlayDirective,
+    BgManagerDirective,
     ResumeComponent,
     AniCircleComponent,
     IntroComponent,
