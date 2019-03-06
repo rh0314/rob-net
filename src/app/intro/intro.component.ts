@@ -26,5 +26,16 @@ export class IntroComponent implements OnInit {
     this.globalFunctions.transitionIntroOut('/home');
   }
 
+  // tin = false;
+  // swap() {
+  //   console.log('click');
+  //   if (!this.tin) {
+  //     this.globalFunctions.swapClassByQuery('body', 'rh-background-2', 'rh-background-3');
+  //   }
+  //   else {
+  //     this.globalFunctions.swapClassByQuery('body', 'rh-background-3', 'rh-background-2');
+  //   }
+  //   this.tin = !this.tin;
+  // }
 
 }
