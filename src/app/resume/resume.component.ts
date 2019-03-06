@@ -100,7 +100,7 @@ export class ResumeComponent implements OnInit, AfterViewInit {
   }
 
   afterLoadComplete(pdfData: any) {
-    // console.log('pdfData', pdfData);
+    // 
     this.totalPages = pdfData.numPages;
     this.isLoaded = true;
 
@@ -119,6 +119,6 @@ export class ResumeComponent implements OnInit, AfterViewInit {
   }
 
   pageRenderedI(e) {
-    console.log('pageRendered: ', e);
+    
   }
 }

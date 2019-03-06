@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
                 )
             ).subscribe(
       (event: NavigationStart) => {
-        console.log(event);
+        
         this.globalFunctions.setIntroClasses();
       }
     )

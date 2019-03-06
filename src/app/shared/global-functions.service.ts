@@ -59,7 +59,7 @@ export class GlobalFunctionsService {
       this.globalData.scrollData.beenToTop = true;
     }
     this.globalData.scrollData.direction = (this.globalData.scrollData.currentTop < previousTop);
-    console.log('globalFunctions: onScroll: ', this.globalData.scrollData);
+    
   }
 
   setIntroClasses(wait: number = 0) {
@@ -189,7 +189,7 @@ export class GlobalFunctionsService {
   }
 
   menuClick(page: string, activeRoute: ActivatedRoute) {
-    console.log('menuClick: ', activeRoute);
+    
   }
 
   scrollToTop(delay: number, x: number, y: number) {

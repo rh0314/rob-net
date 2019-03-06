@@ -35,7 +35,7 @@ export class CcRewardsComponent implements OnInit, AfterViewInit {
     this.video.play();
     this.video.textTracks[0].mode = 'showing';
     this.video.classList.add('enlarged');
-    console.log(this.video, this.video.textTracks);
+    
   }
 
 

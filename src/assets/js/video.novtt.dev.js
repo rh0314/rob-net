@@ -1799,7 +1799,7 @@ vjs.EventEmitter.prototype.dispatchEvent = vjs.EventEmitter.prototype.trigger;
  * Components are also event emitters.
  *
  *     button.on('click', function(){
- *       console.log('Button Clicked!');
+ *       
  *     });
  *
  *     button.trigger('customevent');

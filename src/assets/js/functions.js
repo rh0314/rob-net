@@ -1,10 +1,10 @@
 (() => {
-  console.log('functions.js loading...');
+  
   let count = 0;
   let loading = true;
 
   document.onload = () => {
-    console.log('document.onload');
+    
     var imgA = new Image();
     count++;
     imgA.onload = () => {

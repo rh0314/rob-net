@@ -50,7 +50,6 @@
 //   background-size: cover;
 //   background-repeat: no-repeat;
 // }
-
 .rh-background-1 {
   background-image: url(./assets/images/wopr-code-1920-1080.jpg);
   opacity: 0.8;
@@ -125,14 +124,14 @@
 
 .page-hidden {
   opacity: 0;
-  transition-property: opacity; 
+  transition-property: opacity;
 }
 
 .page-in {
   display: inline-block;
   transition-property: opacity;
   transition-delay: 500ms;
-  transition-duration: 750ms; 
+  transition-duration: 750ms;
   opacity: 1;
 }
 
@@ -402,6 +401,13 @@ p {
   .router-outlet-container {
     max-width: 767px;
   }
+  .page-content-box {
+    padding: 4vh 4vw;
+    margin-bottom: 25px;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
 }
 
 @media(min-width: 767px) and (max-width: 991px) {
@@ -413,6 +419,13 @@ p {
   }
   .page-subheadline-content {
     font-size: 1.5em;
+  }
+  .page-content-box {
+    padding: 5vh 5vw;
+    margin-bottom: 25px;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
   }
 }
 

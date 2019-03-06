@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       homePage = homePage[0] ? homePage[0] : homePage;
     }
     const nextPage = homePage.getBoundingClientRect().top - window.innerHeight;
-    console.log(nextPage, window.innerHeight);
+    
     const fadeOut = nextPage <= window.innerHeight;
     let circlesContainer = document.querySelector('.circles-container-anchor');
     if (circlesContainer) {

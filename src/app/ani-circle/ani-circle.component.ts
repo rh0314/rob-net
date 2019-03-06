@@ -63,7 +63,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
   // alternate way of getting host clicks
   // ngAfterViewInit() {
   //   this.rend.listen(this.el.nativeElement, 'click', () => {
-  //     console.log('el clicked');
+  //     
   //   })
   // }
 
@@ -78,7 +78,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
   }
 
   hostClicked(e: any) {
-    console.log('hostClicked: ', e);
+    
   }
 
   onResize() {
@@ -311,7 +311,7 @@ export class AniCircleComponent implements OnInit, OnChanges {
   }
 
   toggleFlip() {
-    console.log('flip');
+    
     const n = this.el.nativeElement;
     if (n.classList.contains('flipped')) {
       this.rend.removeClass(n, 'flipped');

@@ -120,7 +120,7 @@
 //       const comparePoint = (el.pos.top < 0) ? (el.pos.top * -1) + compareElementPos.height : el.pos.top;
 
 //       el.triggered = el.pos.top <= comparePoint;
-//       // console.log('elementId: ', el.id, 'el.triggered: ', el.triggered, 'el.pos.top', el.pos.top);
+//       // 
 //       if (el.triggered) {
 //         // if it's already been triggered for this trip up, ignore and reset triggered status
 //         if (el.triggeredAtPos && el.pos.top > el.triggeredAtPos.top) {
@@ -141,7 +141,7 @@
 
 //   }
 //   // return the array (as a conveniencee so the calling function doesn't have to get it again)
-//   // console.log('trackElements: ', this.globalData.watchOnScroll);
+//   // 
 //   return this.globalData.watchOnScroll;
 
 // }
