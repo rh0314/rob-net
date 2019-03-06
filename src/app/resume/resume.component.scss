@@ -49,24 +49,6 @@
   }
 }
 
-.page-button {
-  background-image: url(./../../assets/images/brushed-aluminium-vector-background.jpg);
-  background-color: grba(0, 0, 0, 0);
-  width: 120px;
-  margin-top: 8px;
-  span {
-    font-weight: bold;
-  }
-  i {
-    margin-left: 5px;
-    margin-right: 5px;
-    color: rgb(19, 116, 228);
-    size: 20px;
-    margin-right: 5px;
-    margin-top: 3px;
-  }
-}
-
 .zoom-button {
   float: left;
   z-index: 205;
