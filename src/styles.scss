@@ -44,18 +44,29 @@
   font-size: 15px;
 }
 
+// .rh-background-1 {
+//   background-image: url(./assets/images/coding-3-flip-75a.png); // background-image: url(./assets/images/lightning-combined-high.gif);
+//   opacity: 0.8;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+// }
+
 .rh-background-1 {
-  background-image: url(./assets/images/coding-3-flip-75a.png); // background-image: url(./assets/images/lightning-combined-high.gif);
+  background-image: url(./assets/images/wopr-code.jpg); 
   opacity: 0.8;
   background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
+  background-color: black;
 }
 
 .rh-background-2 {
   transition: background-image 1s ease-in;
   background-image: url(./assets/images/coding-4-flip-2a.png);
   background-attachment: fixed;
+  background-repeat: no-repeat;
   background-size: cover;
+  opacity: 1;
 }
 
 .rh-background-3 {

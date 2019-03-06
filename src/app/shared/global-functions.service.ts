@@ -11,20 +11,38 @@ export class GlobalFunctionsService {
     private globalData: GlobalDataService
   ) { }
 
+  // transitionIntroOut(destination: string) {
+  //   const intro = document.getElementById('intro');
+  //   const streak = document.getElementById('blueStreak');
+  //   if (intro) {
+  //     this.spinOut(intro);
+  //     if (streak) {
+  //       this.shrinkOut(streak, { x: .5 });
+  //     }
+  //     setTimeout(() => {
+  //       this.swapClass('main_menu', 'header-in', 'header-out');
+  //       // this.swapClassByQuery('body', 'rh-background-2', 'rh-background-1');
+  //       this.navigateTo(destination);
+  //     }, 2000);
+  //   }
+  // }
+
   transitionIntroOut(destination: string) {
     const intro = document.getElementById('intro');
-    const streak = document.getElementById('blueStreak');
+    // greetings el
     if (intro) {
-      this.spinOut(intro);
-      if (streak) {
-        this.shrinkOut(streak, { x: .5 });
-      }
+      this.fadeOut(intro);
+      this.swapClassByQuery('body', 'dim', '');
+      this.swapClassByQuery('.wopr-container', 'show', '');
       setTimeout(() => {
         this.swapClass('main_menu', 'header-in', 'header-out');
-        // this.swapClassByQuery('body', 'rh-background-2', 'rh-background-1');
         this.navigateTo(destination);
-      }, 2000);
+      }, 4000);
     }
+  }
+
+  playAGame() {
+
   }
 
   navigateTo(destination: string) {
@@ -75,7 +93,7 @@ export class GlobalFunctionsService {
       }
       return bgImagePath;
     }, wait);
-    
+
   }
 
   // getBgImage(): string { 
@@ -142,8 +160,12 @@ export class GlobalFunctionsService {
       el = el[0];
     }
     if (el) {
-      el.classList.remove(classNameOut);
-      el.classList.add(classNameIn);
+      if (classNameOut) {
+        el.classList.remove(classNameOut);
+      }
+      if (classNameIn) {
+        el.classList.add(classNameIn);
+      }
     }
   }
 
@@ -175,6 +197,11 @@ export class GlobalFunctionsService {
   spinOut(el) {
     el.style.transition = 'transform 1.5s ease-in';
     el.style.transform = 'rotate(1440deg) scale(0, 0)'
+  }
+
+  fadeOut(el) {
+    el.style.transition = 'opacity 1s ease-in';
+    el.style.opacity = 0;
   }
 
   shrinkOut(el, endScale) {

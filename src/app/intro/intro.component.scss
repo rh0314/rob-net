@@ -78,6 +78,30 @@
   }
 }
 
+.wopr-container {
+  position: fixed;
+  top: 52vh;
+  left: 0px;
+  width: 100vw;
+  opacity: 0;
+  &.show {
+    transition: opacity 1s ease-in;
+    opacity: 1;
+  }
+}
+
+.wopr-inner-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wopr-ani {
+  max-width: 500px;
+  width: 33vw;
+  margin-left: calc(50vw - 250px);
+  opacity: 0.7;
+}
+
 @media (max-width: 574.99px) {
   .xxx-spacer-cell {
     display: inline-block;

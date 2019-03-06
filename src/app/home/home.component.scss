@@ -164,7 +164,7 @@ app-ani-circle.park {
     color: $bb-accent-light;
     text-decoration: none;
   }
-  &:hover {
+  &.rotate {
     transform: rotate(320deg);
     -webkit-animation-name: puffIn;
   }
