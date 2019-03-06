@@ -47,8 +47,6 @@ import { CcRewardsComponent } from './code-demos/cc-rewards/cc-rewards.component
   providers: [
     GlobalDataService,
     GlobalFunctionsService,
-    // RMbGbPipe,
-    // ROrderByPipe
 
   ],
   bootstrap: [AppComponent]
