@@ -52,26 +52,28 @@
 // }
 
 .rh-background-1 {
-  background-image: url(./assets/images/wopr-code.jpg); 
+  background-image: url(./assets/images/wopr-code-1920-1080.jpg);
   opacity: 0.8;
   background-size: cover;
-  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-color: black;
 }
 
 .rh-background-2 {
   transition: background-image 1s ease-in;
-  background-image: url(./assets/images/coding-4-flip-2a.png);
+  background-image: url(./assets/images/coding-4-flip-1920-1080.png);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 1;
+  background-attachment: fixed;
 }
 
 .rh-background-3 {
   transition: background-image 1s ease-in;
-  background-image: url(./assets/images/blue-grid-paper-background-millimeter.jpg);
+  background-image: url(./assets/images/blue-grid-paper-1920-1080.jpg);
   background-attachment: fixed;
   background-size: cover;
 }
