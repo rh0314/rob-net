@@ -18,11 +18,20 @@ export class CcRewardsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    
+
     const el = document.getElementById('ccRewardsVideo');
     if (el) {
       this.video = <HTMLVideoElement>el;
       this.video.volume = 0.1;
+      this.video.onplay = () => {
+        if (screen.width < 676) {
+          this.video.requestFullscreen().then(d => {
+            console.log(d);
+          }).catch(e => {
+            console.log(e);
+          });
+        }
+      };
     }
   }
 
@@ -35,9 +44,6 @@ export class CcRewardsComponent implements OnInit, AfterViewInit {
     this.video.play();
     this.video.textTracks[0].mode = 'showing';
     this.video.classList.add('enlarged');
-    
+
   }
-
-
-
 }

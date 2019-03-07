@@ -66,10 +66,11 @@ export class ResumeComponent implements OnInit, AfterViewInit {
     const y = window.scrollY;
     const zbt = this.zbtOffset - at;
     const zbl = am - (bw * .5);
-    const vbl = canvas.getBoundingClientRect().width + canvas.getBoundingClientRect().left - 50;
+    const vbl = canvas ? canvas.getBoundingClientRect().width + canvas.getBoundingClientRect().left - 50 : 0;
     const vbt = y + 100;
     const wh = window.innerHeight;
     const ww = window.innerWidth;
+    if (!(btns && canvas && wrapper)) { return; }
     if (y < 250 && btns) {
       btns.style.top = zbt + 'px';
       btns.style.left = zbl + 'px';

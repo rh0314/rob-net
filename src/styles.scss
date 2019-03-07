@@ -393,10 +393,19 @@ p {
   }
 }
 
-@media(max-width: 767px) {
-  app-root {
-    max-width: 767px;
+@media(max-width: 575px) {
+  .intro-enter-text-content {
+    top: 15vh;
   }
+  .page-headline-content {
+    font-size: 3em;
+  }
+  .page-subheadline-content {
+    font-size: 1.25em;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
   .page-headline-content {
     font-size: 3em;
   }
@@ -412,6 +421,9 @@ p {
     width: 90vw;
     margin-left: 5vw;
     margin-right: 5vw;
+  }
+  .intro-enter-text-content {
+    top: 40vh;
   }
 }
 
