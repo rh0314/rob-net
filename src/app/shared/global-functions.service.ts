@@ -34,10 +34,11 @@ export class GlobalFunctionsService {
       this.fadeOut(intro);
       this.swapClassByQuery('body', 'dim', '');
       this.swapClassByQuery('.wopr-container', 'show', '');
+      const pause = window.innerWidth > 767 ? 4000 : 0;
       setTimeout(() => {
         this.swapClass('main_menu', 'header-in', 'header-out');
         this.navigateTo(destination);
-      }, 4000);
+      }, pause);
     }
   }
 
